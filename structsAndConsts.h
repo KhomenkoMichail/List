@@ -8,8 +8,8 @@ typedef int listData_t;
 
 struct node {
     listData_t data;
-    size_t next;
-    size_t prev;
+    int next;
+    int prev;
 };
 
 struct info {

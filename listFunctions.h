@@ -17,4 +17,8 @@ int deleteElem (struct list* lst, size_t deletedElem);
 
 int reallocList (struct list* lst);
 
+int fprintfGraphDump (struct list* lst, const char* textGraphFileName);
+
+int fprintfGraphDump2 (struct list* lst, const char* textGraphFileName);
+
 #endif

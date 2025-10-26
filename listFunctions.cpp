@@ -15,7 +15,7 @@ void listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     ((lst->nodeArr)[0]).next = 0;
     ((lst->nodeArr)[0]).prev = 0;
 
-    for (size_t nodeNum = 1; nodeNum < capacity; nodeNum++) {
+    for (int nodeNum = 1; nodeNum < capacity; nodeNum++) {
         ((lst->nodeArr)[nodeNum]).data = 0xBAD;
         ((lst->nodeArr)[nodeNum]).next = nodeNum + 1;
         ((lst->nodeArr)[nodeNum]).prev = -1;
@@ -136,6 +136,162 @@ int reallocList (struct list* lst) {
 
     return stack->errorCode;
 }*/
+
+int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
+    assert(lst);
+    assert(textGraphFileName);
+
+    FILE* graphFile = fopen(textGraphFileName, "w");
+
+    if (graphFile == NULL) {
+        fprintf(stderr, "Error of opening file \"%s\"", textGraphFileName);
+        perror("");
+        return 1;
+    }
+
+    fprintf(graphFile, "digraph List {\n");
+    fprintf(graphFile, "    rankdir=LR;\n");
+    fprintf(graphFile, "    node [shape = Mrecord, color = black];\n\n");
+
+    for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++) {
+
+        const char* fillColor = "#C2BBBD";
+
+        if (numOfNode == lst->head)
+            fillColor = "#79D47F";
+
+        if (numOfNode == lst->tail)
+            fillColor = "#E07397";
+
+        if (((lst->nodeArr)[numOfNode]).prev == -1)
+            fillColor = "#E3f194";
+
+        fprintf(graphFile, "    node%d [rank = 2,label = \" idx: %d| data = %d|<f2> next = %d| prev = %d\", style = filled, fillcolor = \"%s\", color = black];\n",
+                numOfNode, numOfNode, ((lst->nodeArr)[numOfNode]).data, ((lst->nodeArr)[numOfNode]).next, ((lst->nodeArr)[numOfNode]).prev, fillColor);
+    }
+
+    fprintf(graphFile, "\n");
+
+    for (size_t numOfNode = 0; numOfNode < lst->capacity - 1; numOfNode++)
+        fprintf(graphFile, "    node%d -> node%d [weight = 500, style = invis, color = white];\n", numOfNode, numOfNode + 1);
+
+    for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++) {
+
+        if (((lst->nodeArr)[numOfNode]).prev == -1)
+            continue;
+
+        // Связь next (синяя стрелка)
+        if (((lst->nodeArr)[numOfNode]).next != 0)
+            fprintf(graphFile, "    node%d -> node%d [color = blue, label = \"next\"];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
+
+        // Связь prev (красная стрелка)
+        if (((lst->nodeArr)[numOfNode]).prev != 0)
+            fprintf(graphFile, "    node%d -> node%d [color=red, label = \"prev\", style=dashed];\n", numOfNode, ((lst->nodeArr)[numOfNode]).prev);
+    }
+
+    for (size_t numOfNode = lst->free; ((lst->nodeArr)[numOfNode]).next != 0; numOfNode = ((lst->nodeArr)[numOfNode]).next)
+        fprintf(graphFile, "    node%d -> node%d [color=gray, label=\"free\"];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
+
+    fprintf(graphFile, "\n");
+
+    fprintf(graphFile, "    head [rank = 1, shape = box3d, label=\"head\", style = filled, fillcolor = \"#79D47F\", color = black];\n");
+    fprintf(graphFile, "    tail [rank = 1, shape = box3d, label=\"tail\", style = filled, fillcolor = \"#E07397\", color = black];\n");
+    fprintf(graphFile, "    free [rank = 1, shape = box3d, label=\"free\", style = filled, fillcolor = \"#E3f194\", color = black];\n");
+
+    fprintf(graphFile, "    head -> node%d [color=darkblue];\n", lst->head);
+    fprintf(graphFile, "    tail -> node%d [color=darkgreen];\n", lst->tail);
+    fprintf(graphFile, "    free -> node%d [color=black];\n", lst->free);
+    fprintf(graphFile, "}\n");
+
+
+    if (fclose(graphFile) != 0) {
+        fprintf(stderr, "Error of closing file \"%s\"", textGraphFileName);
+        perror("");
+        return 1;
+    }
+
+    return 0;
+}
+
+
+
+int fprintfGraphDump2 (struct list* lst, const char* textGraphFileName) {
+    assert(lst);
+    assert(textGraphFileName);
+
+    FILE* graphFile = fopen(textGraphFileName, "w");
+
+    if (graphFile == NULL) {
+        fprintf(stderr, "Error of opening file \"%s\"", textGraphFileName);
+        perror("");
+        return 1;
+    }
+
+    fprintf(graphFile, "digraph List {\n");
+    fprintf(graphFile, "    rankdir=HR;\n");
+    fprintf(graphFile, "    node [shape = polygon, color = black];\n\n");
+
+    for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++) {
+
+        const char* fillColor = "#C2BBBD";
+
+        if (numOfNode == lst->head)
+            fillColor = "#79D47F";
+
+        if (numOfNode == lst->tail)
+            fillColor = "#E07397";
+
+        if (((lst->nodeArr)[numOfNode]).prev == -1)
+            fillColor = "#E3f194";
+
+        fprintf(graphFile, "    node%d [label = \"{ idx: %d| data = %d|<f2> next = %d| prev = %d}\", style = filled, fillcolor = \"%s\", color = black];\n",
+                numOfNode, numOfNode, ((lst->nodeArr)[numOfNode]).data, ((lst->nodeArr)[numOfNode]).next, ((lst->nodeArr)[numOfNode]).prev, fillColor);
+    }
+
+    fprintf(graphFile, "\n");
+
+    for (size_t numOfNode = 0; numOfNode < lst->capacity - 1; numOfNode++)
+        fprintf(graphFile, "    node%d -> node%d [weight = 500, style = invis, color = white];\n", numOfNode, numOfNode + 1);
+
+    for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++) {
+
+        if (((lst->nodeArr)[numOfNode]).prev == -1)
+            continue;
+
+        // Связь next (синяя стрелка)
+        if (((lst->nodeArr)[numOfNode]).next != 0)
+            fprintf(graphFile, "    node%d -> node%d [color = blue, label = \"next\"];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
+
+        // Связь prev (красная стрелка)
+        if (((lst->nodeArr)[numOfNode]).prev != 0)
+            fprintf(graphFile, "    node%d -> node%d [color=red, label = \"prev\", style=dashed];\n", numOfNode, ((lst->nodeArr)[numOfNode]).prev);
+    }
+
+    for (size_t numOfNode = lst->free; ((lst->nodeArr)[numOfNode]).next != 0; numOfNode = ((lst->nodeArr)[numOfNode]).next)
+        fprintf(graphFile, "    node%d -> node%d [color=gray, label=\"free\"];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
+
+    fprintf(graphFile, "\n");
+
+    fprintf(graphFile, "    head [shape = box3d, label=\"head\", style = filled, fillcolor = \"#79D47F\", color = black];\n");
+    fprintf(graphFile, "    tail [shape = box3d, label=\"tail\", style = filled, fillcolor = \"#E07397\", color = black];\n");
+    fprintf(graphFile, "    free [shape = box3d, label=\"free\", style = filled, fillcolor = \"#E3f194\", color = black];\n");
+
+    fprintf(graphFile, "    head -> node%d [color=darkblue];\n", lst->head);
+    fprintf(graphFile, "    tail -> node%d [color=darkgreen];\n", lst->tail);
+    fprintf(graphFile, "    free -> node%d [color=black];\n", lst->free);
+    fprintf(graphFile, "    { rank = same; head; tail; free; }\n    { rank = same; node0; node1; node2; node3; node4; node5; node6; node7; node8; node9; }\n");
+    fprintf(graphFile, "}\n");
+
+
+    if (fclose(graphFile) != 0) {
+        fprintf(stderr, "Error of closing file \"%s\"", textGraphFileName);
+        perror("");
+        return 1;
+    }
+
+    return 0;
+}
+
 
 
 
