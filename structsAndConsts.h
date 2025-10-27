@@ -2,7 +2,7 @@
 #define STRUCTS_AND_CONSTS_H
 
 const int POISON = 0xBAD;
-const int nullData = 0xBABE;
+const int NULL_CANARY = 0xBABE;
 
 typedef int listData_t;
 
@@ -31,13 +31,18 @@ struct list {
     struct info creationInfo;
 };
 
+const size_t MAX_CAPACITY = 5000;
+
 enum listErr_t {
     noErrors = 0b0,
     badListPtr= 0b1,
     badNodeArrPtr = 0b10,
     badCapacity = 0b100,
     badNullNode = 0b1000,
-    badNextAndPrevMatch = 0b10000,
+    badFreeNode = 0b10000,
+    badNextAndPrevMatch = 0b100000,
+    badHead = 0b1000000,
+    badTail = 0b10000000,
 };
 
 #endif

@@ -2,20 +2,21 @@
 
 #include "listFunctions.h"
 #include "structsAndConsts.h"
+#include <stdlib.h>
 
 int main (void) {
     struct list lst = {};
     struct info listInfo = {};
+    struct info dumpInfo = {};
 
     LIST_CTOR(lst, 5, listInfo);
 
     insortAfter (&lst, 0, 10);
     insortAfter (&lst, 1, 20);
-    insortAfter (&lst, 2, 30);
-    insortAfter (&lst, 3, 40);
-    insortAfter (&lst, 2, 25);
 
-    fprintfGraphDump2 (&lst, "graphDump.txt");
+    FILE* file = fopen("listDump.html", "w");
+    LIST_DUMP (&lst, dumpInfo, file, "graphDump.txt");
+    fclose(file);
     return 0;
 
 }
