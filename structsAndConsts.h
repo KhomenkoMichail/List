@@ -17,16 +17,23 @@ struct info {
     const char* nameOfFile;
     const char* nameOfFunc;
     unsigned int numOfLine;
+
 };
 
 struct dump {
-    const char* nameOfTextGraphFile;
-    const char* nameOfHTMLFile;
-    FILE* HTMLFilePtr;
-
     const char* nameOfFile;
     const char* nameOfFunc;
     unsigned int numOfLine;
+
+    const char* nameOfDumpFile;
+    const char* nameOfGraphFile;
+    int dumpFileWasOpened;
+};
+
+struct listFiles {
+    const char* nameOfDumpFile;
+    const char* nameOfGraphFile;
+    FILE* dumpFile;
 };
 
 struct list {
@@ -39,6 +46,7 @@ struct list {
 
     int errorCode;
     struct info creationInfo;
+    struct listFiles files;
 };
 
 const size_t MAX_CAPACITY = 5000;

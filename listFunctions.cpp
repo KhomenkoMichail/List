@@ -5,8 +5,7 @@
 #include "listFunctions.h"
 #include "structsAndConsts.h"
 
-
-void listCtor (struct list* lst, ssize_t capacity, struct info listInfo, struct dump* dumpInfo) {
+void listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     assert(lst);
 
     lst->nodeArr = (struct node*)calloc(capacity, sizeof(struct node));
@@ -32,22 +31,6 @@ void listCtor (struct list* lst, ssize_t capacity, struct info listInfo, struct 
     (lst->creationInfo).nameOfFunc = listInfo.nameOfFunc;
     (lst->creationInfo).nameOfFile = listInfo.nameOfFile;
     (lst->creationInfo).numOfLine = listInfo.numOfLine;
-
-    FILE* dumpFile = fopen(dumpInfo->nameOfHTMLFile, "w");
-    if (dumpFile == NULL) {
-        fprintf(stderr, "Error of opening file \"%s\"", dumpInfo->nameOfHTMLFile);
-        perror("");
-        return;
-    }
-
-    fprintf(dumpFile, "<pre>\n");
-
-    /*if (fclose(dumpFile) != 0) {
-        fprintf(stderr, "Error of closing file \"%s\"", dumpInfo.nameOfHTMLFile);
-        perror("");
-        return;
-    }*/
-    dumpInfo->HTMLFilePtr = dumpFile;
 
     lst->errorCode = noErrors;
 }
@@ -214,8 +197,6 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
     fprintf(graphFile, "    free -> node%d [color = gray];\n", lst->free);
 
     fprintf(graphFile, "    { rank = same; head; tail; free; }\n");
-    //for (size_t NumOfNode = 0; NumOfNode < lst->capacity; NumOfNode++)
-    //    fprintf(graphFile, "node%d;", NumOfNode);
 
     fprintf(graphFile, " }\n");
 
@@ -231,17 +212,24 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
 
 void listDump (struct list* lst, struct dump* dumpInfo) {
     assert(lst);
-    FILE* dumpFile = dumpInfo->HTMLFilePtr;
-    //FILE* dumpFile = fopen(dumpInfo->nameOfHTMLFile, "a");
 
-    /*if (dumpFile == NULL) {
-        fprintf(stderr, "Error of opening file \"%s\"", dumpInfo->nameOfHTMLFile);
+    const char* nameOfTextGraphFile = dumpInfo->nameOfGraphFile;
+
+    FILE* dumpFile = 0;
+    if(dumpInfo->dumpFileWasOpened)
+        dumpFile = fopen(dumpInfo->nameOfDumpFile, "a");
+    else {
+        dumpFile = fopen(dumpInfo->nameOfDumpFile, "w");
+        dumpInfo->dumpFileWasOpened = 1;
+    }
+
+    if (dumpFile == NULL) {
+        fprintf(stderr, "Error of opening file \"%s\"", dumpInfo->nameOfDumpFile);
         perror("");
         return;
     }
-    printf("succsess\n");*/
 
-    //fprintf(dumpFile, "<pre>\n");
+    fprintf(dumpFile, "<pre>\n");
     fprintf(dumpFile, "<h3>listDump() <font color=red>from %s at %s:%d</font></h3>\n", dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     fprintf(dumpFile, "list \"%s\" [%p] from %s at %s:%d\n\n", (lst->creationInfo).name, lst, lst->creationInfo.nameOfFunc, lst->creationInfo.nameOfFile, lst->creationInfo.numOfLine);
 
@@ -249,13 +237,13 @@ void listDump (struct list* lst, struct dump* dumpInfo) {
 
     fprintfListDataForDump (lst, dumpFile);
 
-    createGraphImageForDump (lst, dumpFile, dumpInfo->nameOfTextGraphFile);
+    createGraphImageForDump (lst, dumpFile, nameOfTextGraphFile);
 
-    /*if (fclose(dumpFile) != 0) {
-        fprintf(stderr, "Error of closing file \"%s\"", dumpInfo->nameOfTextGraphFile);
+    if (fclose(dumpFile) != 0) {
+        fprintf(stderr, "Error of closing file \"%s\"", dumpInfo->nameOfGraphFile);
         perror("");
         return;
-    }*/
+    }
 }
 
 void fprintfListDataForDump (struct list* lst, FILE* dumpFile) {
@@ -390,3 +378,4 @@ void fprintfListErrorsForDump (struct list* lst, FILE* dumpFile) {
     if (lst->errorCode & badTail)
         fprintf(dumpFile, "<h2><font color=red>ERROR! BAD TAIL VALUE! errorcode = %d</font></h2>\n", badTail);
 }
+

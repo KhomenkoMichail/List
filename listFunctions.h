@@ -3,12 +3,12 @@
 
 #include"structsAndConsts.h"
 
-#define LIST_CTOR(listName, capacity, listInfo, dumpInfo)\
-    listInfo.name = #listName;\
-    listInfo.nameOfFile = __FILE__;\
-    listInfo.nameOfFunc = __func__;\
-    listInfo.numOfLine = __LINE__;\
-    listCtor(&listName, capacity, listInfo, &dumpInfo);\
+#define LIST_CTOR(listName, capacity, listInfo)\
+    (listInfo).name = #listName;\
+    (listInfo).nameOfFile = __FILE__;\
+    (listInfo).nameOfFunc = __func__;\
+    (listInfo).numOfLine = __LINE__;\
+    listCtor(&listName, capacity, listInfo);\
 
 #define LIST_DUMP(listAddress, dumpInfo)\
     (dumpInfo).nameOfFile = __FILE__;\
@@ -16,9 +16,7 @@
     (dumpInfo).numOfLine = __LINE__;\
     listDump (listAddress, &dumpInfo);\
 
-//#define LIST_ERROR_CHECK(listAddress, dumpInfo)
-
-void listCtor (struct list* lst, ssize_t capacity, struct info listInfo, struct dump* dumpInfo);
+void listCtor (struct list* lst, ssize_t capacity, struct info listInfo);
 
 int insortAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue);
 
@@ -29,8 +27,6 @@ int reallocList (struct list* lst);
 int fprintfGraphDump (struct list* lst, const char* textGraphFileName);
 
 int listVerifier (struct list* lst);
-
-//void listDump (struct list* lst, FILE* file, struct info dumpInfo,  const char* nameOfTextGraphFile);
 
 void listDump (struct list* lst, struct dump* dumpInfo);
 
