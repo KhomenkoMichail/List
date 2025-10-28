@@ -6,7 +6,7 @@
 #include "structsAndConsts.h"
 
 
-void listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
+void listCtor (struct list* lst, ssize_t capacity, struct info listInfo, struct dump* dumpInfo) {
     assert(lst);
 
     lst->nodeArr = (struct node*)calloc(capacity, sizeof(struct node));
@@ -32,6 +32,22 @@ void listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     (lst->creationInfo).nameOfFunc = listInfo.nameOfFunc;
     (lst->creationInfo).nameOfFile = listInfo.nameOfFile;
     (lst->creationInfo).numOfLine = listInfo.numOfLine;
+
+    FILE* dumpFile = fopen(dumpInfo->nameOfHTMLFile, "w");
+    if (dumpFile == NULL) {
+        fprintf(stderr, "Error of opening file \"%s\"", dumpInfo->nameOfHTMLFile);
+        perror("");
+        return;
+    }
+
+    fprintf(dumpFile, "<pre>\n");
+
+    /*if (fclose(dumpFile) != 0) {
+        fprintf(stderr, "Error of closing file \"%s\"", dumpInfo.nameOfHTMLFile);
+        perror("");
+        return;
+    }*/
+    dumpInfo->HTMLFilePtr = dumpFile;
 
     lst->errorCode = noErrors;
 }
@@ -134,8 +150,8 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
     }
 
     fprintf(graphFile, "digraph List {\n");
-    fprintf(graphFile, "    rankdir = HR;\n");
-    fprintf(graphFile, "    node [shape = rect, color = black];\n");
+    fprintf(graphFile, "    rankdir = LR;\n");
+    fprintf(graphFile, "    node [shape = Mrecord, color = black];\n");
     fprintf(graphFile, "    splines = ortho;");
 
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++) {
@@ -151,8 +167,20 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
         if (((lst->nodeArr)[numOfNode]).prev == -1)
             fillColor = "#E3f194";
 
-        fprintf(graphFile, "    node%d [label = \" idx = %d\\n data = %d\\n next = %d\\n prev = %d\", style = filled, fillcolor = \"%s\", color = black];\n",
-                numOfNode, numOfNode, ((lst->nodeArr)[numOfNode]).data, ((lst->nodeArr)[numOfNode]).next, ((lst->nodeArr)[numOfNode]).prev, fillColor);
+        switch (((lst->nodeArr)[numOfNode]).data) {
+            case POISON:
+                fprintf(graphFile, "    node%d [label = \" idx = %d| data = PZN|", numOfNode, numOfNode);
+                break;
+            case NULL_CANARY:
+                fprintf(graphFile, "    node%d [label = \" idx = %d| data = CANARY|", numOfNode, numOfNode);
+                break;
+            default:
+                fprintf(graphFile, "    node%d [label = \" idx = %d| data = %d|", numOfNode, numOfNode, ((lst->nodeArr)[numOfNode]).data);
+                break;
+        }
+
+        fprintf(graphFile, "    next = %d| prev = %d\", style = filled, fillcolor = \"%s\", color = black];\n",
+                ((lst->nodeArr)[numOfNode]).next, ((lst->nodeArr)[numOfNode]).prev, fillColor);
     }
 
     fprintf(graphFile, "\n");
@@ -177,19 +205,19 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
 
     fprintf(graphFile, "\n");
 
-    fprintf(graphFile, "    head [shape = box3d, label=\"head\", style = filled, fillcolor = \"#79D47F\", color = black];\n");
-    fprintf(graphFile, "    tail [shape = box3d, label=\"tail\", style = filled, fillcolor = \"#E07397\", color = black];\n");
-    fprintf(graphFile, "    free [shape = box3d, label=\"free\", style = filled, fillcolor = \"#E3f194\", color = black];\n");
+    fprintf(graphFile, "    head [shape = box3d, label=\"HEAD\", style = filled, fillcolor = \"#79D47F\", color = black];\n");
+    fprintf(graphFile, "    tail [shape = box3d, label=\"TAIL\", style = filled, fillcolor = \"#E07397\", color = black];\n");
+    fprintf(graphFile, "    free [shape = box3d, label=\"FREE\", style = filled, fillcolor = \"#E3f194\", color = black];\n");
 
     fprintf(graphFile, "    head -> node%d [color = \"#79D47F\"];\n", lst->head);
     fprintf(graphFile, "    tail -> node%d [color = \"#E07397\"];\n", lst->tail);
     fprintf(graphFile, "    free -> node%d [color = gray];\n", lst->free);
 
-    fprintf(graphFile, "    { rank = same; head; tail; free; }\n    { rank = same; ");
-    for (size_t NumOfNode = 0; NumOfNode < lst->capacity; NumOfNode++)
-        fprintf(graphFile, "node%d;", NumOfNode);
+    fprintf(graphFile, "    { rank = same; head; tail; free; }\n");
+    //for (size_t NumOfNode = 0; NumOfNode < lst->capacity; NumOfNode++)
+    //    fprintf(graphFile, "node%d;", NumOfNode);
 
-    fprintf(graphFile, " }\n}\n");
+    fprintf(graphFile, " }\n");
 
 
     if (fclose(graphFile) != 0) {
@@ -201,19 +229,33 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
     return 0;
 }
 
-void listDump (struct list* lst, FILE* dumpFile, struct info dumpInfo, const char* nameOfTextGraphFile) {
+void listDump (struct list* lst, struct dump* dumpInfo) {
     assert(lst);
-    assert(dumpFile);
+    FILE* dumpFile = dumpInfo->HTMLFilePtr;
+    //FILE* dumpFile = fopen(dumpInfo->nameOfHTMLFile, "a");
 
-    fprintf(dumpFile, "<pre>\n");
-    fprintf(dumpFile, "<h3>listDump() <font color=red>from %s at %s:%d</font></h3>\n", dumpInfo.nameOfFunc, dumpInfo.nameOfFile, dumpInfo.numOfLine);
+    /*if (dumpFile == NULL) {
+        fprintf(stderr, "Error of opening file \"%s\"", dumpInfo->nameOfHTMLFile);
+        perror("");
+        return;
+    }
+    printf("succsess\n");*/
+
+    //fprintf(dumpFile, "<pre>\n");
+    fprintf(dumpFile, "<h3>listDump() <font color=red>from %s at %s:%d</font></h3>\n", dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     fprintf(dumpFile, "list \"%s\" [%p] from %s at %s:%d\n\n", (lst->creationInfo).name, lst, lst->creationInfo.nameOfFunc, lst->creationInfo.nameOfFile, lst->creationInfo.numOfLine);
 
     fprintfListErrorsForDump (lst, dumpFile);
 
     fprintfListDataForDump (lst, dumpFile);
 
-    createGraphImageForDump (lst, dumpFile, nameOfTextGraphFile);
+    createGraphImageForDump (lst, dumpFile, dumpInfo->nameOfTextGraphFile);
+
+    /*if (fclose(dumpFile) != 0) {
+        fprintf(stderr, "Error of closing file \"%s\"", dumpInfo->nameOfTextGraphFile);
+        perror("");
+        return;
+    }*/
 }
 
 void fprintfListDataForDump (struct list* lst, FILE* dumpFile) {

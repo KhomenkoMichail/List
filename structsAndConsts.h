@@ -19,6 +19,16 @@ struct info {
     unsigned int numOfLine;
 };
 
+struct dump {
+    const char* nameOfTextGraphFile;
+    const char* nameOfHTMLFile;
+    FILE* HTMLFilePtr;
+
+    const char* nameOfFile;
+    const char* nameOfFunc;
+    unsigned int numOfLine;
+};
+
 struct list {
     struct node* nodeArr;
     size_t head;
