@@ -38,11 +38,12 @@ struct listFiles {
 
 struct list {
     struct node* nodeArr;
-    size_t head;
-    size_t tail;
+//    size_t head;
+//    size_t tail;
     size_t free;
 
     size_t capacity;
+    size_t size;
 
     int errorCode;
     struct info creationInfo;
@@ -61,6 +62,7 @@ enum listErr_t {
     badNextAndPrevMatch = 0b100000,
     badHead = 0b1000000,
     badTail = 0b10000000,
+    requestForBadNum = -3,
 };
 
 #endif

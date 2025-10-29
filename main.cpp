@@ -19,14 +19,23 @@ int main (void) {
 
     LIST_CTOR(lst, 5, listInfo);
 
-    insortAfter (&lst, 0, 10);
-    insortAfter (&lst, 1, 20);
-    insortAfter (&lst, 2, 20);
-    insortAfter (&lst, 3, 20);
-    insortAfter (&lst, 4, 20);
-    deleteElement (&lst, 2);
+    insortAfter2 (&lst, 0, 10);
+    LIST_DUMP (&lst, dumpInfo, "WOW");
+    insortAfter2 (&lst, 1, 20);
+    LIST_DUMP (&lst, dumpInfo, "WOW");
+    insortAfter2 (&lst, 2, 30);
+    LIST_DUMP (&lst, dumpInfo, "WOW");
+    insortAfter2 (&lst, 1, 15);
+    LIST_DUMP (&lst, dumpInfo, "WOW");
+    deleteElement2 (&lst, 2);
+    //insortAfter (&lst, 2, 20);
+    //insortAfter (&lst, 3, 20);
+    //insortAfter (&lst, 4, 20);
+    //deleteElement (&lst, 2);
 
-    LIST_DUMP (&lst, dumpInfo);
+    LIST_DUMP (&lst, dumpInfo, "WOW");
+    deleteElement2 (&lst, 1);
+    LIST_DUMP (&lst, dumpInfo, "WOW");
 
     return 0;
 }

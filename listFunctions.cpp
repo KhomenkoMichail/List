@@ -4,6 +4,7 @@
 
 #include "listFunctions.h"
 #include "structsAndConsts.h"
+#include "listAccessFunctions.h"
 
 void listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     assert(lst);
@@ -23,8 +24,8 @@ void listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
 
     ((lst->nodeArr)[capacity - 1]).next = 0;
 
-    lst->head = 0;
-    lst->tail = 0;
+    //lst->head = 0;
+    //lst->tail = 0;
     lst->free = 1;
 
     (lst->creationInfo).name = listInfo.name;
@@ -35,7 +36,7 @@ void listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     lst->errorCode = noErrors;
 }
 
-int insortAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue) {
+/*int insortAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue) {
     assert(lst);
 
     struct node* nodes = lst->nodeArr;
@@ -69,33 +70,25 @@ int insortAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue) {
     lst->free = nextFreeNum;
 
     return 0;
-}
+}*/
 
-int deleteElement (struct list* lst, size_t deletedElem) {
+int deleteElement2 (struct list* lst, size_t deletedElement, struct dump* dumpInfo) {
     assert(lst);
 
-    struct node* nodes = lst->nodeArr;
+    *(listData(lst, deletedElement)) = POISON;
 
-    if(deletedElem == lst->head)
-        lst->head = (nodes[deletedElem]).next;
+    int prevElemNum = *(listPrev(lst, deletedElement));
+    int nextElemNum = *(listNext(lst, deletedElement));
 
-    if(deletedElem == lst->tail)
-        lst->tail = (nodes[deletedElem]).prev;
+    *(listNext(lst, prevElemNum)) = *(listNext(lst, deletedElement));
 
-    (nodes[deletedElem]).data = POISON;
+    *(listNext(lst, deletedElement)) = *(listFree(lst));
 
-    int prevElemNum = (nodes[deletedElem]).prev;
-    int nextElemNum = (nodes[deletedElem]).next;
+    *(listFree(lst)) = deletedElement;
 
-    if(prevElemNum != 0)
-        (nodes[prevElemNum]).next = (nodes[deletedElem]).next;
+    *(listPrev(lst, nextElemNum)) = prevElemNum;
 
-    (nodes[deletedElem]).next = lst->free;
-    lst->free = deletedElem;
-
-    if (nextElemNum != 0)
-        (nodes[nextElemNum]).prev = prevElemNum;
-    (nodes[deletedElem]).prev = -1;
+    *(listPrev(lst, deletedElement)) = -1;
 
     return 0;
 }
@@ -137,17 +130,17 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
     fprintf(graphFile, "    node [shape = Mrecord, color = black];\n");
     fprintf(graphFile, "    splines = ortho;");
 
-    for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++) {
+    for (int numOfNode = 0; numOfNode < (int)(lst->capacity); numOfNode++) {
 
         const char* fillColor = "#C2BBBD";
 
-        if (numOfNode == lst->head)
+        if (numOfNode == *(listHead(lst)))
             fillColor = "#79D47F";
 
-        if (numOfNode == lst->tail)
+        if (numOfNode == *(listTail(lst)))
             fillColor = "#E07397";
 
-        if (((lst->nodeArr)[numOfNode]).prev == -1)
+        if ((*(listData(lst, numOfNode)) == POISON) && (*(listPrev(lst, numOfNode)) == -1))
             fillColor = "#E3f194";
 
         switch (((lst->nodeArr)[numOfNode]).data) {
@@ -173,17 +166,14 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
 
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++) {
 
-        if (((lst->nodeArr)[numOfNode]).prev == -1)
+        if (*(listPrev(lst, numOfNode)) == -1)
             continue;
 
-       if (((lst->nodeArr)[numOfNode]).next != 0)
-            fprintf(graphFile, "    node%d -> node%d [color = \"#83dd94\"];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
-
-        if (((lst->nodeArr)[numOfNode]).prev != 0)
-            fprintf(graphFile, "    node%d -> node%d [color = \"#dd83cc\"];\n", numOfNode, ((lst->nodeArr)[numOfNode]).prev);
+        fprintf(graphFile, "    node%d -> node%d [color = \"#83dd94\"];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
+        fprintf(graphFile, "    node%d -> node%d [color = \"#dd83cc\"];\n", numOfNode, ((lst->nodeArr)[numOfNode]).prev);
     }
 
-    for (size_t numOfNode = lst->free; ((lst->nodeArr)[numOfNode]).next != 0; numOfNode = ((lst->nodeArr)[numOfNode]).next)
+    for (size_t numOfNode = lst->free; (((lst->nodeArr)[numOfNode]).next != 0) && (lst->free != 0); numOfNode = ((lst->nodeArr)[numOfNode]).next)
         fprintf(graphFile, "    node%d -> node%d [color = gray];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
 
     fprintf(graphFile, "\n");
@@ -192,9 +182,10 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
     fprintf(graphFile, "    tail [shape = box3d, label=\"TAIL\", style = filled, fillcolor = \"#E07397\", color = black];\n");
     fprintf(graphFile, "    free [shape = box3d, label=\"FREE\", style = filled, fillcolor = \"#E3f194\", color = black];\n");
 
-    fprintf(graphFile, "    head -> node%d [color = \"#79D47F\"];\n", lst->head);
-    fprintf(graphFile, "    tail -> node%d [color = \"#E07397\"];\n", lst->tail);
-    fprintf(graphFile, "    free -> node%d [color = gray];\n", lst->free);
+    fprintf(graphFile, "    head -> node%d [color = \"#79D47F\"];\n", *(listHead(lst)));
+    fprintf(graphFile, "    tail -> node%d [color = \"#E07397\"];\n", *(listTail(lst)));
+    if (*(listFree(lst)) != 0)
+        fprintf(graphFile, "    free -> node%d [color = gray];\n", *(listFree(lst)));
 
     fprintf(graphFile, "    { rank = same; head; tail; free; }\n");
 
@@ -210,8 +201,10 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
     return 0;
 }
 
-void listDump (struct list* lst, struct dump* dumpInfo) {
+void listDump (struct list* lst, struct dump* dumpInfo, const char* message) {
     assert(lst);
+    assert(dumpInfo);
+    assert(message);
 
     const char* nameOfTextGraphFile = dumpInfo->nameOfGraphFile;
 
@@ -231,7 +224,9 @@ void listDump (struct list* lst, struct dump* dumpInfo) {
 
     fprintf(dumpFile, "<pre>\n");
     fprintf(dumpFile, "<h3>listDump() <font color=red>from %s at %s:%d</font></h3>\n", dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+    fprintf(dumpFile, "<h2><font color=blue>%s</font></h2>\n", message);
     fprintf(dumpFile, "list \"%s\" [%p] from %s at %s:%d\n\n", (lst->creationInfo).name, lst, lst->creationInfo.nameOfFunc, lst->creationInfo.nameOfFile, lst->creationInfo.numOfLine);
+
 
     fprintfListErrorsForDump (lst, dumpFile);
 
@@ -253,28 +248,26 @@ void fprintfListDataForDump (struct list* lst, FILE* dumpFile) {
     fprintf(dumpFile, "capacity == %d\n", lst->capacity);
     fprintf(dumpFile, "errorCode == %d\n\n", lst->errorCode);
 
-    fprintf(dumpFile, "head == %d\n", lst->head);
-    fprintf(dumpFile, "tail == %d\n", lst->tail);
     fprintf(dumpFile, "free == %d\n\n", lst->free);
 
-    fprintf(dumpFile, "idx: ");
+    fprintf(dumpFile, "idx:  ");
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        fprintf(dumpFile, "%5d", numOfNode);
+        fprintf(dumpFile, "[ %5d ]", numOfNode);
     fprintf(dumpFile, "\n");
 
     fprintf(dumpFile, "data: ");
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        fprintf(dumpFile, "%5d", ((lst->nodeArr)[numOfNode]).data);
+        fprintf(dumpFile, "[ %5d ]", ((lst->nodeArr)[numOfNode]).data);
     fprintf(dumpFile, "\n");
 
     fprintf(dumpFile, "next: ");
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        fprintf(dumpFile, "%5d", ((lst->nodeArr)[numOfNode]).next);
+        fprintf(dumpFile, "[ %5d ]", ((lst->nodeArr)[numOfNode]).next);
     fprintf(dumpFile, "\n");
 
     fprintf(dumpFile, "prev: ");
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        fprintf(dumpFile, "%5d", ((lst->nodeArr)[numOfNode]).prev);
+        fprintf(dumpFile, "[ %5d ]", ((lst->nodeArr)[numOfNode]).prev);
     fprintf(dumpFile, "\n");
 }
 
@@ -291,7 +284,7 @@ void createGraphImageForDump (struct list* lst, FILE* dumpFile, const char* name
     char graphvizCallCommand[64] = {};
     snprintf(graphvizCallCommand, sizeof(graphvizCallCommand), "dot -Tpng %s -o graph%d.png", nameOfTextGraphFile, graphImageCounter);
     system(graphvizCallCommand);
-    fprintf(dumpFile, "Image:\n <img src=graph%d.png width=200px>\n", graphImageCounter);
+    fprintf(dumpFile, "Image:\n <img src=graph%d.png width=1000px>\n", graphImageCounter);
 }
 
 int listVerifier (struct list* lst) {
@@ -307,10 +300,10 @@ int listVerifier (struct list* lst) {
     if ((((lst->nodeArr)[0]).data != NULL_CANARY) || (((lst->nodeArr)[0]).next != 0) || (((lst->nodeArr)[0]).prev != 0))
         lst->errorCode |= badNullNode;
 
-    if (((lst->nodeArr)[lst->head]).prev != 0)
+    if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
         lst->errorCode |= badHead;
 
-    if (((lst->nodeArr)[lst->tail]).next != 0)
+    if (((lst->nodeArr)[*(listTail(lst))]).next != 0)
         lst->errorCode |= badTail;
 
     if (findBadFreeNode(lst))
@@ -340,8 +333,8 @@ int findBadFreeNode (struct list* lst) {
 int findBadNextAndPrevMatch (struct list* lst) {
     assert(lst);
 
-    for (int numOfNode = 1; numOfNode < (int)lst->capacity; numOfNode++) {
-        if((numOfNode == (int)lst->tail) || (((lst->nodeArr)[numOfNode])).data == POISON)
+    for (int numOfNode = 0; numOfNode < (int)lst->capacity; numOfNode++) {
+        if((((lst->nodeArr)[numOfNode])).data == POISON)
             continue;
 
         int nextNum = (((lst->nodeArr)[numOfNode])).next;
@@ -379,3 +372,57 @@ void fprintfListErrorsForDump (struct list* lst, FILE* dumpFile) {
         fprintf(dumpFile, "<h2><font color=red>ERROR! BAD TAIL VALUE! errorcode = %d</font></h2>\n", badTail);
 }
 
+int insortAfter2 (struct list* lst, size_t anchorElemNum, listData_t dataValue, struct dump* dumpInfo) {
+    assert(lst);
+
+    if(listFree(lst) == 0)
+        reallocList(lst);
+
+    size_t freeNum = *(listFree(lst));
+
+    *(listData(lst, freeNum)) = dataValue;
+    *(listPrev(lst, freeNum)) = anchorElemNum;
+
+    size_t nextFreeNum = *(listNext(lst, freeNum));
+    *(listNext(lst, freeNum)) = *(listNext(lst, anchorElemNum));
+
+
+    *(listNext(lst, anchorElemNum)) = freeNum;
+
+    size_t nextNumAfterNew = *(listNext(lst, freeNum));
+
+    *(listPrev(lst, nextNumAfterNew)) = freeNum;
+
+    lst->free = nextFreeNum;
+
+    return 0;
+}
+
+/*int deleteElement (struct list* lst, size_t deletedElement) {
+    assert(lst);
+
+    struct node* nodes = lst->nodeArr;
+
+    if(deletedElement == lst->head)
+        lst->head = (nodes[deletedElement]).next;
+
+    if(deletedElement == lst->tail)
+        lst->tail = (nodes[deletedElement]).prev;
+
+    (nodes[deletedElement]).data = POISON;
+
+    int prevElemNum = (nodes[deletedElement]).prev;
+    int nextElemNum = (nodes[deletedElement]).next;
+
+    if(prevElemNum != 0)
+        (nodes[prevElemNum]).next = (nodes[deletedElement]).next;
+
+    (nodes[deletedElement]).next = lst->free;
+    lst->free = deletedElement;
+
+    if (nextElemNum != 0)
+        (nodes[nextElemNum]).prev = prevElemNum;
+    (nodes[deletedElement]).prev = -1;
+
+    return 0;
+}*/
