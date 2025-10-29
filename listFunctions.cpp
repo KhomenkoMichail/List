@@ -75,6 +75,14 @@ void listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
 int deleteElement2 (struct list* lst, size_t deletedElement, struct dump* dumpInfo) {
     assert(lst);
 
+    dumpInfo->nameOfFunc = __func__;
+    char beforeMessage[64] =  {};
+    char afterMessage[64]= {};
+    snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE delete element with idx [%d]", deletedElement);
+    snprintf(afterMessage, sizeof(afterMessage), "AFTER delete element with idx [%d]", deletedElement);
+
+    listDump (lst, dumpInfo, beforeMessage);
+
     *(listData(lst, deletedElement)) = POISON;
 
     int prevElemNum = *(listPrev(lst, deletedElement));
@@ -90,6 +98,8 @@ int deleteElement2 (struct list* lst, size_t deletedElement, struct dump* dumpIn
 
     *(listPrev(lst, deletedElement)) = -1;
 
+    listDump (lst, dumpInfo, afterMessage);
+
     return 0;
 }
 
@@ -98,7 +108,12 @@ int reallocList (struct list* lst) {
 
     lst->capacity *= 2;
 
-    realloc(lst->nodeArr, (lst->capacity)*sizeof(struct node));
+    struct node* newArr = (struct node*)realloc(lst->nodeArr, (lst->capacity)*sizeof(struct node));
+    if (!newArr) {
+        printf("Error realloc\n");
+        return 1;
+    }
+    lst->nodeArr = newArr;
 
     for (size_t nodeNum = lst->capacity / 2; nodeNum < lst->capacity; nodeNum++) {
         ((lst->nodeArr)[nodeNum]).data = 0xBAD;
@@ -109,7 +124,6 @@ int reallocList (struct list* lst) {
     ((lst->nodeArr)[lst->capacity - 1]).next = 0;
 
     lst->free = lst->capacity / 2;
-
     return 0;
 }
 
@@ -282,9 +296,9 @@ void createGraphImageForDump (struct list* lst, FILE* dumpFile, const char* name
     fprintfGraphDump (lst, nameOfTextGraphFile);
 
     char graphvizCallCommand[64] = {};
-    snprintf(graphvizCallCommand, sizeof(graphvizCallCommand), "dot -Tpng %s -o graph%d.png", nameOfTextGraphFile, graphImageCounter);
+    snprintf(graphvizCallCommand, sizeof(graphvizCallCommand), "dot -Tpng %s -o GRAPH_DUMPS/graph%d.png", nameOfTextGraphFile, graphImageCounter);
     system(graphvizCallCommand);
-    fprintf(dumpFile, "Image:\n <img src=graph%d.png width=1000px>\n", graphImageCounter);
+    fprintf(dumpFile, "Image:\n <img src=GRAPH_DUMPS/graph%d.png width=1000px>\n", graphImageCounter);
 }
 
 int listVerifier (struct list* lst) {
@@ -375,7 +389,15 @@ void fprintfListErrorsForDump (struct list* lst, FILE* dumpFile) {
 int insortAfter2 (struct list* lst, size_t anchorElemNum, listData_t dataValue, struct dump* dumpInfo) {
     assert(lst);
 
-    if(listFree(lst) == 0)
+    dumpInfo->nameOfFunc = __func__;
+    char beforeMessage[64] =  {};
+    char afterMessage[64]= {};
+    snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE Insort \"%d\" after idx [%d]", dataValue, anchorElemNum);
+    snprintf(afterMessage, sizeof(afterMessage), "AFTER Insort \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+
+    listDump (lst, dumpInfo, beforeMessage);
+
+    if(lst->free == 0)
         reallocList(lst);
 
     size_t freeNum = *(listFree(lst));
@@ -393,7 +415,9 @@ int insortAfter2 (struct list* lst, size_t anchorElemNum, listData_t dataValue, 
 
     *(listPrev(lst, nextNumAfterNew)) = freeNum;
 
-    lst->free = nextFreeNum;
+    lst->free = nextFreeNum; //FIXME
+
+    listDump (lst, dumpInfo, afterMessage);
 
     return 0;
 }

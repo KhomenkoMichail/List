@@ -17,9 +17,16 @@
     listDump (listAddress, &dumpInfo, message);\*/
 
 #define InsortAfter(listAddress, anchorElemNum, dataValue, dumpInfoAddress)\
-    (dumpInfoAddress)nameOfFile = __FILE__;\
-    (dumpInfo).nameOfFunc = __func__;\
-    (dumpInfo).numOfLine = __LINE__;\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    insortAfter2 (listAddress, anchorElemNum, dataValue, dumpInfoAddress);\
+
+#define DeleteElement(listAddress, deletedElement, dumpInfoAddress)\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    deleteElement2 (listAddress, deletedElement, dumpInfoAddress);\
+
+
 
 
 void listCtor (struct list* lst, ssize_t capacity, struct info listInfo);

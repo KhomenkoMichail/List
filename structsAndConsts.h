@@ -53,16 +53,16 @@ struct list {
 const size_t MAX_CAPACITY = 5000;
 
 enum listErr_t {
-    noErrors = 0b0,
-    badListPtr= 0b1,
-    badNodeArrPtr = 0b10,
-    badCapacity = 0b100,
-    badNullNode = 0b1000,
-    badFreeNode = 0b10000,
-    badNextAndPrevMatch = 0b100000,
-    badHead = 0b1000000,
-    badTail = 0b10000000,
-    requestForBadNum = -3,
+    noErrors            = 0x00,
+    badListPtr          = 0x01,
+    badNodeArrPtr       = 0x02,
+    badCapacity         = 0x04,
+    badNullNode         = 0x08,
+    badFreeNode         = 0x10,
+    badNextAndPrevMatch = 0x20,
+    badHead             = 0x40,
+    badTail             = 0x80,
+    requestForBadNum    = -3,
 };
 
 #endif
