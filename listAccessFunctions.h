@@ -15,4 +15,6 @@ int* listData (struct list* lst, size_t numOfNode);
 
 size_t* listSize (struct list* lst);
 
+size_t* listCapacity (struct list* lst);
+
 #endif

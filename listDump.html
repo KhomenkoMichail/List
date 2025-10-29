@@ -1,7 +1,7 @@
 <pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:40</font></h3>
-<h2><font color=blue>BEFORE Insort "10" after idx [0]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
+<h3>listDump() <font color=red>from insertAfter at main.cpp:22</font></h3>
+<h2><font color=blue>BEFORE Insert "10" after idx [0]</font></h2>
+list "lst" [007BFE88] from main at main.cpp:20
 
 capacity == 5
 errorCode == 0
@@ -15,9 +15,9 @@ prev: [     0 ][    -1 ][    -1 ][    -1 ][    -1 ]
 Image:
  <img src=GRAPH_DUMPS/graph1.png width=1000px>
 <pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:40</font></h3>
-<h2><font color=blue>AFTER Insort "10" after idx [0]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
+<h3>listDump() <font color=red>from insertAfter at main.cpp:22</font></h3>
+<h2><font color=blue>AFTER Insert "10" after idx [0]</font></h2>
+list "lst" [007BFE88] from main at main.cpp:20
 
 capacity == 5
 errorCode == 0
@@ -31,9 +31,9 @@ prev: [     1 ][     0 ][    -1 ][    -1 ][    -1 ]
 Image:
  <img src=GRAPH_DUMPS/graph2.png width=1000px>
 <pre>
-<h3>listDump() <font color=red>from deleteElement2 at main.cpp:41</font></h3>
-<h2><font color=blue>BEFORE delete element with idx [1]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
+<h3>listDump() <font color=red>from insertBefore at main.cpp:22</font></h3>
+<h2><font color=blue>BEFORE Insert "99" before idx [1]</font></h2>
+list "lst" [007BFE88] from main at main.cpp:20
 
 capacity == 5
 errorCode == 0
@@ -47,9 +47,9 @@ prev: [     1 ][     0 ][    -1 ][    -1 ][    -1 ]
 Image:
  <img src=GRAPH_DUMPS/graph3.png width=1000px>
 <pre>
-<h3>listDump() <font color=red>from deleteElement2 at main.cpp:41</font></h3>
-<h2><font color=blue>AFTER delete element with idx [1]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
+<h3>listDump() <font color=red>from insertBefore at main.cpp:22</font></h3>
+<h2><font color=blue>AFTER Insert "99" before idx [1]</font></h2>
+list "lst" [007BFE88] from main at main.cpp:20
 
 capacity == 5
 errorCode == 0
@@ -57,15 +57,15 @@ errorCode == 0
 free == 1
 
 idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     0 ][     2 ][     3 ][     4 ][     0 ]
-prev: [     0 ][    -1 ][    -1 ][    -1 ][    -1 ]
+data: [ 47806 ][    10 ][    99 ][  2989 ][  2989 ]
+next: [     2 ][     0 ][     1 ][     4 ][     0 ]
+prev: [     1 ][     2 ][     0 ][    -1 ][    -1 ]
 Image:
  <img src=GRAPH_DUMPS/graph4.png width=1000px>
 <pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:42</font></h3>
-<h2><font color=blue>BEFORE Insort "10" after idx [0]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
+<h3>listDump() <font color=red>from insertAfter at main.cpp:24</font></h3>
+<h2><font color=blue>BEFORE Insert "20" after idx [1]</font></h2>
+list "lst" [007BFE88] from main at main.cpp:20
 
 capacity == 5
 errorCode == 0
@@ -73,280 +73,8 @@ errorCode == 0
 free == 1
 
 idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     0 ][     2 ][     3 ][     4 ][     0 ]
-prev: [     0 ][    -1 ][    -1 ][    -1 ][    -1 ]
+data: [ 47806 ][    10 ][    99 ][  2989 ][  2989 ]
+next: [     2 ][     0 ][     1 ][     4 ][     0 ]
+prev: [     1 ][     2 ][     0 ][    -1 ][    -1 ]
 Image:
  <img src=GRAPH_DUMPS/graph5.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:42</font></h3>
-<h2><font color=blue>AFTER Insort "10" after idx [0]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 5
-errorCode == 0
-
-free == 2
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][    10 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     0 ][     3 ][     4 ][     0 ]
-prev: [     1 ][     0 ][    -1 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph6.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:43</font></h3>
-<h2><font color=blue>BEFORE Insort "20" after idx [1]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 5
-errorCode == 0
-
-free == 2
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][    10 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     0 ][     3 ][     4 ][     0 ]
-prev: [     1 ][     0 ][    -1 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph7.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:43</font></h3>
-<h2><font color=blue>AFTER Insort "20" after idx [1]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 5
-errorCode == 0
-
-free == 3
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][    10 ][    20 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     0 ][     4 ][     0 ]
-prev: [     2 ][     0 ][     1 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph8.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:44</font></h3>
-<h2><font color=blue>BEFORE Insort "30" after idx [2]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 5
-errorCode == 0
-
-free == 3
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][    10 ][    20 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     0 ][     4 ][     0 ]
-prev: [     2 ][     0 ][     1 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph9.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:44</font></h3>
-<h2><font color=blue>AFTER Insort "30" after idx [2]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 5
-errorCode == 0
-
-free == 4
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     0 ][     0 ]
-prev: [     3 ][     0 ][     1 ][     2 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph10.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:45</font></h3>
-<h2><font color=blue>BEFORE Insort "40" after idx [3]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 5
-errorCode == 0
-
-free == 4
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     0 ][     0 ]
-prev: [     3 ][     0 ][     1 ][     2 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph11.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:45</font></h3>
-<h2><font color=blue>AFTER Insort "40" after idx [3]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 5
-errorCode == 0
-
-free == 0
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ]
-next: [     1 ][     2 ][     3 ][     4 ][     0 ]
-prev: [     4 ][     0 ][     1 ][     2 ][     3 ]
-Image:
- <img src=GRAPH_DUMPS/graph12.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:46</font></h3>
-<h2><font color=blue>BEFORE Insort "50" after idx [4]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 5
-errorCode == 0
-
-free == 0
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ]
-next: [     1 ][     2 ][     3 ][     4 ][     0 ]
-prev: [     4 ][     0 ][     1 ][     2 ][     3 ]
-Image:
- <img src=GRAPH_DUMPS/graph13.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:46</font></h3>
-<h2><font color=blue>AFTER Insort "50" after idx [4]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 6
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     0 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     5 ][     0 ][     1 ][     2 ][     3 ][     4 ][    -1 ][    -1 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph14.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:47</font></h3>
-<h2><font color=blue>BEFORE Insort "60" after idx [5]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 6
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     0 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     5 ][     0 ][     1 ][     2 ][     3 ][     4 ][    -1 ][    -1 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph15.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:47</font></h3>
-<h2><font color=blue>AFTER Insort "60" after idx [5]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 7
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][    60 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     0 ][     8 ][     9 ][     0 ]
-prev: [     6 ][     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][    -1 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph16.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:48</font></h3>
-<h2><font color=blue>BEFORE Insort "70" after idx [6]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 7
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][    60 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     0 ][     8 ][     9 ][     0 ]
-prev: [     6 ][     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][    -1 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph17.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:48</font></h3>
-<h2><font color=blue>AFTER Insort "70" after idx [6]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 8
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][    60 ][    70 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     0 ][     9 ][     0 ]
-prev: [     7 ][     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph18.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:49</font></h3>
-<h2><font color=blue>BEFORE Insort "80" after idx [7]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 8
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][    60 ][    70 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     0 ][     9 ][     0 ]
-prev: [     7 ][     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][    -1 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph19.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:49</font></h3>
-<h2><font color=blue>AFTER Insort "80" after idx [7]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 9
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][    60 ][    70 ][    80 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     0 ][     0 ]
-prev: [     8 ][     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph20.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:50</font></h3>
-<h2><font color=blue>BEFORE Insort "90" after idx [8]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 9
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][    60 ][    70 ][    80 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     0 ][     0 ]
-prev: [     8 ][     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][    -1 ]
-Image:
- <img src=GRAPH_DUMPS/graph21.png width=1000px>
-<pre>
-<h3>listDump() <font color=red>from insortAfter2 at main.cpp:50</font></h3>
-<h2><font color=blue>AFTER Insort "90" after idx [8]</font></h2>
-list "lst" [0065FEA0] from main at main.cpp:20
-
-capacity == 10
-errorCode == 0
-
-free == 0
-
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][    40 ][    50 ][    60 ][    70 ][    80 ][    90 ]
-next: [     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     9 ][     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ]
-Image:
- <img src=GRAPH_DUMPS/graph22.png width=1000px>

@@ -61,3 +61,9 @@ size_t* listSize (struct list* lst) {
     return &(lst->size);
 }
 
+size_t* listCapacity (struct list* lst) {
+    assert(lst);
+
+    return &(lst->capacity);
+}
+
