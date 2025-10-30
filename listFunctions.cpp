@@ -5,28 +5,27 @@
 #include "listFunctions.h"
 #include "structsAndConsts.h"
 #include "listAccessFunctions.h"
-#include "TXLib.h"
 
 int listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     assert(lst);
 
     lst->nodeArr = (struct node*)calloc(capacity, sizeof(struct node));
-    lst->capacity = capacity;
-    lst->size = 0;
 
-    ((lst->nodeArr)[0]).data = NULL_CANARY;
-    ((lst->nodeArr)[0]).next = 0;
-    ((lst->nodeArr)[0]).prev = 0;
+    *(listCapacity(lst)) = capacity;
+    *(listSize(lst)) = 0;
+
+    *(listData(lst, 0)) = NULL_CANARY;
+    *(listHead(lst)) = 0;
+    *(listTail(lst)) = 0;
 
     for (int nodeNum = 1; nodeNum < capacity; nodeNum++) {
-        ((lst->nodeArr)[nodeNum]).data = 0xBAD;
-        ((lst->nodeArr)[nodeNum]).next = nodeNum + 1;
-        ((lst->nodeArr)[nodeNum]).prev = -1;
+        *(listData(lst, nodeNum)) = 0xBAD;
+        *(listNext(lst, nodeNum)) = nodeNum + 1;
+        *(listPrev(lst, nodeNum)) = -1;
     }
+    *(listNext(lst, capacity - 1)) = 0;
 
-    ((lst->nodeArr)[capacity - 1]).next = 0;
-
-    lst->free = 1;
+    *(listFree(lst)) = 1;
 
     (lst->creationInfo).name = listInfo.name;
     (lst->creationInfo).nameOfFunc = listInfo.nameOfFunc;
@@ -41,6 +40,7 @@ int listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
 
 int deleteElement (struct list* lst, size_t deletedElement, struct dump* dumpInfo) {
     assert(lst);
+    assert(dumpInfo);
 
     dumpInfo->nameOfFunc = __func__;
     char beforeMessage[STR_SIZE] =  {};
@@ -84,7 +84,8 @@ int deleteElement (struct list* lst, size_t deletedElement, struct dump* dumpInf
 listErr_t reallocList (struct list* lst) {
     assert(lst);
 
-    lst->capacity *= 2;
+    size_t oldCapacity = *(listCapacity(lst));
+    *(listCapacity(lst)) = 2*oldCapacity;
 
     struct node* newArr = (struct node*)realloc(lst->nodeArr, (lst->capacity)*sizeof(struct node));
     if (!newArr) {
@@ -93,15 +94,14 @@ listErr_t reallocList (struct list* lst) {
     }
     lst->nodeArr = newArr;
 
-    for (size_t nodeNum = lst->capacity / 2; nodeNum < lst->capacity; nodeNum++) {
-        ((lst->nodeArr)[nodeNum]).data = 0xBAD;
-        ((lst->nodeArr)[nodeNum]).next = nodeNum + 1;
-        ((lst->nodeArr)[nodeNum]).prev = -1;
+    for (size_t nodeNum = *(listCapacity(lst)) / 2; nodeNum < *(listCapacity(lst)); nodeNum++) {
+        *(listData(lst, nodeNum)) = 0xBAD;
+        *(listNext(lst, nodeNum)) = nodeNum + 1;
+        *(listPrev(lst, nodeNum)) = -1;
     }
+    *(listNext(lst, oldCapacity*2 - 1)) = 0;
 
-    ((lst->nodeArr)[lst->capacity - 1]).next = 0;
-
-    lst->free = lst->capacity / 2;
+    *(listFree(lst)) = *(listCapacity(lst)) / 2;
     return noErrors;
 }
 
@@ -120,7 +120,6 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
     fprintf(graphFile, "digraph List {\n");
     fprintf(graphFile, "    rankdir = LR;\n");
     fprintf(graphFile, "    node [shape = Mrecord, color = black];\n");
-    //fprintf(graphFile, "    splines = ortho;");
 
     for (int numOfNode = 0; numOfNode < (int)(lst->capacity); numOfNode++) {
 
@@ -143,20 +142,20 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
                 fprintf(graphFile, "    node%d [label = \" idx = %d| data = CANARY|", numOfNode, numOfNode);
                 break;
             default:
-                fprintf(graphFile, "    node%d [label = \" idx = %d| data = %d|", numOfNode, numOfNode, ((lst->nodeArr)[numOfNode]).data);
+                fprintf(graphFile, "    node%d [label = \" idx = %d| data = %d|", numOfNode, numOfNode,*(listData(lst, numOfNode)));
                 break;
         }
 
         fprintf(graphFile, "    next = %d| prev = %d\", style = filled, fillcolor = \"%s\", color = black];\n",
-                ((lst->nodeArr)[numOfNode]).next, ((lst->nodeArr)[numOfNode]).prev, fillColor);
+                *(listNext(lst, numOfNode)), *(listPrev(lst, numOfNode)), fillColor);
     }
 
     fprintf(graphFile, "\n");
 
-    for (size_t numOfNode = 0; numOfNode < lst->capacity - 1; numOfNode++)
+    for (size_t numOfNode = 0; numOfNode < *(listCapacity(lst)) - 1; numOfNode++)
         fprintf(graphFile, "    node%d -> node%d [weight = 500, style = invis, color = white];\n", numOfNode, numOfNode + 1);
 
-    for (int numOfNode = 0; numOfNode < (int)lst->capacity; numOfNode++) {
+    for (int numOfNode = 0; numOfNode < (int)(*(listCapacity(lst))); numOfNode++) {
 
         if (*(listPrev(lst, numOfNode)) == -1)
             continue;
@@ -173,10 +172,10 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
     }
 
     size_t freeListCounter = 0;
-    for (size_t numOfNode = lst->free;
-        (((lst->nodeArr)[numOfNode]).next != 0) && (lst->free != 0) && (freeListCounter <= (lst->capacity - lst->size));
-        numOfNode = ((lst->nodeArr)[numOfNode]).next, freeListCounter++)
-        fprintf(graphFile, "    node%d -> node%d [color = gray];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
+    for (size_t numOfNode = *(listFree(lst));
+        (*(listNext(lst, numOfNode)) != 0) && (*(listFree(lst)) != 0) && (freeListCounter <= (*(listCapacity(lst)) - *(listSize(lst))));
+        numOfNode = *(listNext(lst, numOfNode)), freeListCounter++)
+        fprintf(graphFile, "    node%d -> node%d [color = gray];\n", numOfNode, *(listNext(lst, numOfNode)));
 
     fprintf(graphFile, "\n");
 
@@ -225,9 +224,12 @@ void listDump (struct list* lst, struct dump* dumpInfo, const char* message) {
     }
 
     fprintf(dumpFile, "<pre>\n");
-    fprintf(dumpFile, "<h3>listDump() <font color=red>from %s at %s:%d</font></h3>\n", dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+    fprintf(dumpFile, "<h3>listDump() <font color=red>from %s at %s:%d</font></h3>\n",
+    dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+
     fprintf(dumpFile, "<h2><font color=blue>%s</font></h2>\n", message);
-    fprintf(dumpFile, "list \"%s\" [%p] from %s at %s:%d\n\n", (lst->creationInfo).name, lst, lst->creationInfo.nameOfFunc, lst->creationInfo.nameOfFile, lst->creationInfo.numOfLine);
+    fprintf(dumpFile, "list \"%s\" [%p] from %s at %s:%d\n\n",
+    (lst->creationInfo).name, lst, lst->creationInfo.nameOfFunc, lst->creationInfo.nameOfFile, lst->creationInfo.numOfLine);
 
 
     fprintfListErrorsForDump (lst, dumpFile, dumpInfo);
@@ -248,11 +250,11 @@ void fprintfListDataForDump (struct list* lst, FILE* dumpFile) {
     assert(lst);
     assert(dumpFile);
 
-    fprintf(dumpFile, "capacity == %d\n", lst->capacity);
-    fprintf(dumpFile, "size == %d\n", lst->size);
+    fprintf(dumpFile, "capacity == %d\n", *(listCapacity(lst)));
+    fprintf(dumpFile, "size == %d\n", *(listSize(lst)));
     fprintf(dumpFile, "errorCode == %d\n\n", lst->errorCode);
 
-    fprintf(dumpFile, "free == %d\n\n", lst->free);
+    fprintf(dumpFile, "free == %d\n\n", *(listFree(lst)));
 
     fprintf(dumpFile, "idx:  ");
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
@@ -261,17 +263,17 @@ void fprintfListDataForDump (struct list* lst, FILE* dumpFile) {
 
     fprintf(dumpFile, "data: ");
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        fprintf(dumpFile, "[ %5d ]", ((lst->nodeArr)[numOfNode]).data);
+        fprintf(dumpFile, "[ %5d ]", *(listData(lst, numOfNode)));
     fprintf(dumpFile, "\n");
 
     fprintf(dumpFile, "next: ");
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        fprintf(dumpFile, "[ %5d ]", ((lst->nodeArr)[numOfNode]).next);
+        fprintf(dumpFile, "[ %5d ]", *(listNext(lst, numOfNode)));
     fprintf(dumpFile, "\n");
 
     fprintf(dumpFile, "prev: ");
     for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        fprintf(dumpFile, "[ %5d ]", ((lst->nodeArr)[numOfNode]).prev);
+        fprintf(dumpFile, "[ %5d ]", *(listPrev(lst, numOfNode)));
     fprintf(dumpFile, "\n");
 }
 
@@ -337,12 +339,12 @@ int listVerifier (struct list* lst) {
 int findBadFreeNode (struct list* lst) {
     assert(lst);
 
-    for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        if ((((lst->nodeArr)[numOfNode]).data == POISON) && (((lst->nodeArr)[numOfNode]).prev != -1))
+    for (size_t numOfNode = 0; numOfNode < *(listCapacity(lst)); numOfNode++)
+        if ((*(listData(lst, numOfNode)) == POISON) && ((*(listPrev(lst, numOfNode)) != -1)))
             return 1;
 
-    for (size_t numOfNode = 0; numOfNode < lst->capacity; numOfNode++)
-        if ((((lst->nodeArr)[numOfNode]).data != POISON) && (((lst->nodeArr)[numOfNode]).prev == -1))
+    for (size_t numOfNode = 0; numOfNode < *(listCapacity(lst)); numOfNode++)
+        if ((*(listData(lst, numOfNode)) != POISON) && ((*(listPrev(lst, numOfNode))) == -1))
             return 1;
 
     return 0;
@@ -351,13 +353,12 @@ int findBadFreeNode (struct list* lst) {
 int findBadNextAndPrevMatch (struct list* lst) {
     assert(lst);
 
-    for (int numOfNode = 0; numOfNode < (int)lst->capacity; numOfNode++) {
-        if((((lst->nodeArr)[numOfNode])).data == POISON)
+    for (int numOfNode = 0; numOfNode < (int)(*(listCapacity(lst))); numOfNode++) {
+        if((*(listPrev(lst, numOfNode))) == -1)
             continue;
 
-        int nextNum = (((lst->nodeArr)[numOfNode])).next;
-        struct node nextNode = (lst->nodeArr)[nextNum];
-        if (numOfNode != nextNode.prev)
+        int nextNum = *(listNext(lst, numOfNode));
+        if (numOfNode != *(listPrev(lst, nextNum)))
             return 1;
     }
 
@@ -370,58 +371,74 @@ void fprintfListErrorsForDump (struct list* lst, FILE* dumpFile, struct dump* du
     assert(dumpFile);
 
     if (lst->errorCode & -badNodeArrPtr) {
-        fprintf(dumpFile, "<h2><font color=red>ERROR! NODE ARRAY POINTER IS NULL! errorcode = %d</font></h2>\n", badNodeArrPtr);
-        printf("ERROR! NODE ARRAY POINTER IS NULL! errorcode = %d; In func %s from %s:%d\n", badNodeArrPtr, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        fprintf(dumpFile, "<h2><font color=red>ERROR! NODE ARRAY POINTER IS NULL! errorcode = %d</font></h2>\n",
+        badNodeArrPtr);
+        printf("ERROR! NODE ARRAY POINTER IS NULL! errorcode = %d; In func %s from %s:%d\n",
+        badNodeArrPtr, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -badCapacity) {
         fprintf(dumpFile, "<h2><font color=red>ERROR! CAPACITY IS TOO BIG! errorcode = %d</font></h2>\n", badCapacity);
-        printf("ERROR! CAPACITY IS TOO BIG! errorcode = %d; In func %s from %s:%d\n", badCapacity, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        printf("ERROR! CAPACITY IS TOO BIG! errorcode = %d; In func %s from %s:%d\n",
+        badCapacity, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -badNullNode) {
-        fprintf(dumpFile, "<h2><font color=red>ERROR! NULL NODE VALUES WERE DAMAGED! errorcode = %d</font></h2>\n", badNullNode);
-        printf("ERROR! NULL NODE VALUES WERE DAMAGED! errorcode = %d; In func %s from %s:%d\n", badNullNode, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        fprintf(dumpFile, "<h2><font color=red>ERROR! NULL NODE VALUES WERE DAMAGED! errorcode = %d</font></h2>\n",
+        badNullNode);
+        printf("ERROR! NULL NODE VALUES WERE DAMAGED! errorcode = %d; In func %s from %s:%d\n",
+        badNullNode, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -badFreeNode) {
-        fprintf(dumpFile, "<h2><font color=red>ERROR! FREE NODE(S) VALUES WERE DAMAGED! errorcode = %d</font></h2>\n", badFreeNode);
-        printf("ERROR! FREE NODE(S) VALUES WERE DAMAGED! errorcode = %d; In func %s from %s:%d\n", badFreeNode, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        fprintf(dumpFile, "<h2><font color=red>ERROR! FREE NODE(S) VALUES WERE DAMAGED! errorcode = %d</font></h2>\n",
+        badFreeNode);
+        printf("ERROR! FREE NODE(S) VALUES WERE DAMAGED! errorcode = %d; In func %s from %s:%d\n",
+        badFreeNode, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -badNextAndPrevMatch) {
-        fprintf(dumpFile, "<h2><font color=red>ERROR! NEXT VALUES DO NOT MATCH WITH PREV! errorcode = %d</font></h2>\n", badNextAndPrevMatch);
-        printf("ERROR! NEXT VALUES DO NOT MATCH WITH PREV! errorcode = %d; In func %s from %s:%d\n", badNextAndPrevMatch, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        fprintf(dumpFile, "<h2><font color=red>ERROR! NEXT VALUES DO NOT MATCH WITH PREV! errorcode = %d</font></h2>\n",
+        badNextAndPrevMatch);
+        printf("ERROR! NEXT VALUES DO NOT MATCH WITH PREV! errorcode = %d; In func %s from %s:%d\n",
+        badNextAndPrevMatch, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -badHead) {
-        fprintf(dumpFile, "<h2><font color=red>ERROR! BAD HEAD VALUE! errorcode = %d</font></h2>\n", badHead);
-        printf("ERROR! BAD HEAD VALUE! errorcode = %d; In func %s from %s:%d\n", badHead, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        fprintf(dumpFile, "<h2><font color=red>ERROR! BAD HEAD VALUE! errorcode = %d</font></h2>\n",
+        badHead);
+        printf("ERROR! BAD HEAD VALUE! errorcode = %d; In func %s from %s:%d\n",
+        badHead, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -badTail) {
         fprintf(dumpFile, "<h2><font color=red>ERROR! BAD TAIL VALUE! errorcode = %d</font></h2>\n", badTail);
-        printf("ERROR! BAD TAIL VALUE! errorcode = %d; In func %s from %s:%d\n", badTail, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        printf("ERROR! BAD TAIL VALUE! errorcode = %d; In func %s from %s:%d\n",
+        badTail, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -badSize) {
         fprintf(dumpFile, "<h2><font color=red>ERROR! BAD LIST SIZE! errorcode = %d</font></h2>\n", badSize);
-        printf("ERROR! BAD LIST SIZE! errorcode = %d; In func %s from %s:%d\n", badSize, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        printf("ERROR! BAD LIST SIZE! errorcode = %d; In func %s from %s:%d\n",
+        badSize, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -badNodeCycle) {
         fprintf(dumpFile, "<h2><font color=red>ERROR! BAD NODE CYCLE! errorcode = %d</font></h2>\n", badNodeCycle);
-        printf("ERROR! BAD NODE CYCLE! errorcode = %d; In func %s from %s:%d\n", badNodeCycle, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        printf("ERROR! BAD NODE CYCLE! errorcode = %d; In func %s from %s:%d\n",
+        badNodeCycle, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 
     if (lst->errorCode & -freeListCycle) {
         fprintf(dumpFile, "<h2><font color=red>ERROR! FREE LIST HAS CYCLE! errorcode = %d</font></h2>\n", freeListCycle);
-        printf("ERROR! FREE LIST HAS CYCLE! errorcode = %d; In func %s from %s:%d\n", freeListCycle, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
+        printf("ERROR! FREE LIST HAS CYCLE! errorcode = %d; In func %s from %s:%d\n",
+        freeListCycle, dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
     }
 }
 
 int insertAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue, struct dump* dumpInfo) {
     assert(lst);
+    assert(dumpInfo);
 
     dumpInfo->nameOfFunc = __func__;
 
@@ -474,30 +491,30 @@ listErr_t findBadNodeCycle (struct list* lst) {
 
     size_t cycleCounter = 0;
 
-    for (size_t numOfNode = 0; cycleCounter < 2*(lst->capacity); numOfNode = ((lst->nodeArr)[numOfNode]).next) {
-        if (numOfNode > lst->capacity)
+    for (size_t numOfNode = 0; cycleCounter < 2*(*(listCapacity(lst))); numOfNode = *(listNext(lst, numOfNode))) {
+        if (numOfNode > *(listCapacity(lst)))
             return badNodeCycle;
 
-        if (((lst->nodeArr)[numOfNode]).next == 0)
+        if (*(listNext(lst, numOfNode)) == 0)
             break;
         cycleCounter++;
     }
 
-    if(cycleCounter != lst->size)
+    if(cycleCounter != *(listSize(lst)))
         return badNodeCycle;
 
     cycleCounter = 0;
 
-    for (size_t numOfNode = 0; cycleCounter < 2*(lst->capacity); numOfNode = ((lst->nodeArr)[numOfNode]).prev) {
-        if (numOfNode > lst->capacity)
+    for (size_t numOfNode = 0; cycleCounter < 2*(*(listCapacity(lst))); numOfNode = *(listPrev(lst, numOfNode))) {
+        if (numOfNode > *(listCapacity(lst)))
             return badNodeCycle;
 
-        if (((lst->nodeArr)[numOfNode]).prev == 0)
+        if (*(listPrev(lst, numOfNode)) == 0)
             break;
         cycleCounter++;
     }
 
-    if(cycleCounter != lst->size)
+    if(cycleCounter != *(listSize(lst)))
         return badNodeCycle;
 
     return noErrors;
@@ -561,8 +578,8 @@ int insertBefore (struct list* lst, size_t anchorElemNum, listData_t dataValue, 
     *(listPrev(lst, newNodeNum)) = *(listPrev(lst, anchorElemNum));
     *(listPrev(lst, anchorElemNum)) = newNodeNum;
 
-    size_t prevNumAfterNew = *(listPrev(lst, newNodeNum));//
-    *(listNext(lst, prevNumAfterNew)) = newNodeNum;//
+    size_t prevNumAfterNew = *(listPrev(lst, newNodeNum));
+    *(listNext(lst, prevNumAfterNew)) = newNodeNum;
 
     *listFree(lst) = nextFreeNum;
     *(listSize(lst)) += 1;
@@ -580,25 +597,34 @@ int insertBefore (struct list* lst, size_t anchorElemNum, listData_t dataValue, 
 listErr_t findFreeListCycle (struct list* lst) {
     assert(lst);
 
-    if ((lst->free == 0) && (lst->size != lst->capacity - 1))
+    if ((*(listFree(lst)) == 0) && (*(listSize(lst)) != *(listCapacity(lst)) - 1))
         return freeListCycle;
 
     size_t cycleCounter = 0;
 
-    for (size_t numOfNode = lst->free; cycleCounter < 2*(lst->capacity); numOfNode = ((lst->nodeArr)[numOfNode]).next) {
-        if (numOfNode > lst->capacity)
+    for (size_t numOfNode = *(listFree(lst)); cycleCounter < 2*(*(listCapacity(lst)));
+         numOfNode = *(listNext(lst, numOfNode))) {
+        if (numOfNode > *(listCapacity(lst)))
             return freeListCycle;
 
-        if(lst->free == 0)
+        if(*(listFree(lst)) == 0)
             break;
 
-        if (((lst->nodeArr)[numOfNode]).next == 0)
+        if (*(listNext(lst, numOfNode)) == 0)
             break;
         cycleCounter++;
     }
 
-    if (cycleCounter > lst->capacity - lst->size)
+    if (cycleCounter > *(listCapacity(lst)) - *(listSize(lst)))
         return freeListCycle;
 
     return noErrors;
+}
+
+void userListPrintf (struct list* lst) {
+    assert(lst);
+
+    for(int numOfNode = *(listHead(lst)); numOfNode != *(listTail(lst)); numOfNode = *(listNext(lst, numOfNode)))
+        printf("idx:%4d == %d\n", numOfNode, *(listData(lst, numOfNode)));
+
 }

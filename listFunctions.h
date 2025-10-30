@@ -1,7 +1,8 @@
 #ifndef LIST_FUNCTIONS_H
 #define LIST_FUNCTIONS_H
 
-#include"structsAndConsts.h"
+#include "listAccessFunctions.h"
+#include "structsAndConsts.h"
 
 #define LIST_CTOR(listName, capacity, listInfo) ({\
     (listInfo).name = #listName;\
@@ -16,6 +17,29 @@
     (dumpInfoAddress)->nameOfFile = __FILE__;\
     (dumpInfoAddress)->numOfLine = __LINE__;\
     int returnableValue = insertAfter(listAddress, anchorElemNum, dataValue, dumpInfoAddress);\
+    returnableValue;\
+})
+
+#define InsertBefore(listAddress, anchorElemNum, dataValue, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int returnableValue = insertBefore(listAddress, anchorElemNum, dataValue, dumpInfoAddress);\
+    returnableValue;\
+})
+
+#define InsertBeforeHead(listAddress, dataValue, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int head = *(listHead(listAddress));\
+    int returnableValue = insertBefore(listAddress, head, dataValue, dumpInfoAddress);\
+    returnableValue;\
+})
+
+#define InsertAfterTail(listAddress, dataValue, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int tail = *(listTail(listAddress));\
+    int returnableValue = insertAfter(listAddress, tail, dataValue, dumpInfoAddress);\
     returnableValue;\
 })
 
@@ -59,5 +83,7 @@ listErr_t findBadAnchorElemNum (struct list* lst, size_t anchorElemNum, struct d
 listErr_t findBadDeleteNum (struct list* lst, size_t deletedElement, struct dump* dumpInfo);
 
 listErr_t findFreeListCycle (struct list* lst);
+
+void userListPrintf (struct list* lst);
 
 #endif
