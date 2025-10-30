@@ -58,4 +58,6 @@ listErr_t findBadAnchorElemNum (struct list* lst, size_t anchorElemNum, struct d
 
 listErr_t findBadDeleteNum (struct list* lst, size_t deletedElement, struct dump* dumpInfo);
 
+listErr_t findFreeListCycle (struct list* lst);
+
 #endif

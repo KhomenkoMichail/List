@@ -1,96 +1,159 @@
 <pre>
 <h3>listDump() <font color=red>from insertAfter at main.cpp:22</font></h3>
 <h2><font color=blue>BEFORE Insert "10" after idx [0]</font></h2>
-list "lst" [007BFE90] from main at main.cpp:20
+list "lst" [007BFE84] from main at main.cpp:20
 
-capacity == 10
+capacity == 2
+size == 0
 errorCode == 0
 
 free == 1
 
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     0 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     0 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ]
+idx:  [     0 ][     1 ]
+data: [ 47806 ][  2989 ]
+next: [     0 ][     0 ]
+prev: [     0 ][    -1 ]
 Image:
- <img src=GRAPH_DUMPS/graph1.png width=1500px>
+ <img src=GRAPH_DUMPS/graph1.png width=300px>
 <pre>
 <h3>listDump() <font color=red>from insertAfter at main.cpp:22</font></h3>
 <h2><font color=blue>AFTER Insert "10" after idx [0]</font></h2>
-list "lst" [007BFE90] from main at main.cpp:20
+list "lst" [007BFE84] from main at main.cpp:20
 
-capacity == 10
+capacity == 2
+size == 1
 errorCode == 0
 
-free == 2
+free == 0
 
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     0 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     1 ][     0 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ]
+idx:  [     0 ][     1 ]
+data: [ 47806 ][    10 ]
+next: [     1 ][     0 ]
+prev: [     1 ][     0 ]
 Image:
- <img src=GRAPH_DUMPS/graph2.png width=1500px>
+ <img src=GRAPH_DUMPS/graph2.png width=300px>
 <pre>
 <h3>listDump() <font color=red>from insertAfter at main.cpp:23</font></h3>
 <h2><font color=blue>BEFORE Insert "20" after idx [1]</font></h2>
-list "lst" [007BFE90] from main at main.cpp:20
+list "lst" [007BFE84] from main at main.cpp:20
 
-capacity == 10
+capacity == 2
+size == 1
 errorCode == 0
 
-free == 2
+free == 0
 
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     0 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     1 ][     0 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ]
+idx:  [     0 ][     1 ]
+data: [ 47806 ][    10 ]
+next: [     1 ][     0 ]
+prev: [     1 ][     0 ]
 Image:
- <img src=GRAPH_DUMPS/graph3.png width=1500px>
+ <img src=GRAPH_DUMPS/graph3.png width=300px>
 <pre>
 <h3>listDump() <font color=red>from insertAfter at main.cpp:23</font></h3>
 <h2><font color=blue>AFTER Insert "20" after idx [1]</font></h2>
-list "lst" [007BFE90] from main at main.cpp:20
+list "lst" [007BFE84] from main at main.cpp:20
 
-capacity == 10
+capacity == 4
+size == 2
 errorCode == 0
 
 free == 3
 
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     0 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     2 ][     0 ][     1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ]
+idx:  [     0 ][     1 ][     2 ][     3 ]
+data: [ 47806 ][    10 ][    20 ][  2989 ]
+next: [     1 ][     2 ][     0 ][     0 ]
+prev: [     2 ][     0 ][     1 ][    -1 ]
 Image:
- <img src=GRAPH_DUMPS/graph4.png width=1500px>
+ <img src=GRAPH_DUMPS/graph4.png width=600px>
 <pre>
 <h3>listDump() <font color=red>from insertAfter at main.cpp:24</font></h3>
 <h2><font color=blue>BEFORE Insert "30" after idx [2]</font></h2>
-list "lst" [007BFE90] from main at main.cpp:20
+list "lst" [007BFE84] from main at main.cpp:20
 
-capacity == 10
+capacity == 4
+size == 2
 errorCode == 0
 
 free == 3
 
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     0 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     2 ][     0 ][     1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ]
+idx:  [     0 ][     1 ][     2 ][     3 ]
+data: [ 47806 ][    10 ][    20 ][  2989 ]
+next: [     1 ][     2 ][     0 ][     0 ]
+prev: [     2 ][     0 ][     1 ][    -1 ]
 Image:
- <img src=GRAPH_DUMPS/graph5.png width=1500px>
+ <img src=GRAPH_DUMPS/graph5.png width=600px>
 <pre>
 <h3>listDump() <font color=red>from insertAfter at main.cpp:24</font></h3>
 <h2><font color=blue>AFTER Insert "30" after idx [2]</font></h2>
-list "lst" [007BFE90] from main at main.cpp:20
+list "lst" [007BFE84] from main at main.cpp:20
 
-capacity == 10
+capacity == 4
+size == 3
 errorCode == 0
 
-free == 4
+free == 0
 
-idx:  [     0 ][     1 ][     2 ][     3 ][     4 ][     5 ][     6 ][     7 ][     8 ][     9 ]
-data: [ 47806 ][    10 ][    20 ][    30 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ][  2989 ]
-next: [     1 ][     2 ][     3 ][     0 ][     5 ][     6 ][     7 ][     8 ][     9 ][     0 ]
-prev: [     3 ][     0 ][     1 ][     2 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ][    -1 ]
+idx:  [     0 ][     1 ][     2 ][     3 ]
+data: [ 47806 ][    10 ][    20 ][    30 ]
+next: [     1 ][     2 ][     3 ][     0 ]
+prev: [     3 ][     0 ][     1 ][     2 ]
 Image:
- <img src=GRAPH_DUMPS/graph6.png width=1500px>
+ <img src=GRAPH_DUMPS/graph6.png width=600px>
+<pre>
+<h3>listDump() <font color=red>from insertAfter at main.cpp:26</font></h3>
+<h2><font color=blue>BEFORE Insert "30" after idx [3]</font></h2>
+list "lst" [007BFE84] from main at main.cpp:20
+
+<h2><font color=red>ERROR! NEXT VALUES DO NOT MATCH WITH PREV! errorcode = -32</font></h2>
+<h2><font color=red>ERROR! BAD NODE CYCLE! errorcode = -512</font></h2>
+capacity == 4
+size == 3
+errorCode == 544
+
+free == 0
+
+idx:  [     0 ][     1 ][     2 ][     3 ]
+data: [ 47806 ][    10 ][    20 ][    30 ]
+next: [     1 ][     2 ][     3 ][     0 ]
+prev: [     3 ][     0 ][     1 ][     8 ]
+Image:
+ <img src=GRAPH_DUMPS/graph7.png width=600px>
+<pre>
+<h3>listDump() <font color=red>from insertAfter at main.cpp:27</font></h3>
+<h2><font color=blue>BEFORE Insert "80" after idx [4]</font></h2>
+list "lst" [007BFE84] from main at main.cpp:20
+
+<h2><font color=red>ERROR! NEXT VALUES DO NOT MATCH WITH PREV! errorcode = -32</font></h2>
+<h2><font color=red>ERROR! BAD NODE CYCLE! errorcode = -512</font></h2>
+capacity == 4
+size == 3
+errorCode == 544
+
+free == 0
+
+idx:  [     0 ][     1 ][     2 ][     3 ]
+data: [ 47806 ][    10 ][    20 ][    30 ]
+next: [     1 ][     2 ][     3 ][     0 ]
+prev: [     3 ][     0 ][     1 ][     8 ]
+Image:
+ <img src=GRAPH_DUMPS/graph8.png width=600px>
+<pre>
+<h3>listDump() <font color=red>from insertAfter at main.cpp:28</font></h3>
+<h2><font color=blue>BEFORE Insert "30" after idx [3]</font></h2>
+list "lst" [007BFE84] from main at main.cpp:20
+
+<h2><font color=red>ERROR! NEXT VALUES DO NOT MATCH WITH PREV! errorcode = -32</font></h2>
+<h2><font color=red>ERROR! BAD NODE CYCLE! errorcode = -512</font></h2>
+capacity == 4
+size == 3
+errorCode == 544
+
+free == 0
+
+idx:  [     0 ][     1 ][     2 ][     3 ]
+data: [ 47806 ][    10 ][    20 ][    30 ]
+next: [     1 ][     2 ][     3 ][     0 ]
+prev: [     3 ][     0 ][     1 ][     8 ]
+Image:
+ <img src=GRAPH_DUMPS/graph9.png width=600px>
