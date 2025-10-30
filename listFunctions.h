@@ -3,12 +3,14 @@
 
 #include"structsAndConsts.h"
 
-#define LIST_CTOR(listName, capacity, listInfo)\
+#define LIST_CTOR(listName, capacity, listInfo) ({\
     (listInfo).name = #listName;\
     (listInfo).nameOfFile = __FILE__;\
     (listInfo).nameOfFunc = __func__;\
     (listInfo).numOfLine = __LINE__;\
-    listCtor(&listName, capacity, listInfo);\
+    int returnableValue = listCtor(&listName, capacity, listInfo);\
+    returnableValue;\
+})
 
 #define InsertAfter(listAddress, anchorElemNum, dataValue, dumpInfoAddress) ({\
     (dumpInfoAddress)->nameOfFile = __FILE__;\
@@ -24,7 +26,7 @@
     returnableValue;\
 })
 
-void listCtor (struct list* lst, ssize_t capacity, struct info listInfo);
+int listCtor (struct list* lst, ssize_t capacity, struct info listInfo);
 
 listErr_t reallocList (struct list* lst);
 
@@ -42,7 +44,7 @@ int findBadFreeNode (struct list* lst);
 
 int findBadNextAndPrevMatch (struct list* lst);
 
-void fprintfListErrorsForDump (struct list* lst, FILE* dumpFile);
+void fprintfListErrorsForDump (struct list* lst, FILE* dumpFile, struct dump* dumpInfo);
 
 int insertAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue, struct dump* dumpInfo);
 

@@ -17,16 +17,11 @@ int main (void) {
     dumpInfo.nameOfDumpFile = nameOfDumpFile;
     dumpInfo.nameOfGraphFile = nameOfTextGraphFile;
 
-    LIST_CTOR(lst, 5, listInfo);
+    LIST_CTOR(lst, 10, listInfo);
 
     InsertAfter(&lst, 0, 10, &dumpInfo);
-    insertBefore(&lst, 1, 99, &dumpInfo);
     InsertAfter(&lst, 1, 20, &dumpInfo);
-    InsertAfter(&lst, 2, 60, &dumpInfo);
-    InsertAfter(&lst, 3, 280, &dumpInfo);
-    InsertAfter(&lst, 4, 7, &dumpInfo);
-    InsertAfter(&lst, 5, 8, &dumpInfo);
-    deleteElement(&lst, 4, &dumpInfo);
+    InsertAfter(&lst, 2, 30, &dumpInfo);
 
 
 
