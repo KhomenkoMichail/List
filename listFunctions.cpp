@@ -5,6 +5,7 @@
 #include "listFunctions.h"
 #include "structsAndConsts.h"
 #include "listAccessFunctions.h"
+#include "TXLib.h"
 
 int listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     assert(lst);
@@ -160,14 +161,20 @@ int fprintfGraphDump (struct list* lst, const char* textGraphFileName) {
         if (*(listPrev(lst, numOfNode)) == -1)
             continue;
 
-        size_t nextNum = *(listNext(lst, numOfNode));
+        int nextNum = *(listNext(lst, numOfNode));
+
+        if ((nextNum > (int)(*(listCapacity(lst)))) || (nextNum < 0)) {
+            fprintf(graphFile, "    errorNode%d [shape = doubleoctagon, style = filled, fillcolor = \"#ff0000ff\",  color = \"#ff0000ff\", label = \" idx = %d\", fontcolor = white];\n", nextNum, nextNum);
+            fprintf(graphFile, "    node%d -> errorNode%d [color = \"#ff0000ff\", penwidth = 4];\n", numOfNode, nextNum);
+            continue;
+        }
 
         if (numOfNode == *(listPrev(lst, nextNum)))
             fprintf(graphFile, "    node%d -> node%d [dir = both, color = \"#9faafaff\"];\n", numOfNode, nextNum);
         else {
             fprintf(graphFile, "    node%d -> node%d [color = \"#220ff5ff\"];\n", numOfNode, *(listNext(lst, numOfNode)));
-            fprintf(graphFile, "    errorNode%d [shape = doubleoctagon, style = filled, fillcolor = \"#ff0000ff\", color = \"#ff0000ff\", label = \" idx = %d\"];\n", *(listPrev(lst, nextNum)), *(listPrev(lst, nextNum)));
-            fprintf(graphFile, "    node%d -> errorNode%d [color = \"#ff0000ff\"];\n", nextNum, *(listPrev(lst, nextNum)));
+            fprintf(graphFile, "    errorNode%d [shape = doubleoctagon, style = filled, fillcolor = \"#ff0000ff\",  color = \"#ff0000ff\", label = \" idx = %d\", fontcolor = white];\n", *(listPrev(lst, nextNum)), *(listPrev(lst, nextNum)));
+            fprintf(graphFile, "    node%d -> errorNode%d [color = \"#ff0000ff\", penwidth = 4];\n", nextNum, *(listPrev(lst, nextNum)));
         }
     }
 
@@ -354,10 +361,16 @@ int findBadNextAndPrevMatch (struct list* lst) {
     assert(lst);
 
     for (int numOfNode = 0; numOfNode < (int)(*(listCapacity(lst))); numOfNode++) {
+
+        if(listPrev(lst, numOfNode) == NULL)
+            return 1;
+
         if((*(listPrev(lst, numOfNode))) == -1)
             continue;
 
         int nextNum = *(listNext(lst, numOfNode));
+        if(listPrev(lst, nextNum) == NULL)
+            return 1;
         if (numOfNode != *(listPrev(lst, nextNum)))
             return 1;
     }
@@ -535,7 +548,7 @@ listErr_t findBadDeleteNum(struct list* lst, size_t deletedElement, struct dump*
     assert(lst);
     assert(dumpInfo);
 
-    if ((deletedElement > *(listCapacity(lst))) || (*(listPrev(lst, deletedElement)) == -1)) {
+    if ((deletedElement > *(listCapacity(lst))) || (*(listPrev(lst, deletedElement)) == -1) || (deletedElement == 0)) {
         printf("Error! Bad number of deleted element in %s from %s:%d\n", dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
         return badDeleteNum;
     }
@@ -627,4 +640,10 @@ void userListPrintf (struct list* lst) {
     for(int numOfNode = *(listHead(lst)); numOfNode != *(listTail(lst)); numOfNode = *(listNext(lst, numOfNode)))
         printf("idx:%4d == %d\n", numOfNode, *(listData(lst, numOfNode)));
 
+}
+
+void listDtor (struct list* lst) {
+    assert(lst);
+
+    free(lst->nodeArr);
 }

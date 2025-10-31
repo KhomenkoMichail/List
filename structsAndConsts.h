@@ -71,4 +71,10 @@ enum listErr_t {
 
 const size_t STR_SIZE = 64;
 
+struct listNode_t {
+    listData_t data;
+    listNode_t* next;
+    listNode_t* prev;
+};
+
 #endif

@@ -86,4 +86,6 @@ listErr_t findFreeListCycle (struct list* lst);
 
 void userListPrintf (struct list* lst);
 
+void listDtor (struct list* lst);
+
 #endif

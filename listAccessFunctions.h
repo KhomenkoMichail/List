@@ -1,5 +1,6 @@
 #ifndef LIST_ACCESS_FUNCTIONS_H
 #define LIST_ACCESS_FUNCTIONS_H
+#include "structsAndConsts.h"
 
 int* listHead (struct list* lst);
 
@@ -16,5 +17,11 @@ int* listData (struct list* lst, size_t numOfNode);
 size_t* listSize (struct list* lst);
 
 size_t* listCapacity (struct list* lst);
+
+listData_t* nodeData (listNode_t* node);
+
+listNode_t** nodePrev (listNode_t* node);
+
+listNode_t** nodeNext (listNode_t* node);
 
 #endif

@@ -1,0 +1,2114 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042F8D8 в функции findBadNodeCycle() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 453. Попытка прочесть данные по адресу 0x9158A284 в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050A1DC (32-bit), Flags: Cmdre0, Thread: 0x655C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F8D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: findBadNodeCycle() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:453:
+
+    451: 
+    452:     for (size_t numOfNode = 0; cycleCounter < 2*(lst->capacity); numOfNode = ((lst->nodeArr)[numOfNode]).prev) {
+=>  453:         if (((lst->nodeArr)[numOfNode]).prev == 0)
+    454:             break;
+    455:         cycleCounter++;
+
+# 1 0x0042F078 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:318:
+
+    316:         lst->errorCode |= badSize;
+    317: 
+=>  318:     if (findBadNodeCycle(lst))
+    319:         lst->errorCode |= badNodeCycle;
+    320: 
+
+# 2 0x0042F620 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:400:
+
+    398:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+    399: 
+=>  400:     if(listVerifier(lst)) {
+    401:         listDump (lst, dumpInfo, beforeMessage);
+    402:         return lst->errorCode;
+
+# 3 0x004015AB in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:26:
+
+     24:     InsertAfter(&lst, 2, 30, &dumpInfo);
+     25:     (lst.nodeArr)[2].prev = 4;
+=>   26:     InsertAfter(&lst, 3, 40, &dumpInfo);
+     27: 
+     28: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2025 19:01:15, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2025 19:01:20
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042F8D8 в функции findBadNodeCycle() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 453. Попытка прочесть данные по адресу 0x9158A284 в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050A1DC (32-bit), Flags: Cmdre0, Thread: 0x655C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F8D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: findBadNodeCycle() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:453:
+
+    451: 
+    452:     for (size_t numOfNode = 0; cycleCounter < 2*(lst->capacity); numOfNode = ((lst->nodeArr)[numOfNode]).prev) {
+=>  453:         if (((lst->nodeArr)[numOfNode]).prev == 0)
+    454:             break;
+    455:         cycleCounter++;
+
+# 1 0x0042F078 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:318:
+
+    316:         lst->errorCode |= badSize;
+    317: 
+=>  318:     if (findBadNodeCycle(lst))
+    319:         lst->errorCode |= badNodeCycle;
+    320: 
+
+# 2 0x0042F620 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:400:
+
+    398:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+    399: 
+=>  400:     if(listVerifier(lst)) {
+    401:         listDump (lst, dumpInfo, beforeMessage);
+    402:         return lst->errorCode;
+
+# 3 0x004015AB in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:26:
+
+     24:     InsertAfter(&lst, 2, 30, &dumpInfo);
+     25:     (lst.nodeArr)[2].prev = 4;
+=>   26:     InsertAfter(&lst, 3, 40, &dumpInfo);
+     27: 
+     28: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2025 19:01:15, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2025 19:01:20
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042F8D8 в функции findBadNodeCycle() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 453. Попытка прочесть данные по адресу 0x61479A9C в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050A1DC (32-bit), Flags: Cmdre0, Thread: 0x48C4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F8D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: findBadNodeCycle() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:453:
+
+    451: 
+    452:     for (size_t numOfNode = 0; cycleCounter < 2*(lst->capacity); numOfNode = ((lst->nodeArr)[numOfNode]).prev) {
+=>  453:         if (((lst->nodeArr)[numOfNode]).prev == 0)
+    454:             break;
+    455:         cycleCounter++;
+
+# 1 0x0042F078 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:318:
+
+    316:         lst->errorCode |= badSize;
+    317: 
+=>  318:     if (findBadNodeCycle(lst))
+    319:         lst->errorCode |= badNodeCycle;
+    320: 
+
+# 2 0x0042F620 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:400:
+
+    398:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+    399: 
+=>  400:     if(listVerifier(lst)) {
+    401:         listDump (lst, dumpInfo, beforeMessage);
+    402:         return lst->errorCode;
+
+# 3 0x004015AB in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:26:
+
+     24:     InsertAfter(&lst, 2, 30, &dumpInfo);
+     25:     (lst.nodeArr)[2].prev = 4;
+=>   26:     InsertAfter(&lst, 3, 40, &dumpInfo);
+     27: 
+     28: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2025 19:02:42, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2025 19:02:47
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042F8D8 в функции findBadNodeCycle() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 453. Попытка прочесть данные по адресу 0x61479A9C в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050A1DC (32-bit), Flags: Cmdre0, Thread: 0x48C4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F8D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: findBadNodeCycle() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:453:
+
+    451: 
+    452:     for (size_t numOfNode = 0; cycleCounter < 2*(lst->capacity); numOfNode = ((lst->nodeArr)[numOfNode]).prev) {
+=>  453:         if (((lst->nodeArr)[numOfNode]).prev == 0)
+    454:             break;
+    455:         cycleCounter++;
+
+# 1 0x0042F078 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:318:
+
+    316:         lst->errorCode |= badSize;
+    317: 
+=>  318:     if (findBadNodeCycle(lst))
+    319:         lst->errorCode |= badNodeCycle;
+    320: 
+
+# 2 0x0042F620 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:400:
+
+    398:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+    399: 
+=>  400:     if(listVerifier(lst)) {
+    401:         listDump (lst, dumpInfo, beforeMessage);
+    402:         return lst->errorCode;
+
+# 3 0x004015AB in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:26:
+
+     24:     InsertAfter(&lst, 2, 30, &dumpInfo);
+     25:     (lst.nodeArr)[2].prev = 4;
+=>   26:     InsertAfter(&lst, 3, 40, &dumpInfo);
+     27: 
+     28: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2025 19:02:42, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2025 19:02:47
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042E600 в функции fprintfGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 177. Попытка прочесть данные по адресу 0xA96C1B20 в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050B1DC (32-bit), Flags: Cmdre0, Thread: 0x6E1C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042E600 in C:\Users\Admin\Desktop\prodva\List\list.exe: fprintfGraphDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:177:
+
+    175:     size_t freeListCounter = 0;
+    176:     for (size_t numOfNode = lst->free;
+=>  177:         (((lst->nodeArr)[numOfNode]).next != 0) && (lst->free != 0) && (freeListCounter <= (lst->capacity - lst->size));
+    178:         numOfNode = ((lst->nodeArr)[numOfNode]).next, freeListCounter++)
+    179:         fprintf(graphFile, "    node%d -> node%d [color = gray];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
+
+# 1 0x0042EF24 in C:\Users\Admin\Desktop\prodva\List\list.exe: createGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:285:
+
+    283:     graphImageCounter++;
+    284: 
+=>  285:     fprintfGraphDump (lst, nameOfTextGraphFile);
+    286: 
+    287:     char graphvizCallCommand[STR_SIZE] = {};
+
+# 2 0x0042EA84 in C:\Users\Admin\Desktop\prodva\List\list.exe: listDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:237:
+
+    235:     if(!(lst->errorCode & badCapacity)) {
+    236:         fprintfListDataForDump (lst, dumpFile);
+=>  237:         createGraphImageForDump (lst, dumpFile, nameOfTextGraphFile);
+    238:     }
+    239: 
+
+# 3 0x0042F98D in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:434:
+
+    432: 
+    433:     if(listVerifier(lst)) {
+=>  434:         listDump (lst, dumpInfo, beforeMessage);
+    435:         return lst->errorCode;
+    436:     }
+
+# 4 0x004014F6 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:22:
+
+     20:     LIST_CTOR(lst, 1, listInfo);
+     21: 
+=>   22:     InsertAfter(&lst, 0, 10, &dumpInfo);
+     23:     InsertAfter(&lst, 1, 20, &dumpInfo);
+     24:     //lst.nodeArr[6].next = 4;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2025 21:10:06, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2025 21:10:09
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042E600 в функции fprintfGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 177. Попытка прочесть данные по адресу 0xA96C1B20 в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050B1DC (32-bit), Flags: Cmdre0, Thread: 0x6E1C (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042E600 in C:\Users\Admin\Desktop\prodva\List\list.exe: fprintfGraphDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:177:
+
+    175:     size_t freeListCounter = 0;
+    176:     for (size_t numOfNode = lst->free;
+=>  177:         (((lst->nodeArr)[numOfNode]).next != 0) && (lst->free != 0) && (freeListCounter <= (lst->capacity - lst->size));
+    178:         numOfNode = ((lst->nodeArr)[numOfNode]).next, freeListCounter++)
+    179:         fprintf(graphFile, "    node%d -> node%d [color = gray];\n", numOfNode, ((lst->nodeArr)[numOfNode]).next);
+
+# 1 0x0042EF24 in C:\Users\Admin\Desktop\prodva\List\list.exe: createGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:285:
+
+    283:     graphImageCounter++;
+    284: 
+=>  285:     fprintfGraphDump (lst, nameOfTextGraphFile);
+    286: 
+    287:     char graphvizCallCommand[STR_SIZE] = {};
+
+# 2 0x0042EA84 in C:\Users\Admin\Desktop\prodva\List\list.exe: listDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:237:
+
+    235:     if(!(lst->errorCode & badCapacity)) {
+    236:         fprintfListDataForDump (lst, dumpFile);
+=>  237:         createGraphImageForDump (lst, dumpFile, nameOfTextGraphFile);
+    238:     }
+    239: 
+
+# 3 0x0042F98D in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:434:
+
+    432: 
+    433:     if(listVerifier(lst)) {
+=>  434:         listDump (lst, dumpInfo, beforeMessage);
+    435:         return lst->errorCode;
+    436:     }
+
+# 4 0x004014F6 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:22:
+
+     20:     LIST_CTOR(lst, 1, listInfo);
+     21: 
+=>   22:     InsertAfter(&lst, 0, 10, &dumpInfo);
+     23:     InsertAfter(&lst, 1, 20, &dumpInfo);
+     24:     //lst.nodeArr[6].next = 4;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2025 21:10:06, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2025 21:10:10
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x0042F05F в функции listVerifier() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 310 в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050B1DC (32-bit), Flags: Cmdre0, Thread: 0x6B94 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F05F in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 1 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+# 2 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 3 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+# 4 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 5 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+# 6 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 7 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+# 8 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 9 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#10 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#11 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#12 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#13 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#14 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#15 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#16 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#17 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#18 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#19 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#20 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#21 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#22 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#23 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#24 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#25 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#26 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#27 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#28 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#29 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#30 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#31 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#32 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#33 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#34 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#35 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#36 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#37 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#38 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#39 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#40 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#41 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#42 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#43 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#44 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#45 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#46 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#47 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#48 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#49 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#50 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#51 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#52 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#53 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#54 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#55 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#56 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#57 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#58 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#59 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#60 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#61 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2025 21:45:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2025 21:45:11
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: Ю-ху! Переполнение стека!
+
+#1: Исключение EXCEPTION_STACK_OVERFLOW (0xC00000FD) при выполнении кода по адресу 0x0042F05F в функции listVerifier() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 310 в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050B1DC (32-bit), Flags: Cmdre0, Thread: 0x6B94 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F05F in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 1 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+# 2 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 3 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+# 4 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 5 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+# 6 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 7 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+# 8 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+# 9 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#10 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#11 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#12 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#13 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#14 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#15 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#16 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#17 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#18 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#19 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#20 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#21 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#22 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#23 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#24 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#25 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#26 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#27 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#28 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#29 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#30 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#31 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#32 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#33 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#34 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#35 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#36 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#37 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#38 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#39 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#40 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#41 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#42 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#43 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#44 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#45 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#46 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#47 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#48 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#49 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#50 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#51 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#52 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#53 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#54 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#55 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#56 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#57 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#58 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#59 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+#60 0x0042F064 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:310:
+
+    308:         lst->errorCode |= -badNullNode;
+    309: 
+=>  310:     if (((lst->nodeArr)[*(listHead(lst))]).prev != 0)
+    311:         lst->errorCode |= -badHead;
+    312: 
+
+#61 0x00431687 in C:\Users\Admin\Desktop\prodva\List\list.exe: listHead() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:16:
+
+     14: int* listHead (struct list* lst) {
+     15:     assert(lst);
+=>   16:     ON_PROTECTION(listVerifier(lst));
+     17: 
+     18:     return &(((lst->nodeArr)[0]).next);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 30 2025 21:45:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 30 2025 21:45:10
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042F657 в функции findBadNextAndPrevMatch() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 368. Попытка прочесть данные по адресу NULL в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0x49D8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F657 in C:\Users\Admin\Desktop\prodva\List\list.exe: findBadNextAndPrevMatch() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:368:
+
+    366: 
+    367:         int nextNum = *(listNext(lst, numOfNode));
+=>  368:         if (numOfNode != *(listPrev(lst, nextNum)))
+    369:             return 1;
+    370:     }
+
+# 1 0x0042F3B1 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:330:
+
+    328:         lst->errorCode |= -badFreeNode;
+    329: 
+=>  330:     if (findBadNextAndPrevMatch(lst))
+    331:         lst->errorCode |= -badNextAndPrevMatch;
+    332: 
+
+# 2 0x0042FDA5 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:460:
+
+    458:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+    459: $$
+=>  460:     if(listVerifier(lst)) {
+    461:         listDump (lst, dumpInfo, beforeMessage);
+    462:         return lst->errorCode;
+
+# 3 0x0040174F in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:67:
+
+     65:     InsertAfter(&lst, 9, 1000, &dumpInfo);
+     66:     lst.nodeArr[2].next = 100;
+=>   67:     InsertAfter(&lst, 10, 1100, &dumpInfo);
+     68: 
+     69:     listDtor(&lst);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int insertAfter(list*, size_t, listData_t, dump*) at listFunctions.cpp:459:
+
+    457:     snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE Insert \"%d\" after idx [%d]", dataValue, anchorElemNum);
+    458:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+=>  459: $$
+    460:     if(listVerifier(lst)) {
+    461:         listDump (lst, dumpInfo, beforeMessage);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 13:09:18, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 13:09:22
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042F657 в функции findBadNextAndPrevMatch() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 368. Попытка прочесть данные по адресу NULL в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0x49D8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F657 in C:\Users\Admin\Desktop\prodva\List\list.exe: findBadNextAndPrevMatch() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:368:
+
+    366: 
+    367:         int nextNum = *(listNext(lst, numOfNode));
+=>  368:         if (numOfNode != *(listPrev(lst, nextNum)))
+    369:             return 1;
+    370:     }
+
+# 1 0x0042F3B1 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:330:
+
+    328:         lst->errorCode |= -badFreeNode;
+    329: 
+=>  330:     if (findBadNextAndPrevMatch(lst))
+    331:         lst->errorCode |= -badNextAndPrevMatch;
+    332: 
+
+# 2 0x0042FDA5 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:460:
+
+    458:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+    459: $$
+=>  460:     if(listVerifier(lst)) {
+    461:         listDump (lst, dumpInfo, beforeMessage);
+    462:         return lst->errorCode;
+
+# 3 0x0040174F in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:67:
+
+     65:     InsertAfter(&lst, 9, 1000, &dumpInfo);
+     66:     lst.nodeArr[2].next = 100;
+=>   67:     InsertAfter(&lst, 10, 1100, &dumpInfo);
+     68: 
+     69:     listDtor(&lst);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int insertAfter(list*, size_t, listData_t, dump*) at listFunctions.cpp:459:
+
+    457:     snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE Insert \"%d\" after idx [%d]", dataValue, anchorElemNum);
+    458:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+=>  459: $$
+    460:     if(listVerifier(lst)) {
+    461:         listDump (lst, dumpInfo, beforeMessage);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 13:09:18, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 13:09:22
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042F67F в функции findBadNextAndPrevMatch() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 371. Попытка прочесть данные по адресу NULL в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0xDD4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F67F in C:\Users\Admin\Desktop\prodva\List\list.exe: findBadNextAndPrevMatch() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:371:
+
+    369: 
+    370:         int nextNum = *(listNext(lst, numOfNode));
+=>  371:         if (numOfNode != *(listPrev(lst, nextNum)))
+    372:             return 1;
+    373:     }
+
+# 1 0x0042F3B1 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:330:
+
+    328:         lst->errorCode |= -badFreeNode;
+    329: 
+=>  330:     if (findBadNextAndPrevMatch(lst))
+    331:         lst->errorCode |= -badNextAndPrevMatch;
+    332: 
+
+# 2 0x0042FDD1 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:463:
+
+    461:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+    462: $$
+=>  463:     if(listVerifier(lst)) {
+    464:         listDump (lst, dumpInfo, beforeMessage);
+    465:         return lst->errorCode;
+
+# 3 0x0040174F in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:67:
+
+     65:     InsertAfter(&lst, 9, 1000, &dumpInfo);
+     66:     lst.nodeArr[2].next = 100;
+=>   67:     InsertAfter(&lst, 10, 1100, &dumpInfo);
+     68: 
+     69:     listDtor(&lst);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int insertAfter(list*, size_t, listData_t, dump*) at listFunctions.cpp:462:
+
+    460:     snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE Insert \"%d\" after idx [%d]", dataValue, anchorElemNum);
+    461:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+=>  462: $$
+    463:     if(listVerifier(lst)) {
+    464:         listDump (lst, dumpInfo, beforeMessage);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 13:11:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 13:11:45
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042F67F в функции findBadNextAndPrevMatch() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 371. Попытка прочесть данные по адресу NULL в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0xDD4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042F67F in C:\Users\Admin\Desktop\prodva\List\list.exe: findBadNextAndPrevMatch() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:371:
+
+    369: 
+    370:         int nextNum = *(listNext(lst, numOfNode));
+=>  371:         if (numOfNode != *(listPrev(lst, nextNum)))
+    372:             return 1;
+    373:     }
+
+# 1 0x0042F3B1 in C:\Users\Admin\Desktop\prodva\List\list.exe: listVerifier() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:330:
+
+    328:         lst->errorCode |= -badFreeNode;
+    329: 
+=>  330:     if (findBadNextAndPrevMatch(lst))
+    331:         lst->errorCode |= -badNextAndPrevMatch;
+    332: 
+
+# 2 0x0042FDD1 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:463:
+
+    461:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+    462: $$
+=>  463:     if(listVerifier(lst)) {
+    464:         listDump (lst, dumpInfo, beforeMessage);
+    465:         return lst->errorCode;
+
+# 3 0x0040174F in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:67:
+
+     65:     InsertAfter(&lst, 9, 1000, &dumpInfo);
+     66:     lst.nodeArr[2].next = 100;
+=>   67:     InsertAfter(&lst, 10, 1100, &dumpInfo);
+     68: 
+     69:     listDtor(&lst);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int insertAfter(list*, size_t, listData_t, dump*) at listFunctions.cpp:462:
+
+    460:     snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE Insert \"%d\" after idx [%d]", dataValue, anchorElemNum);
+    461:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+=>  462: $$
+    463:     if(listVerifier(lst)) {
+    464:         listDump (lst, dumpInfo, beforeMessage);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 13:11:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 13:11:45
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042E6FE в функции fprintfGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 168. Попытка прочесть данные по адресу NULL в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0x4D08 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042E6FE in C:\Users\Admin\Desktop\prodva\List\list.exe: fprintfGraphDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:168:
+
+    166:         if (nextNum > *(listCapacity(lst))) {
+    167:             fprintf(graphFile, "    errorNode%d [shape = doubleoctagon, style = filled, fillcolor = \"#ff0000ff\",  color = \"#ff0000ff\", label = \" idx = %d\", fontcolor = white];\n", nextNum, nextNum);
+=>  168:             fprintf(graphFile, "    node%d -> errorNode%d [color = \"#ff0000ff\", penwidth = 4];\n", numOfNode, *(listPrev(lst, nextNum)));
+    169:             continue;
+    170:         }
+
+# 1 0x0042F218 in C:\Users\Admin\Desktop\prodva\List\list.exe: createGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:295:
+
+    293:     graphImageCounter++;
+    294: 
+=>  295:     fprintfGraphDump (lst, nameOfTextGraphFile);
+    296: 
+    297:     char graphvizCallCommand[STR_SIZE] = {};
+
+# 2 0x0042ED4D in C:\Users\Admin\Desktop\prodva\List\list.exe: listDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:246:
+
+    244:     if(!(lst->errorCode & -badCapacity)) {
+    245:         fprintfListDataForDump (lst, dumpFile);
+=>  246:         createGraphImageForDump (lst, dumpFile, nameOfTextGraphFile);
+    247:     }
+    248: 
+
+# 3 0x0042FE18 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:467:
+
+    465: $$
+    466:     if(listVerifier(lst)) {
+=>  467:         listDump (lst, dumpInfo, beforeMessage);
+    468:         return lst->errorCode;
+    469:     }
+
+# 4 0x0040174F in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:67:
+
+     65:     InsertAfter(&lst, 9, 1000, &dumpInfo);
+     66:     lst.nodeArr[2].next = 100;
+=>   67:     InsertAfter(&lst, 10, 1100, &dumpInfo);
+     68: 
+     69:     listDtor(&lst);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int insertAfter(list*, size_t, listData_t, dump*) at listFunctions.cpp:465:
+
+    463:     snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE Insert \"%d\" after idx [%d]", dataValue, anchorElemNum);
+    464:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+=>  465: $$
+    466:     if(listVerifier(lst)) {
+    467:         listDump (lst, dumpInfo, beforeMessage);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 13:12:27, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 13:12:30
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0042E6FE в функции fprintfGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp на строке 168. Попытка прочесть данные по адресу NULL в модуле C:\Users\Admin\Desktop\prodva\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0x4D08 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042E6FE in C:\Users\Admin\Desktop\prodva\List\list.exe: fprintfGraphDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:168:
+
+    166:         if (nextNum > *(listCapacity(lst))) {
+    167:             fprintf(graphFile, "    errorNode%d [shape = doubleoctagon, style = filled, fillcolor = \"#ff0000ff\",  color = \"#ff0000ff\", label = \" idx = %d\", fontcolor = white];\n", nextNum, nextNum);
+=>  168:             fprintf(graphFile, "    node%d -> errorNode%d [color = \"#ff0000ff\", penwidth = 4];\n", numOfNode, *(listPrev(lst, nextNum)));
+    169:             continue;
+    170:         }
+
+# 1 0x0042F218 in C:\Users\Admin\Desktop\prodva\List\list.exe: createGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:295:
+
+    293:     graphImageCounter++;
+    294: 
+=>  295:     fprintfGraphDump (lst, nameOfTextGraphFile);
+    296: 
+    297:     char graphvizCallCommand[STR_SIZE] = {};
+
+# 2 0x0042ED4D in C:\Users\Admin\Desktop\prodva\List\list.exe: listDump() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:246:
+
+    244:     if(!(lst->errorCode & -badCapacity)) {
+    245:         fprintfListDataForDump (lst, dumpFile);
+=>  246:         createGraphImageForDump (lst, dumpFile, nameOfTextGraphFile);
+    247:     }
+    248: 
+
+# 3 0x0042FE18 in C:\Users\Admin\Desktop\prodva\List\list.exe: insertAfter() at C:/Users/Admin/Desktop/prodva/List/listFunctions.cpp:467:
+
+    465: $$
+    466:     if(listVerifier(lst)) {
+=>  467:         listDump (lst, dumpInfo, beforeMessage);
+    468:         return lst->errorCode;
+    469:     }
+
+# 4 0x0040174F in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:67:
+
+     65:     InsertAfter(&lst, 9, 1000, &dumpInfo);
+     66:     lst.nodeArr[2].next = 100;
+=>   67:     InsertAfter(&lst, 10, 1100, &dumpInfo);
+     68: 
+     69:     listDtor(&lst);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int insertAfter(list*, size_t, listData_t, dump*) at listFunctions.cpp:465:
+
+    463:     snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE Insert \"%d\" after idx [%d]", dataValue, anchorElemNum);
+    464:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after idx [%d]",  dataValue, anchorElemNum);
+=>  465: $$
+    466:     if(listVerifier(lst)) {
+    467:         listDump (lst, dumpInfo, beforeMessage);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 13:12:27, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 13:12:30
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0xEFC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00412024 in C:\Users\Admin\Desktop\prodva\List\list.exe: (anonymous namespace)::TX::_txOnSignal() at c:/users/admin/downloads/codeblocks/mingw/include/txlib.h:11173
+# 1 0x76228F03 in C:\WINDOWS\System32\msvcrt.dll: raise()
+# 2 0x7622D3CB in C:\WINDOWS\System32\msvcrt.dll: abort()
+# 3 0x76229D47 in C:\WINDOWS\System32\msvcrt.dll: assert()
+
+# 4 0x00431AF0 in C:\Users\Admin\Desktop\prodva\List\list.exe: nodePrev() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:78:
+
+     76: 
+     77: listNode_t** nodePrev (listNode_t* node) {
+=>   78:     assert(node);
+     79: 
+     80:     return &(node->prev);
+
+# 5 0x00431EB4 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:89:
+
+     87:         listNode_t* nextNum = *(nodeNext(node));
+     88: 
+=>   89:         if(node == *(nodePrev(nextNum)))
+     90:             fprintf(graphFile, "    node%p -> node%p [dir = both, color = \"#9faafaff\"];\n", node, nextNum);
+     91:         else {
+
+# 6 0x00401443 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:81:
+
+     79:     listNode_t* secondNode = classicInsertAfter(firstNode, 20);
+     80:     listNode_t* thirdNode = classicInsertAfter(firstNode, 30);
+=>   81:     classicListGraphDump (nullNode, "classicGraph.txt");
+     82: 
+     83: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 14:56:38, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 14:56:49
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0x68BC (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00412024 in C:\Users\Admin\Desktop\prodva\List\list.exe: (anonymous namespace)::TX::_txOnSignal() at c:/users/admin/downloads/codeblocks/mingw/include/txlib.h:11173
+# 1 0x76228F03 in C:\WINDOWS\System32\msvcrt.dll: raise()
+# 2 0x7622D3CB in C:\WINDOWS\System32\msvcrt.dll: abort()
+# 3 0x76229D47 in C:\WINDOWS\System32\msvcrt.dll: assert()
+
+# 4 0x00431B20 in C:\Users\Admin\Desktop\prodva\List\list.exe: nodeNext() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:84:
+
+     82: 
+     83: listNode_t** nodeNext (listNode_t* node) {
+=>   84:     assert(node);
+     85: 
+     86:     return &(node->next);
+
+# 5 0x00431E99 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:82:
+
+     80:     fprintf(graphFile, "\n");
+     81: 
+=>   82:     for (listNode_t* node = fictitiousNode; (node != NULL) || (*(nodeNext(node)) != NULL); node = *(nodeNext(node)))
+     83:         fprintf(graphFile, "    node%p -> node%p [weight = 500, style = invis, color = white];\n", node, *(nodeNext(node)));
+     84: 
+
+# 6 0x00401443 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:81:
+
+     79:     listNode_t* secondNode = classicInsertAfter(firstNode, 20);
+     80:     listNode_t* thirdNode = classicInsertAfter(firstNode, 30);
+=>   81:     classicListGraphDump (nullNode, "classicGraph.txt");
+     82: 
+     83: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 15:17:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 15:17:24
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050C1DC (32-bit), Flags: Cmdre0, Thread: 0x3778 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00412024 in C:\Users\Admin\Desktop\prodva\List\list.exe: (anonymous namespace)::TX::_txOnSignal() at c:/users/admin/downloads/codeblocks/mingw/include/txlib.h:11173
+# 1 0x76228F03 in C:\WINDOWS\System32\msvcrt.dll: raise()
+# 2 0x7622D3CB in C:\WINDOWS\System32\msvcrt.dll: abort()
+# 3 0x76229D47 in C:\WINDOWS\System32\msvcrt.dll: assert()
+
+# 4 0x00431B3A in C:\Users\Admin\Desktop\prodva\List\list.exe: nodeNext() at C:/Users/Admin/Desktop/prodva/List/listAccessFunctions.cpp:88:
+
+     86: 
+     87: listNode_t** nodeNext (listNode_t* node) {
+=>   88:     assert(node);
+     89:     if(node == NULL)
+     90:         return NULL;
+
+# 5 0x00431EC1 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:82:
+
+     80:     fprintf(graphFile, "\n");
+     81: 
+=>   82:     for (listNode_t* node = fictitiousNode; (node != NULL) || (*(nodeNext(node)) != NULL); node = *(nodeNext(node)))
+     83:         fprintf(graphFile, "    node%p -> node%p [weight = 500, style = invis, color = white];\n", node, *(nodeNext(node)));
+     84: 
+
+# 6 0x00401443 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:81:
+
+     79:     listNode_t* secondNode = classicInsertAfter(firstNode, 20);
+     80:     listNode_t* thirdNode = classicInsertAfter(firstNode, 30);
+=>   81:     classicListGraphDump (nullNode, "classicGraph.txt");
+     82: 
+     83: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Oct 31 2025 15:19:00, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Oct 31 2025 15:19:04
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------

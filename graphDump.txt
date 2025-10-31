@@ -1,46 +1,45 @@
 digraph List {
-    rankdir=HR;
-    node [shape = rect, color = black];
+    rankdir = LR;
+    node [shape = Mrecord, color = black];
+    node0 [label = " idx = 0| data = CANARY|    next = 6| prev = 4", style = filled, fillcolor = "#C2BBBD", color = black];
+    node1 [label = " idx = 1| data = 1|    next = 5| prev = 6", style = filled, fillcolor = "#C2BBBD", color = black];
+    node2 [label = " idx = 2| data = 20|    next = 4| prev = 90", style = filled, fillcolor = "#C2BBBD", color = black];
+    node3 [label = " idx = 3| data = 20|    next = 2| prev = 5", style = filled, fillcolor = "#C2BBBD", color = black];
+    node4 [label = " idx = 4| data = 30|    next = 0| prev = 2", style = filled, fillcolor = "#E07397", color = black];
+    node5 [label = " idx = 5| data = 1|    next = 3| prev = 1", style = filled, fillcolor = "#C2BBBD", color = black];
+    node6 [label = " idx = 6| data = 1|    next = 1| prev = 100", style = filled, fillcolor = "#79D47F", color = black];
+    node7 [label = " idx = 7| data = PZN|    next = 8| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
+    node8 [label = " idx = 8| data = PZN|    next = 9| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
+    node9 [label = " idx = 9| data = PZN|    next = 0| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
 
-    // Верхний ряд
-    head [shape = box3d, label="head", style = filled, fillcolor = "#79D47F", color = black];
-    tail [shape = box3d, label="tail", style = filled, fillcolor = "#E07397", color = black];
-    free [shape = box3d, label="free", style = filled, fillcolor = "#E3f194", color = black];
+    node0 -> node1 [weight = 500, style = invis, color = white];
+    node1 -> node2 [weight = 500, style = invis, color = white];
+    node2 -> node3 [weight = 500, style = invis, color = white];
+    node3 -> node4 [weight = 500, style = invis, color = white];
+    node4 -> node5 [weight = 500, style = invis, color = white];
+    node5 -> node6 [weight = 500, style = invis, color = white];
+    node6 -> node7 [weight = 500, style = invis, color = white];
+    node7 -> node8 [weight = 500, style = invis, color = white];
+    node8 -> node9 [weight = 500, style = invis, color = white];
+    node0 -> node6 [color = "#220ff5ff"];
+    errorNode100 [shape = doubleoctagon, style = filled, fillcolor = "#ff0000ff",  color = "#ff0000ff", label = " idx = 100", fontcolor = white];
+    node6 -> errorNode100 [color = "#ff0000ff", penwidth = 4];
+    node1 -> node5 [dir = both, color = "#9faafaff"];
+    node2 -> node4 [dir = both, color = "#9faafaff"];
+    node3 -> node2 [color = "#220ff5ff"];
+    errorNode90 [shape = doubleoctagon, style = filled, fillcolor = "#ff0000ff",  color = "#ff0000ff", label = " idx = 90", fontcolor = white];
+    node2 -> errorNode90 [color = "#ff0000ff", penwidth = 4];
+    node4 -> node0 [dir = both, color = "#9faafaff"];
+    node5 -> node3 [dir = both, color = "#9faafaff"];
+    node6 -> node1 [dir = both, color = "#9faafaff"];
+    node7 -> node8 [color = gray];
+    node8 -> node9 [color = gray];
 
-    // Нижний ряд - простые прямоугольники
-    node0 [label="idx: 0\n─────────────\ndata: 47806\nnext: 0\nprev: 0", style = filled, fillcolor = "#C2BBBD", color = black];
-    node1 [label="idx: 1\ndata: 10\nnext: 2\nprev: 0", style = filled, fillcolor = "#79D47F", color = black];
-    node2 [label="idx: 2\ndata: 20\nnext: 5\nprev: 1", style = filled, fillcolor = "#C2BBBD", color = black];
-    node3 [label="idx: 3\ndata: 30\nnext: 4\nprev: 5", style = filled, fillcolor = "#C2BBBD", color = black];
-    node4 [label="idx: 4\ndata: 40\nnext: 0\nprev: 3", style = filled, fillcolor = "#E07397", color = black];
-    node5 [label="idx: 5\ndata: 25\nnext: 3\nprev: 2", style = filled, fillcolor = "#C2BBBD", color = black];
-    node6 [label="idx: 6\ndata: 2989\nnext: 7\nprev: -1", style = filled, fillcolor = "#E3f194", color = black];
-    node7 [label="idx: 7\ndata: 2989\nnext: 8\nprev: -1", style = filled, fillcolor = "#E3f194", color = black];
-    node8 [label="idx: 8\ndata: 2989\nnext: 9\nprev: -1", style = filled, fillcolor = "#E3f194", color = black];
-    node9 [label="idx: 9\ndata: 2989\nnext: 0\nprev: -1", style = filled, fillcolor = "#E3f194", color = black];
-
-    // Группировка для рядов
+    head [shape = box3d, label="HEAD", style = filled, fillcolor = "#79D47F", color = black];
+    tail [shape = box3d, label="TAIL", style = filled, fillcolor = "#E07397", color = black];
+    free [shape = box3d, label="FREE", style = filled, fillcolor = "#E3f194", color = black];
+    head -> node6 [color = "#79D47F"];
+    tail -> node4 [color = "#E07397"];
+    free -> node7 [color = gray];
     { rank = same; head; tail; free; }
-    { rank = same; node0; node1; node2; node3; node4; node5; node6; node7; node8; node9; }
-
-    // Невидимые связи для выравнивания
-    node0 -> node1 -> node2 -> node3 -> node4 -> node5 -> node6 -> node7 -> node8 -> node9 [style = invis];
-
-    // Связи между узлами
-    node1 -> node2 [color = blue, label = "next"];
-    node2 -> node5 [color = blue, label = "next"];
-    node2 -> node1 [color=red, label = "prev", style=dashed];
-    node3 -> node4 [color = blue, label = "next"];
-    node3 -> node5 [color=red, label = "prev", style=dashed];
-    node4 -> node3 [color=red, label = "prev", style=dashed];
-    node5 -> node3 [color = blue, label = "next"];
-    node5 -> node2 [color=red, label = "prev", style=dashed];
-    node6 -> node7 [color=gray, label="free"];
-    node7 -> node8 [color=gray, label="free"];
-    node8 -> node9 [color=gray, label="free"];
-
-    // Связи от head, tail, free к узлам
-    head -> node1 [color=darkblue];
-    tail -> node4 [color=darkgreen];
-    free -> node6 [color=black];
-}
+ }
