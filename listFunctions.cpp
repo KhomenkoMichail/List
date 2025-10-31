@@ -5,7 +5,6 @@
 #include "listFunctions.h"
 #include "structsAndConsts.h"
 #include "listAccessFunctions.h"
-#include "TXLib.h"
 
 int listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     assert(lst);

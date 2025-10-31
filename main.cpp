@@ -4,7 +4,7 @@
 #include "structsAndConsts.h"
 #include "classicListFunctions.h"
 #include <stdlib.h>
-
+#include <TXLib.h>
 
 int main (void) {
 
@@ -71,15 +71,39 @@ int main (void) {
     lst.nodeArr[2].next = 100;
     InsertAfter(&lst, 10, 1100, &dumpInfo);
 */
-    //listDtor(&lst);*/
 
+    struct dump dumpInfo = {};
+
+    const char* nameOfDumpFile = "classicListDump.html";
+    const char* nameOfTextGraphFile = "classicGraphDump.txt";
+
+    dumpInfo.nameOfDumpFile = nameOfDumpFile;
+    dumpInfo.nameOfGraphFile = nameOfTextGraphFile;
+$$
 
     listNode_t* nullNode = classicListCtor();
-    listNode_t* firstNode = classicInsertAfter(nullNode, 10);
-    listNode_t* secondNode = classicInsertAfter(firstNode, 20);
-    listNode_t* thirdNode = classicInsertAfter(firstNode, 30);
-    classicListGraphDump (nullNode, "classicGraph.txt");
-
+$$
+    dumpInfo.fictitiousNode = nullNode;
+    $$
+    printf("nullNode == %p\n", nullNode);
+    listNode_t* node1 = ClassicInsertAfter(nullNode, 10, &dumpInfo);
+    $$
+    listNode_t* node2 = ClassicInsertAfter(node1, 20, &dumpInfo);
+    $$
+    listNode_t* node3 = ClassicInsertAfter(node2, 30, &dumpInfo);
+    $$
+    listNode_t* node4 = ClassicInsertAfter(node3, 40, &dumpInfo);
+    $$
+    listNode_t* node5 = ClassicInsertAfter(node4, 50, &dumpInfo);
+    $$
+    listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    $$
+    ClassicInsertAfter(node6, 70, &dumpInfo);
+    $$
+    ClassicDeleteNode (node3, &dumpInfo);
+    $$
+    classicListDtor(nullNode);
+$$
 
     return 0;
 }

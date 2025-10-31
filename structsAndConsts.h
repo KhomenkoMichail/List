@@ -20,16 +20,6 @@ struct info {
 
 };
 
-struct dump {
-    const char* nameOfFile;
-    const char* nameOfFunc;
-    unsigned int numOfLine;
-
-    const char* nameOfDumpFile;
-    const char* nameOfGraphFile;
-    int dumpFileWasOpened;
-};
-
 struct listFiles {
     const char* nameOfDumpFile;
     const char* nameOfGraphFile;
@@ -75,6 +65,20 @@ struct listNode_t {
     listData_t data;
     listNode_t* next;
     listNode_t* prev;
+};
+
+
+struct dump {
+    const char* nameOfFile;
+    const char* nameOfFunc;
+    unsigned int numOfLine;
+
+    int errorCode;
+    listNode_t* fictitiousNode;
+
+    const char* nameOfDumpFile;
+    const char* nameOfGraphFile;
+    int dumpFileWasOpened;
 };
 
 #endif
