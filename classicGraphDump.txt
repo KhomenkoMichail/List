@@ -1,0 +1,22 @@
+digraph classicList {
+    rankdir = LR;
+    node [shape = Mrecord, color = black];
+    node0152B8F8 [label = " address = 0152B8F8| data = CANARY|    next = 0152B790| prev = 0152B7F0", style = filled, fillcolor = "#dec84cff", color = black];
+    node0152B790 [label = " address = 0152B790| data = 10|    next = 0152B838| prev = 0152B8F8", style = filled, fillcolor = "#79D47F", color = black];
+    node0152B838 [label = " address = 0152B838| data = 20|    next = 0152B898| prev = 0152B790", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0152B898 [label = " address = 0152B898| data = 30|    next = 0152B7A8| prev = 0152B838", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0152B7A8 [label = " address = 0152B7A8| data = 40|    next = 0152B838| prev = 0152B898", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0152B838 [label = " address = 0152B838| data = 20|    next = 0152B898| prev = 0152B790", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0152B8F8 [label = " address = 0152B8F8| data = 47806|    next = 0152B790| prev = 0152B7F0", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0152B7F0 [label = " address = 0152B7F0| data = 50|    next = 0152B8F8| prev = 0152B7A8", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0152B7A8 [label = " address = 0152B7A8| data = 40|    next = 0152B838| prev = 0152B898", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0152B898 [label = " address = 0152B898| data = 30|    next = 0152B7A8| prev = 0152B838", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0152B838 [label = " address = 0152B838| data = 20|    next = 0152B898| prev = 0152B790", style = filled, fillcolor = "#C2BBBD", color = black];
+
+    node0152B8F8 -> node0152B790 [weight = 500, style = invis, color = white];
+    node0152B790 -> node0152B838 [weight = 500, style = invis, color = white];
+    node0152B838 -> node0152B898 [weight = 500, style = invis, color = white];
+    node0152B8F8 -> node0152B790 [dir = both, color = "#9faafaff"];
+    node0152B790 -> node0152B838 [dir = both, color = "#9faafaff"];
+    node0152B838 -> node0152B898 [dir = both, color = "#9faafaff"];
+ }

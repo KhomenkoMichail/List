@@ -112,6 +112,9 @@ $$
     fprintf(graphFile, "digraph classicList {\n");
     fprintf(graphFile, "    rankdir = LR;\n");
     fprintf(graphFile, "    node [shape = Mrecord, color = black];\n");
+
+    listNode_t* badNode1 = NULL;
+    listNode_t* badNode2 = NULL;
 $$
     for (listNode_t* node = fictitiousNode; ; node = *(nodeNext(node))) {
 
@@ -132,18 +135,68 @@ $$
             continue;
         }
 
+
+        listNode_t* nextNum = *(nodeNext(node));
+        if (nextNum == NULL)
+            continue;
+        if(node != *(nodePrev(nextNum))) {
+            badNode1 = nextNum;
+            //printf("yes\n");
+            //break;
+        }
+        listNode_t* prevNum = *(nodePrev(node));
+        if (nextNum == NULL)
+            continue;
+        if(node != *(nodeNext(prevNum)))
+            badNode2 = prevNum;
+
         fprintf(graphFile, "    node%p [label = \" address = %p| data = %d|    next = %p| prev = %p\", style = filled, fillcolor = \"%s\", color = black];\n",
                 node, node, *(nodeData(node)), *(nodeNext(node)), *(nodePrev(node)), fillColor);
 
         if ((*(nodeNext(node)) == fictitiousNode))
             break;
+
+        if (nodeNext(node) == NULL)
+            break;
+        if ((node == badNode1) || (node == badNode2)) {
+        //printf("yes\n");
+        for (listNode_t* node1 = fictitiousNode; ; node1 = *(nodePrev(node1))) {
+        const char* fillColor = "#C2BBBD";
+
+        fprintf(graphFile, "    node%p [label = \" address = %p| data = %d|    next = %p| prev = %p\", style = filled, fillcolor = \"%s\", color = black];\n",
+                node1, node1, *(nodeData(node1)), *(nodeNext(node1)), *(nodePrev(node1)), fillColor);
+
+        if ((*(nodePrev(node1)) == fictitiousNode))
+            break;
+        if (nodePrev(node1) == NULL)
+            break;
+        if (((node1) == badNode1) || ((node1) == badNode2))
+            break;
+        }
+            break;
+        }
+
     }
 $$
     fprintf(graphFile, "\n");
 $$
     for (listNode_t* node = fictitiousNode; ; node = *(nodeNext(node))) {
         fprintf(graphFile, "    node%p -> node%p [weight = 500, style = invis, color = white];\n", node, *(nodeNext(node)));
+        listNode_t* nextNum = *(nodeNext(node));
+        if (nextNum == NULL)
+            continue;
+        if(node != *(nodePrev(nextNum)))
+            break;
+        listNode_t* prevNum = *(nodePrev(node));
+        if (nextNum == NULL)
+            continue;
+        if(node != *(nodeNext(prevNum)))
+            badNode2 = prevNum;
+
         if ((*(nodeNext(node)) == fictitiousNode))
+            break;
+
+        if ((node == badNode1) || (node == badNode2))
             break;
     }
 $$
@@ -161,8 +214,20 @@ $$
             fprintf(graphFile, "    errorNode%p [shape = doubleoctagon, style = filled, fillcolor = \"#ff0000ff\",  color = \"#ff0000ff\", label = \" address = %p\", fontcolor = white];\n", *(nodePrev(nextNum)), *(nodePrev(nextNum)));
             fprintf(graphFile, "    node%p -> errorNode%p [color = \"#ff0000ff\", penwidth = 4];\n", nextNum, *(nodePrev(nextNum)));
         }
+        if (nextNum == NULL)
+            continue;
+        if(node != *(nodePrev(nextNum)))
+            break;
+        listNode_t* prevNum = *(nodePrev(node));
+        if (nextNum == NULL)
+            continue;
+        if(node != *(nodeNext(prevNum)))
+            badNode2 = prevNum;
 
         if ((*(nodeNext(node)) == fictitiousNode))
+            break;
+
+        if ((node == badNode1) || (node == badNode2))
             break;
     }
 
@@ -286,6 +351,7 @@ $$
 $$
     fprintfClassicListErrorsForDump (dumpFile, dumpInfo);
 
+if (!(dumpInfo->errorCode & -badNodeCycle) && !(dumpInfo->errorCode & -badNextAndPrevMatch))
     fprintfClassicListDataForDump (dumpInfo, dumpFile);
 
     createClassicListGraphImageForDump (dumpInfo, dumpFile, nameOfTextGraphFile);
@@ -312,7 +378,7 @@ void fprintfClassicListDataForDump (struct dump* dumpInfo, FILE* dumpFile) {
     }
     fprintf(dumpFile, "\n");
 
-    fprintf(dumpFile, "data: ");
+    fprintf(dumpFile, "data:     ");
     for (listNode_t* node = dumpInfo->fictitiousNode; (node != NULL) && (*(nodeNext(node)) != dumpInfo->fictitiousNode); node = *(nodeNext(node))) {
         if(nodeData(node) == NULL)
             break;
@@ -323,7 +389,7 @@ void fprintfClassicListDataForDump (struct dump* dumpInfo, FILE* dumpFile) {
     }
     fprintf(dumpFile, "\n");
 
-    fprintf(dumpFile, "next: ");
+    fprintf(dumpFile, "next:     ");
     for (listNode_t* node = dumpInfo->fictitiousNode; (node != NULL) && (*(nodeNext(node)) != dumpInfo->fictitiousNode); node = *(nodeNext(node))) {
         if(nodeNext(node) == NULL)
             break;
@@ -334,7 +400,7 @@ void fprintfClassicListDataForDump (struct dump* dumpInfo, FILE* dumpFile) {
     }
     fprintf(dumpFile, "\n");
 
-    fprintf(dumpFile, "prev: ");
+    fprintf(dumpFile, "prev:     ");
      for (listNode_t* node = dumpInfo->fictitiousNode; (node != NULL) && (*(nodeNext(node)) != dumpInfo->fictitiousNode); node = *(nodeNext(node))) {
         if(nodePrev(node) == NULL)
             break;

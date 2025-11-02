@@ -96,6 +96,7 @@ $$
     $$
     listNode_t* node5 = ClassicInsertAfter(node4, 50, &dumpInfo);
     $$
+    node4->next = node2;
     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
     $$
     ClassicInsertAfter(node6, 70, &dumpInfo);
