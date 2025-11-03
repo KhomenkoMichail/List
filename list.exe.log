@@ -2832,3 +2832,2298 @@ Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
 Directory:	C:\Users\Admin\Desktop\prodva\List
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x2B30 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:09:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:09:52
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x6030 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:10:06, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:10:11
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x67DC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:11:12, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:11:21
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x61CC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:11:57, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:12:01
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x29D0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:12:45, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:12:49
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x4280 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:14:15, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:14:18
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x1198 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:14:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:14:55
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x6600 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:17:04, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:17:07
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x600C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:18:32, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:18:36
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x5724 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:20:25, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:20:28
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x5ED8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:25:51, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:25:54
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x694 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:34:14, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:34:18
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x2A34 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:36:44, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:36:48
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0xDBC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:38:50, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:38:55
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x6634 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:39:49, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:39:53
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x5134 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:41:13, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:41:16
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x2610 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:42:17, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:42:21
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x2DEC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:43:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:43:43
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x14B0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:47:38, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:47:42
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0xEC8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:48:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:48:42
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x4AF4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 00:50:57, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 00:51:01
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x69B0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:11:30, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:11:33
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x62E4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:13:24, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:13:28
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0xF08 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:14:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:14:25
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x4A24 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:15:32, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:15:36
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x694 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E650 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E28B in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:16:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:16:45
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x632C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E650 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E28B in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     $$
+    102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+=>  103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+    105:     $$
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:16:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:26:02
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x62F4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:26:10, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:26:13
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x441C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:26:46, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:26:50
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x4A24 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:33:45, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:33:48
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x279C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:36:03, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:36:07
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x48A0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:102:
+
+    100:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    101:     $$
+=>  102:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    103:     $$
+    104:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:37:25, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:37:29
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x37E0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E650 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E28B in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:38:43, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:38:46
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x14B0 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E650 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E28B in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:42:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:42:37
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x17B8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E650 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E28B in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:46:26, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:46:29
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x1D9C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E650 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E28B in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 21:49:26, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 21:49:29
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x46E8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E640 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E27A in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 22:12:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 22:12:37
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x22E4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2AF in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:04:39, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:04:46
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x2748 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2AF in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:09:01, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:09:06
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x6BF4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2AF in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:10:38, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:10:42
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x1E94 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2AF in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:24:07, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:24:10
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x245C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2AF in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:24:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:24:44
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x3304 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2AF in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:28:08, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:28:21
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x688 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6D8 in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2AF in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:103:
+
+    101:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    102:     $$
+=>  103:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    104:     $$
+    105:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:28:08, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:38:05
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x61A4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6EC in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2C0 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:104:
+
+    102:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    103:     $$
+=>  104:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    105:     $$
+    106:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:38:40, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:38:44
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x1F64 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6EC in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2C0 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:104:
+
+    102:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    103:     $$
+=>  104:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    105:     $$
+    106:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:41:19, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:41:22
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x339C (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6EC in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2C0 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:104:
+
+    102:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    103:     $$
+=>  104:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    105:     $$
+    106:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:57:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:57:41
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x6254 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6EC in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2C0 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:104:
+
+    102:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    103:     $$
+=>  104:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    105:     $$
+    106:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  3 2025 23:59:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 03 2025 23:59:26
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x54BC (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6EC in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2C0 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:104:
+
+    102:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    103:     $$
+=>  104:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    105:     $$
+    106:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  4 2025 00:02:49, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 04 2025 00:02:53
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x2474 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6EC in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2C0 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:104:
+
+    102:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    103:     $$
+=>  104:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    105:     $$
+    106:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  4 2025 00:03:30, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 04 2025 00:03:34
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058467C (32-bit), Flags: Cmdre0, Thread: 0x3690 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E6EC in C:\Users\Admin\Desktop\prodva\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042E2C0 in C:\Users\Admin\Desktop\prodva\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/main.cpp:104:
+
+    102:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    103:     $$
+=>  104:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+    105:     $$
+    106:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  4 2025 00:04:45, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 04 2025 00:04:49
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List
+
+--------------------------------------------------

@@ -91,3 +91,15 @@ listNode_t** nodeNext (listNode_t* node) {
 
     return &(node->next);
 }
+
+listNode_t** cListFictitious (struct classicList* cList) {
+    assert(cList);
+
+    return &(cList->fictitiousNode);
+}
+
+size_t* cListSize (struct classicList* cList) {
+    assert(cList);
+
+    return &(cList->size);
+}

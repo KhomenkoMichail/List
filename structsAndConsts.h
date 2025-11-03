@@ -57,6 +57,8 @@ enum listErr_t {
     badDeleteNum        = -0x1000,
     badRealloc          = -0x2000,
     freeListCycle       = -0x4000,
+    cListNextBadCycle   = -0x8000,
+    cListPrevBadCycle   = -0x10000,
 };
 
 const size_t STR_SIZE = 64;
@@ -73,12 +75,19 @@ struct dump {
     const char* nameOfFunc;
     unsigned int numOfLine;
 
-    int errorCode;
-    listNode_t* fictitiousNode;
+    //int errorCode;
+    //listNode_t* fictitiousNode;
 
     const char* nameOfDumpFile;
     const char* nameOfGraphFile;
     int dumpFileWasOpened;
+};
+
+struct classicList {
+    listNode_t* fictitiousNode;
+
+    size_t size;
+    int errorCode;
 };
 
 #endif

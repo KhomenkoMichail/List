@@ -71,37 +71,39 @@ int main (void) {
     lst.nodeArr[2].next = 100;
     InsertAfter(&lst, 10, 1100, &dumpInfo);
 */
-
+    struct classicList cList = {};
     struct dump dumpInfo = {};
 
-    const char* nameOfDumpFile = "classicListDump.html";
+    const char* nameOfDumpFile = "classicListDump1.html";
     const char* nameOfTextGraphFile = "classicGraphDump.txt";
 
     dumpInfo.nameOfDumpFile = nameOfDumpFile;
     dumpInfo.nameOfGraphFile = nameOfTextGraphFile;
 $$
 
-    listNode_t* nullNode = classicListCtor();
+    listNode_t* nullNode = classicListCtor(&cList);
 $$
-    dumpInfo.fictitiousNode = nullNode;
+    //dumpInfo.fictitiousNode = nullNode;
     $$
-    printf("nullNode == %p\n", nullNode);
-    listNode_t* node1 = ClassicInsertAfter(nullNode, 10, &dumpInfo);
+    //printf("nullNode == %p\n", nullNode);
+    listNode_t* node1 = ClassicInsertAfter(&cList, nullNode, 10, &dumpInfo);
     $$
-    listNode_t* node2 = ClassicInsertAfter(node1, 20, &dumpInfo);
+    listNode_t* node2 = ClassicInsertAfter(&cList, node1, 20, &dumpInfo);
     $$
-    listNode_t* node3 = ClassicInsertAfter(node2, 30, &dumpInfo);
+    listNode_t* node3 = ClassicInsertAfter(&cList, node2, 30, &dumpInfo);
     $$
-    listNode_t* node4 = ClassicInsertAfter(node3, 40, &dumpInfo);
+    listNode_t* node4 = ClassicInsertAfter(&cList, node3, 40, &dumpInfo);
     $$
-    listNode_t* node5 = ClassicInsertAfter(node4, 50, &dumpInfo);
+    listNode_t* node5 = ClassicInsertAfter(&cList, node4, 50, &dumpInfo);
     $$
     node4->next = node2;
-    listNode_t* node6 = ClassicInsertAfter(node5, 60, &dumpInfo);
+    node2->next = node1;
+    //node2->prev = node3;
+    listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
     $$
-    ClassicInsertAfter(node6, 70, &dumpInfo);
+    ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
     $$
-    ClassicDeleteNode (node3, &dumpInfo);
+    ClassicDeleteNode (&cList, node3, &dumpInfo);
     $$
     classicListDtor(nullNode);
 $$
