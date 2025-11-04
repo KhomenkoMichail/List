@@ -33,9 +33,10 @@ struct list {
     size_t capacity;
     size_t size;
 
+    int isLinear;
+
     int errorCode;
     struct info creationInfo;
-    struct listFiles files;
 };
 
 const size_t MAX_CAPACITY = 5000;

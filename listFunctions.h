@@ -50,9 +50,16 @@
     returnableValue;\
 })
 
+#define MakeListLinear(listAddress, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int returnableValue = makeListLinear(listAddress, dumpInfoAddress);\
+    returnableValue;\
+})
+
 int listCtor (struct list* lst, ssize_t capacity, struct info listInfo);
 
-listErr_t reallocList (struct list* lst);
+listErr_t reallocListUP (struct list* lst);
 
 int fprintfGraphDump (struct list* lst, const char* textGraphFileName);
 
@@ -87,5 +94,13 @@ listErr_t findFreeListCycle (struct list* lst);
 void userListPrintf (struct list* lst);
 
 void listDtor (struct list* lst);
+
+int linearOrderNodeComparator(const void* firstStruct, const void* secondStruct);
+
+int makeListLinear (struct list* lst, struct dump* dumpInfo);
+
+listErr_t reallocListDown (struct list* lst);
+
+int findNonlinearList(struct list* lst);
 
 #endif

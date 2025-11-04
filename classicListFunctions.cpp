@@ -26,14 +26,14 @@ listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNod
     char afterMessage[STR_SIZE]= {};
     snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE Insert \"%d\" after  [%p]", dataValue, anchorNode);
     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after [%p]",  dataValue, anchorNode);
-$$
+
     if(classicListVerifier(cList, dumpInfo)) {
         classicListDump(cList, dumpInfo, beforeMessage);
         return NULL;
     }
-$$
+
     classicListDump(cList, dumpInfo, beforeMessage);
-$$
+
 
     listNode_t* newNode = newListNode(dataValue);
 
@@ -108,7 +108,7 @@ listNode_t* classicListCtor(struct classicList* cList) {
 
 int classicListGraphDump (listNode_t* fictitiousNode, const char* textGraphFileName) {
     assert(fictitiousNode);
-$$
+
     FILE* graphFile = fopen(textGraphFileName, "w");
 
     if (graphFile == NULL) {
@@ -123,7 +123,7 @@ $$
 
     listNode_t* badNode1 = NULL;
     listNode_t* badNode2 = NULL;
-$$
+
     for (listNode_t* node = fictitiousNode; ; node = *(nodeNext(node))) {
 
         const char* fillColor = "#C2BBBD";
@@ -147,11 +147,7 @@ $$
         listNode_t* nextNum = *(nodeNext(node));
         if (nextNum == NULL)
             continue;
-        /*if(node != *(nodePrev(nextNum))) {
-            fclose(graphFile);
-            reversedClassicListGraphDump (fictitiousNode, textGraphFileName);;
-            break;
-        }*/
+
         listNode_t* prevNum = *(nodePrev(node));
         if (nextNum == NULL)
             continue;
@@ -168,47 +164,16 @@ $$
             break;
         if ((node == badNode1) || (node == badNode2))
             break;
-        /*for (listNode_t* node1 = fictitiousNode; ; node1 = *(nodePrev(node1))) {
-            fillColor = "#C2BBBD";
-            if (*(nodePrev(node1)) == fictitiousNode)
-                fillColor = "#79D47F";
-
-            if (*(nodeNext(node1)) == fictitiousNode)
-                fillColor = "#E07397";
-
-            if (*(nodeData(node1)) == NULL_CANARY) {
-            fprintf(graphFile, "    node%p [label = \" address = %p| data = CANARY|    next = %p| prev = %p\", style = filled, fillcolor = \"#dec84cff\", color = black];\n",
-                node, node, *(nodeNext(node)), *(nodePrev(node)));
-
-            if ((*(nodeNext(node1)) == fictitiousNode))
-                break;
-            continue;
-            }
-
-            fprintf(graphFile, "    node%p [label = \" address = %p| data = %d|    next = %p| prev = %p\", style = filled, fillcolor = \"%s\", color = black];\n",
-                    node1, node1, *(nodeData(node1)), *(nodeNext(node1)), *(nodePrev(node1)), fillColor);
-
-            if ((*(nodePrev(node1)) == fictitiousNode))
-                break;
-            if (nodePrev(node1) == NULL)
-                break;
-            if (((node1) == badNode1) || ((node1) == badNode2))
-                break;
-        }*/
-        //    break;
-        //}
-
     }
-$$
+
     fprintf(graphFile, "\n");
-$$
+
     for (listNode_t* node = fictitiousNode; ; node = *(nodeNext(node))) {
         fprintf(graphFile, "    node%p -> node%p [weight = 500, style = invis, color = white];\n", node, *(nodeNext(node)));
         listNode_t* nextNum = *(nodeNext(node));
         if (nextNum == NULL)
             continue;
-        //if(node != *(nodePrev(nextNum)))
-        //    break;
+
         listNode_t* prevNum = *(nodePrev(node));
         if (nextNum == NULL)
             continue;
@@ -220,19 +185,8 @@ $$
 
         if ((node == badNode1) || (node == badNode2))
             break;
-           /* for (listNode_t* node1 = fictitiousNode; ; node1 = *(nodePrev(node1))) {
-                fprintf(graphFile, "    node%p -> node%p [weight = 500, style = invis, color = white];\n", node1, *(nodeNext(node1)));
-            if ((*(nodePrev(node1)) == fictitiousNode))
-                break;
-            if (nodePrev(node1) == NULL)
-                break;
-            if (((node1) == badNode1) || ((node1) == badNode2))
-                break;
-            }*/
-            //break;
-        //}
     }
-$$
+
     for (listNode_t* node = fictitiousNode; ; node = *(nodeNext(node))) {
 
         listNode_t* nextNum = *(nodeNext(node));
@@ -249,8 +203,7 @@ $$
         }
         if (nextNum == NULL)
             continue;
-        //if(node != *(nodePrev(nextNum)))
-        //    break;
+
         listNode_t* prevNum = *(nodePrev(node));
         if (nextNum == NULL)
             continue;
@@ -262,25 +215,6 @@ $$
 
         if ((*nodeNext(node) == badNode1) || (*nodeNext(node) == badNode2))
             break;
-            /*for (listNode_t* node1 = fictitiousNode; ; node1 = *(nodePrev(node1))) {
-                listNode_t* nextNum1 = *(nodeNext(node1));
-                if(node1 == *(nodePrev(nextNum1)))
-                    fprintf(graphFile, "    node%p -> node%p [dir = both, color = \"#9faafaff\"];\n",  node1, nextNum1);
-                else {
-                    fprintf(graphFile, "    node%p -> node%p [color = \"#220ff5ff\"];\n", node1, nextNum1);
-                    fprintf(graphFile, "    errorNode%p [shape = doubleoctagon, style = filled, fillcolor = \"#ff0000ff\",  color = \"#ff0000ff\", label = \" address = %p\", fontcolor = white];\n", *(nodePrev(nextNum1)), *(nodePrev(nextNum1)));
-                    fprintf(graphFile, "    node%p -> errorNode%p [color = \"#ff0000ff\", penwidth = 4];\n", nextNum1, *(nodePrev(nextNum1)));
-                }
-
-            if ((*(nodePrev(node1)) == fictitiousNode))
-                break;
-            if (nodePrev(node1) == NULL)
-                break;
-            if ((*nodePrev(node1) == badNode1) || (*nodePrev(node1) == badNode2))
-                break;
-            }
-            break;
-        }*/
     }
 
     fprintf(graphFile, " }\n");
@@ -308,9 +242,6 @@ int classicListVerifier (struct classicList* cList, struct dump* dumpInfo) {
 
     if (noNextAndPrevMatch(*(cListFictitious(cList))))
         cList->errorCode |= -badNextAndPrevMatch;
-
-    //if (classicListNodeCycle(node))
-    //    cList->errorCode |= -badNodeCycle;
 
     if (findCListBadNextCycle(cList))
         cList->errorCode |= -cListNextBadCycle;
@@ -387,7 +318,7 @@ void classicListDump (struct classicList* cList, struct dump* dumpInfo, const ch
     assert(cList);
 
     const char* nameOfTextGraphFile = dumpInfo->nameOfGraphFile;
-$$
+
     FILE* dumpFile = 0;
     if(dumpInfo->dumpFileWasOpened)
         dumpFile = fopen(dumpInfo->nameOfDumpFile, "a");
@@ -395,19 +326,19 @@ $$
         dumpFile = fopen(dumpInfo->nameOfDumpFile, "w");
         dumpInfo->dumpFileWasOpened = 1;
     }
-$$
+
     if (dumpFile == NULL) {
         fprintf(stderr, "Error of opening file \"%s\"", dumpInfo->nameOfDumpFile);
         perror("");
         return;
     }
-$$
+
     fprintf(dumpFile, "<pre>\n");
     fprintf(dumpFile, "<h3>listDump() <font color=red>from %s at %s:%d</font></h3>\n",
     dumpInfo->nameOfFunc, dumpInfo->nameOfFile, dumpInfo->numOfLine);
-$$
+
     fprintf(dumpFile, "<h2><font color=blue>%s</font></h2>\n", message);
-$$
+
 
     fprintfClassicListErrorsForDump (cList, dumpFile, dumpInfo);
 
@@ -415,7 +346,7 @@ if (!(cList->errorCode & -badNodeCycle) && !(cList->errorCode & -badNextAndPrevM
     fprintfClassicListDataForDump (cList, dumpInfo, dumpFile);
 
     createClassicListGraphImageForDump (cList, dumpInfo, dumpFile, nameOfTextGraphFile);
-$$
+
     if (fclose(dumpFile) != 0) {
         fprintf(stderr, "Error of closing file \"%s\"", dumpInfo->nameOfGraphFile);
         perror("");
@@ -477,10 +408,10 @@ void createClassicListGraphImageForDump (struct classicList* cList, struct dump*
     assert(dumpInfo);
     assert(dumpFile);
     assert(nameOfTextGraphFile);
-$$
+
     static int graphImageCounter = 0;
     graphImageCounter++;
-$$
+
     printf("fictitiousNode == %p\n", *cListFictitious(cList));
 
     if (!(cList->errorCode & -cListPrevBadCycle) && (cList->errorCode & -cListNextBadCycle))
@@ -488,7 +419,7 @@ $$
     else
         classicListGraphDump(*cListFictitious(cList), nameOfTextGraphFile);
 
-$$
+
     char graphvizCallCommand[STR_SIZE] = {};
     printf("nameOfTextGraphFile == %s\n", nameOfTextGraphFile);
     snprintf(graphvizCallCommand, sizeof(graphvizCallCommand), "dot -Tpng %s -o GRAPH_DUMPS/graph%d.png", nameOfTextGraphFile, graphImageCounter);
@@ -546,9 +477,6 @@ int reversedClassicListGraphDump (listNode_t* fictitiousNode, const char* textGr
     fprintf(graphFile, "    rankdir = LR;\n");
     fprintf(graphFile, "    node [shape = Mrecord, color = black];\n");
 
-    listNode_t* badNode1 = NULL;
-    listNode_t* badNode2 = NULL;
-
     for (listNode_t* node = fictitiousNode; ; node = *(nodePrev(node))) {
 
         const char* fillColor = "#C2BBBD";
@@ -568,17 +496,6 @@ int reversedClassicListGraphDump (listNode_t* fictitiousNode, const char* textGr
             continue;
         }
 
-
-        /*listNode_t* nextNum = *(nodeNext(node));
-        if (nextNum == NULL)
-            continue;
-
-        listNode_t* prevNum = *(nodePrev(node));
-        if (nextNum == NULL)
-            continue;
-        if(node != *(nodeNext(prevNum)))
-            badNode2 = prevNum;*/
-
         fprintf(graphFile, "    node%p [label = \" address = %p| data = %d|    next = %p| prev = %p\", style = filled, fillcolor = \"%s\", color = black];\n",
                 node, node, *(nodeData(node)), *(nodeNext(node)), *(nodePrev(node)), fillColor);
 
@@ -587,19 +504,14 @@ int reversedClassicListGraphDump (listNode_t* fictitiousNode, const char* textGr
         if ((*(nodePrev(node)) == fictitiousNode))
             break;
     }
-$$
+
     fprintf(graphFile, "\n");
-$$
+
     for (listNode_t* node = fictitiousNode; ; node = *(nodePrev(node))) {
         fprintf(graphFile, "    node%p -> node%p [weight = 500, style = invis, color = white];\n", node, *(nodeNext(node)));
         listNode_t* nextNum = *(nodeNext(node));
         if (nextNum == NULL)
             continue;
-        listNode_t* prevNum = *(nodePrev(node));
-        if (nextNum == NULL)
-            continue;
-        if(node != *(nodeNext(prevNum)))
-            badNode2 = prevNum;
 
         if ((*(nodePrev(*(nodePrev(node)))) == fictitiousNode))
             break;
@@ -619,13 +531,6 @@ $$
             fprintf(graphFile, "    errorNode%p [shape = doubleoctagon, style = filled, fillcolor = \"#ff0000ff\",  color = \"#ff0000ff\", label = \" address = %p\", fontcolor = white];\n", nextNum, *(nodePrev(nextNum)));
             fprintf(graphFile, "    node%p -> errorNode%p [color = \"#ff0000ff\", penwidth = 4];\n", nextNum, nextNum);
         }
-        //if (nextNum == NULL)
-        //    continue;
-        //listNode_t* prevNum = *(nodePrev(node));
-        //if (nextNum == NULL)
-        //    continue;
-        //if(node != *(nodeNext(prevNum)))
-        //    badNode2 = prevNum;
 
         if ((*(nodePrev(node)) == fictitiousNode))
             break;

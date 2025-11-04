@@ -103,3 +103,9 @@ size_t* cListSize (struct classicList* cList) {
 
     return &(cList->size);
 }
+
+int* isListLinear (struct list* lst) {
+    assert(lst);
+
+    return &(lst->isLinear);
+}

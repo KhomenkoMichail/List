@@ -1,15 +1,15 @@
 digraph List {
     rankdir = LR;
     node [shape = Mrecord, color = black];
-    node0 [label = " idx = 0| data = CANARY|    next = 6| prev = 4", style = filled, fillcolor = "#C2BBBD", color = black];
-    node1 [label = " idx = 1| data = 1|    next = 5| prev = 6", style = filled, fillcolor = "#C2BBBD", color = black];
-    node2 [label = " idx = 2| data = 20|    next = 4| prev = 90", style = filled, fillcolor = "#C2BBBD", color = black];
-    node3 [label = " idx = 3| data = 20|    next = 2| prev = 5", style = filled, fillcolor = "#C2BBBD", color = black];
-    node4 [label = " idx = 4| data = 30|    next = 0| prev = 2", style = filled, fillcolor = "#E07397", color = black];
-    node5 [label = " idx = 5| data = 1|    next = 3| prev = 1", style = filled, fillcolor = "#C2BBBD", color = black];
-    node6 [label = " idx = 6| data = 1|    next = 1| prev = 100", style = filled, fillcolor = "#79D47F", color = black];
-    node7 [label = " idx = 7| data = PZN|    next = 8| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
-    node8 [label = " idx = 8| data = PZN|    next = 9| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
+    node0 [label = " idx = 0| data = CANARY|    next = 1| prev = 8", style = filled, fillcolor = "#C2BBBD", color = black];
+    node1 [label = " idx = 1| data = 80|    next = 2| prev = 0", style = filled, fillcolor = "#79D47F", color = black];
+    node2 [label = " idx = 2| data = 70|    next = 3| prev = 1", style = filled, fillcolor = "#C2BBBD", color = black];
+    node3 [label = " idx = 3| data = 60|    next = 4| prev = 2", style = filled, fillcolor = "#C2BBBD", color = black];
+    node4 [label = " idx = 4| data = 50|    next = 5| prev = 3", style = filled, fillcolor = "#C2BBBD", color = black];
+    node5 [label = " idx = 5| data = 20|    next = 6| prev = 4", style = filled, fillcolor = "#C2BBBD", color = black];
+    node6 [label = " idx = 6| data = 70|    next = 7| prev = 5", style = filled, fillcolor = "#C2BBBD", color = black];
+    node7 [label = " idx = 7| data = 50|    next = 8| prev = 6", style = filled, fillcolor = "#C2BBBD", color = black];
+    node8 [label = " idx = 8| data = 90|    next = 0| prev = 7", style = filled, fillcolor = "#E07397", color = black];
     node9 [label = " idx = 9| data = PZN|    next = 0| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
 
     node0 -> node1 [weight = 500, style = invis, color = white];
@@ -21,25 +21,21 @@ digraph List {
     node6 -> node7 [weight = 500, style = invis, color = white];
     node7 -> node8 [weight = 500, style = invis, color = white];
     node8 -> node9 [weight = 500, style = invis, color = white];
-    node0 -> node6 [color = "#220ff5ff"];
-    errorNode100 [shape = doubleoctagon, style = filled, fillcolor = "#ff0000ff",  color = "#ff0000ff", label = " idx = 100", fontcolor = white];
-    node6 -> errorNode100 [color = "#ff0000ff", penwidth = 4];
-    node1 -> node5 [dir = both, color = "#9faafaff"];
-    node2 -> node4 [dir = both, color = "#9faafaff"];
-    node3 -> node2 [color = "#220ff5ff"];
-    errorNode90 [shape = doubleoctagon, style = filled, fillcolor = "#ff0000ff",  color = "#ff0000ff", label = " idx = 90", fontcolor = white];
-    node2 -> errorNode90 [color = "#ff0000ff", penwidth = 4];
-    node4 -> node0 [dir = both, color = "#9faafaff"];
-    node5 -> node3 [dir = both, color = "#9faafaff"];
-    node6 -> node1 [dir = both, color = "#9faafaff"];
-    node7 -> node8 [color = gray];
-    node8 -> node9 [color = gray];
+    node0 -> node1 [dir = both, color = "#9faafaff"];
+    node1 -> node2 [dir = both, color = "#9faafaff"];
+    node2 -> node3 [dir = both, color = "#9faafaff"];
+    node3 -> node4 [dir = both, color = "#9faafaff"];
+    node4 -> node5 [dir = both, color = "#9faafaff"];
+    node5 -> node6 [dir = both, color = "#9faafaff"];
+    node6 -> node7 [dir = both, color = "#9faafaff"];
+    node7 -> node8 [dir = both, color = "#9faafaff"];
+    node8 -> node0 [dir = both, color = "#9faafaff"];
 
     head [shape = box3d, label="HEAD", style = filled, fillcolor = "#79D47F", color = black];
     tail [shape = box3d, label="TAIL", style = filled, fillcolor = "#E07397", color = black];
     free [shape = box3d, label="FREE", style = filled, fillcolor = "#E3f194", color = black];
-    head -> node6 [color = "#79D47F"];
-    tail -> node4 [color = "#E07397"];
-    free -> node7 [color = gray];
+    head -> node1 [color = "#79D47F"];
+    tail -> node8 [color = "#E07397"];
+    free -> node9 [color = gray];
     { rank = same; head; tail; free; }
  }

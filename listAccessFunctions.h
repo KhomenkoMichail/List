@@ -27,4 +27,6 @@ listNode_t** nodeNext (listNode_t* node);
 listNode_t** cListFictitious (struct classicList* cList);
 
 size_t* cListSize (struct classicList* cList);
+
+int* isListLinear (struct list* lst);
 #endif

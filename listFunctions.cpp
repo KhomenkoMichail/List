@@ -32,6 +32,8 @@ int listCtor (struct list* lst, ssize_t capacity, struct info listInfo) {
     (lst->creationInfo).nameOfFile = listInfo.nameOfFile;
     (lst->creationInfo).numOfLine = listInfo.numOfLine;
 
+    *isListLinear(lst) = 1;
+
     lst->errorCode = noErrors;
     listVerifier(lst);
 
@@ -81,7 +83,7 @@ int deleteElement (struct list* lst, size_t deletedElement, struct dump* dumpInf
     return 0;
 }
 
-listErr_t reallocList (struct list* lst) {
+listErr_t reallocListUP (struct list* lst) {
     assert(lst);
 
     size_t oldCapacity = *(listCapacity(lst));
@@ -258,6 +260,7 @@ void fprintfListDataForDump (struct list* lst, FILE* dumpFile) {
 
     fprintf(dumpFile, "capacity == %d\n", *(listCapacity(lst)));
     fprintf(dumpFile, "size == %d\n", *(listSize(lst)));
+    fprintf(dumpFile, "is list linear == %d\n", *isListLinear(lst));
     fprintf(dumpFile, "errorCode == %d\n\n", lst->errorCode);
 
     fprintf(dumpFile, "free == %d\n\n", *(listFree(lst)));
@@ -337,6 +340,9 @@ int listVerifier (struct list* lst) {
 
     if (findFreeListCycle(lst))
         lst->errorCode |= -freeListCycle;
+
+    if (findNonlinearList(lst))
+        *(isListLinear(lst)) = 0;
 
     return lst->errorCode;
 }
@@ -470,7 +476,7 @@ int insertAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue, s
     listDump (lst, dumpInfo, beforeMessage);
 
     if(lst->free == 0)
-        if (reallocList(lst))
+        if (reallocListUP(lst))
             return badRealloc;
 
     size_t newNodeNum = *(listFree(lst));
@@ -577,7 +583,7 @@ int insertBefore (struct list* lst, size_t anchorElemNum, listData_t dataValue, 
     listDump (lst, dumpInfo, beforeMessage);
 
     if(lst->free == 0)
-        if (reallocList(lst))
+        if (reallocListUP(lst))
             return badRealloc;
 
     size_t newNodeNum = *(listFree(lst));
@@ -645,4 +651,114 @@ void listDtor (struct list* lst) {
     assert(lst);
 
     free(lst->nodeArr);
+}
+
+int linearOrderNodeComparator(const void* firstStruct, const void* secondStruct) {
+    assert(firstStruct);
+    assert(secondStruct);
+
+    const struct node* firstNode = (const struct node*)firstStruct;
+    const struct node* secondNode = (const struct node*)secondStruct;
+
+    if ((firstNode->prev == -1) && (secondNode->prev != -1))
+        return 1;
+
+    if ((secondNode->prev == -1) && (firstNode->prev != -1))
+        return -1;
+
+    if((firstNode->prev == -1) && (firstNode->next == 0))
+        return 1;
+
+    if((secondNode->prev == -1) && (secondNode->next == 0))
+        return -1;
+
+    if(firstNode->next == 0)
+        return 1;
+
+    if(secondNode->next == 0)
+        return -1;
+
+    return (int)(firstNode->next - secondNode->next);
+}
+
+int makeListLinear (struct list* lst, struct dump* dumpInfo) {
+    assert(lst);
+    assert(dumpInfo);
+
+    dumpInfo->nameOfFunc = __func__;
+    char beforeMessage[STR_SIZE] =  {};
+    char afterMessage[STR_SIZE]= {};
+    snprintf(beforeMessage, sizeof(beforeMessage), "BEFORE making list linear");
+    snprintf(afterMessage, sizeof(afterMessage), "AFTER making list linear");
+
+    if(listVerifier(lst)) {
+        listDump (lst, dumpInfo, beforeMessage);
+        return lst->errorCode;
+    }
+
+    listDump (lst, dumpInfo, beforeMessage);
+
+    size_t nodeIdx = 1;
+    for (size_t numOfNode = 0; *listNext(lst, numOfNode) != 0; ) {
+        size_t nextNum = *listNext(lst, numOfNode);
+        *listNext(lst, numOfNode) = nodeIdx;
+        nodeIdx++;
+        numOfNode = nextNum;
+    }
+    qsort((lst->nodeArr) + 1, lst->capacity - 1, sizeof(struct node), &linearOrderNodeComparator);
+
+    *listPrev(lst, 0) = *(listSize(lst));
+    for (size_t numOfNode = 1; numOfNode <= *(listSize(lst)); numOfNode++)
+        *listPrev(lst, numOfNode) = numOfNode - 1;
+
+    if(*listFree(lst) != 0)
+        *listFree(lst) = *listSize(lst) + 1;
+
+    for (size_t numOfFreeNode = *listFree(lst); (*listNext(lst, numOfFreeNode) != 0) && (numOfFreeNode != 0); numOfFreeNode++)
+        *listNext(lst, numOfFreeNode) = numOfFreeNode + 1;
+
+    if((*listSize(lst)) < (*listCapacity(lst)) / 2)
+        if (reallocListDown(lst))
+            return badRealloc;
+
+    *isListLinear(lst) = 1;
+
+    if(listVerifier(lst)) {
+        listDump (lst, dumpInfo, afterMessage);
+        return lst->errorCode;
+    }
+
+    listDump (lst, dumpInfo, afterMessage);
+    return 0;
+}
+
+listErr_t reallocListDown (struct list* lst) {
+    assert(lst);
+
+    size_t oldCapacity = *(listCapacity(lst));
+    *(listCapacity(lst)) = oldCapacity / 2;
+
+    struct node* newArr = (struct node*)realloc(lst->nodeArr, (*(listCapacity(lst)))*sizeof(struct node));
+    if (!newArr) {
+        printf("Error! Bad realloc!\n");
+        return badRealloc;
+    }
+    lst->nodeArr = newArr;
+
+    *(listNext(lst, *(listCapacity(lst)) - 1)) = 0;
+
+    if((*listSize(lst)) == (*listCapacity(lst)) - 1)
+        *listFree(lst) = 0;
+
+    return noErrors;
+}
+
+int findNonlinearList(struct list* lst) {
+    assert(lst);
+
+    for(int numOfNode = 0; numOfNode < (int)(*listSize(lst)); numOfNode++)
+        if (*listNext(lst, numOfNode) != numOfNode + 1)
+            return 1;
+
+    return 0;
 }
