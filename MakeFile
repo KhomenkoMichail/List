@@ -2,11 +2,11 @@ flags = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equa
 
 list_cpp = main.cpp listFunctions.cpp listAccessFunctions.cpp classicListFunctions.cpp
 
-list_all = listFunctions.h structsAndConsts.h listAccessFunctions.h classicListFunctions.h $(list_cpp)
+list_all = listFunctions.h structsAndConsts.h listAccessFunctions.h classicListFunctions.h testFunctions.h $(list_cpp)
 
 build:
 	@echo -------------------------------------------------------------------------
-	g++ main.cpp listFunctions.cpp listAccessFunctions.cpp classicListFunctions.cpp $(flags) -o list.exe
+	g++ main.cpp listFunctions.cpp listAccessFunctions.cpp classicListFunctions.cpp testFunctions.cpp $(flags) -o list.exe
 
 run:
 	./list.exe

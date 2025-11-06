@@ -1,6 +1,7 @@
 #ifndef STRUCTS_AND_CONSTS_H
 #define STRUCTS_AND_CONSTS_H
 
+//#define PROTECTION_ON
 const int POISON = 0xBAD;
 const int NULL_CANARY = 0xBABE;
 
@@ -11,6 +12,8 @@ struct node {
     int next;
     int prev;
 };
+
+const size_t NUMBER_OF_TESTS = 300000000;
 
 struct info {
     const char* name;
@@ -75,9 +78,6 @@ struct dump {
     const char* nameOfFile;
     const char* nameOfFunc;
     unsigned int numOfLine;
-
-    //int errorCode;
-    //listNode_t* fictitiousNode;
 
     const char* nameOfDumpFile;
     const char* nameOfGraphFile;

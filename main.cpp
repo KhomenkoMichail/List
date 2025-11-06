@@ -3,12 +3,35 @@
 #include "listFunctions.h"
 #include "structsAndConsts.h"
 #include "classicListFunctions.h"
+#include "testFunctions.h"
 #include <stdlib.h>
 #include <TXLib.h>
 
 int main (void) {
 
 
+    struct list lst = {};
+    struct info listInfo = {};
+    struct dump dumpInfo1 = {};
+
+    struct classicList cList = {};
+    struct dump dumpInfo = {};
+
+    double classicTime = 0;
+    double hashFriendlyTime = 0;
+
+    LIST_CTOR(lst, 3, listInfo);
+    listNode_t* nullNode = classicListCtor(&cList);
+    classicTime = classicListTimetest (&cList, &dumpInfo1);
+
+    hashFriendlyTime = hashFriendlyListTimetest (&lst, &dumpInfo);
+    printf("diff == %lf\n", classicTime / hashFriendlyTime);
+
+    listDtor(&lst);
+    classicListDtor(nullNode);
+
+
+/*
     struct list lst = {};
     struct info listInfo = {};
     struct dump dumpInfo = {};
@@ -19,8 +42,7 @@ int main (void) {
     dumpInfo.nameOfDumpFile = nameOfDumpFile;
     dumpInfo.nameOfGraphFile = nameOfTextGraphFile;
 
-    LIST_CTOR(lst, 20, listInfo);
-
+    LIST_CTOR(lst, 3, listInfo);
 
     InsertAfter(&lst, 0, 10, &dumpInfo);
     InsertAfter(&lst, 1, 20, &dumpInfo);
@@ -40,50 +62,17 @@ int main (void) {
     InsertAfterTail(&lst, 90, &dumpInfo);
     DeleteElement(&lst, 3, &dumpInfo);
     DeleteElement(&lst, 4, &dumpInfo);
-    //qsort((lst.nodeArr)+1, lst.capacity - 1, sizeof(struct node), &linearOrderNodeComparator);
-    //listDump (&lst, &dumpInfo, "AFTER QSORT");
+
     if(!(*isListLinear(&lst)))
         MakeListLinear(&lst, &dumpInfo);
 
     listDtor(&lst);
-
-/*
-    InsertAfter(&lst, 0, 100, &dumpInfo);
-    InsertAfter(&lst, 1, 200, &dumpInfo);
-    InsertAfter(&lst, 2, 300, &dumpInfo);
-    InsertAfter(&lst, 3, 400, &dumpInfo);
-    InsertAfter(&lst, 4, 500, &dumpInfo);
-    InsertAfter(&lst, 5, 600, &dumpInfo);
-    InsertAfter(&lst, 6, 700, &dumpInfo);
-    InsertAfter(&lst, 7, 800, &dumpInfo);
-    InsertAfter(&lst, 8, 900, &dumpInfo);
-    InsertAfter(&lst, 9, 1000, &dumpInfo);
-    lst.nodeArr[2].prev = 8;
-    lst.nodeArr[8].next = 2;
-    lst.nodeArr[4].prev = 6;
-    lst.nodeArr[6].next = 4;
-    InsertAfter(&lst, 10, 1100, &dumpInfo);
-*/
-
-/*
-    InsertAfter(&lst, 0, 100, &dumpInfo);
-    InsertAfter(&lst, 1, 200, &dumpInfo);
-    InsertAfter(&lst, 2, 300, &dumpInfo);
-    InsertAfter(&lst, 3, 400, &dumpInfo);
-    InsertAfter(&lst, 4, 500, &dumpInfo);
-    InsertAfter(&lst, 5, 600, &dumpInfo);
-    InsertAfter(&lst, 6, 700, &dumpInfo);
-    InsertAfter(&lst, 7, 800, &dumpInfo);
-    InsertAfter(&lst, 8, 900, &dumpInfo);
-    InsertAfter(&lst, 9, 1000, &dumpInfo);
-    lst.nodeArr[2].next = 100;
-    InsertAfter(&lst, 10, 1100, &dumpInfo);
 */
 /*
     struct classicList cList = {};
     struct dump dumpInfo = {};
 
-    const char* nameOfDumpFile = "classicListDump1.html";
+    const char* nameOfDumpFile = "classicListDump2.html";
     const char* nameOfTextGraphFile = "classicGraphDump.txt";
 
     dumpInfo.nameOfDumpFile = nameOfDumpFile;
@@ -91,22 +80,31 @@ int main (void) {
 
 
     listNode_t* nullNode = classicListCtor(&cList);
-
+    if (!nullNode)
+        return 1;
 
     listNode_t* node1 = ClassicInsertAfter(&cList, nullNode, 10, &dumpInfo);
+    if (!node1)
+        return 1;
 
     listNode_t* node2 = ClassicInsertAfter(&cList, node1, 20, &dumpInfo);
-
+    if (!node2)
+        return 1;
     listNode_t* node3 = ClassicInsertAfter(&cList, node2, 30, &dumpInfo);
-
+    if (!node3)
+        return 1;
     listNode_t* node4 = ClassicInsertAfter(&cList, node3, 40, &dumpInfo);
-
+    if (!node4)
+        return 1;
     listNode_t* node5 = ClassicInsertAfter(&cList, node4, 50, &dumpInfo);
+    if (!node5)
+        return 1;
+    node4->prev = (listNode_t*)0x12345678;
 
-    node4->next = node2;
-    node2->next = node1;
-    //node2->prev = node3;
     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+
+    if (!node6)
+        return 1;
 
     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
 

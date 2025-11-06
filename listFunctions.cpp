@@ -44,6 +44,7 @@ int deleteElement (struct list* lst, size_t deletedElement, struct dump* dumpInf
     assert(lst);
     assert(dumpInfo);
 
+    #ifdef PROTECTION_ON
     dumpInfo->nameOfFunc = __func__;
     char beforeMessage[STR_SIZE] =  {};
     char afterMessage[STR_SIZE]= {};
@@ -59,7 +60,7 @@ int deleteElement (struct list* lst, size_t deletedElement, struct dump* dumpInf
     }
 
     listDump (lst, dumpInfo, beforeMessage);
-
+    #endif
     *(listData(lst, deletedElement)) = POISON;
 
     int prevElemNum = *(listPrev(lst, deletedElement));
@@ -74,12 +75,14 @@ int deleteElement (struct list* lst, size_t deletedElement, struct dump* dumpInf
     *(listFree(lst)) = deletedElement;
     *(listSize(lst)) -= 1;
 
+    #ifdef PROTECTION_ON
     if(listVerifier(lst)) {
         listDump (lst, dumpInfo, beforeMessage);
         return lst->errorCode;
     }
 
     listDump (lst, dumpInfo, afterMessage);
+    #endif
     return 0;
 }
 
@@ -458,6 +461,7 @@ int insertAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue, s
     assert(lst);
     assert(dumpInfo);
 
+    #ifdef PROTECTION_ON
     dumpInfo->nameOfFunc = __func__;
 
     if (findBadAnchorElemNum(lst, anchorElemNum, dumpInfo))
@@ -474,6 +478,7 @@ int insertAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue, s
     }
 
     listDump (lst, dumpInfo, beforeMessage);
+    #endif
 
     if(lst->free == 0)
         if (reallocListUP(lst))
@@ -495,12 +500,14 @@ int insertAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue, s
     *listFree(lst) = nextFreeNum;
     *(listSize(lst)) += 1;
 
+    #ifdef PROTECTION_ON
     if(listVerifier(lst)) {
         listDump (lst, dumpInfo, beforeMessage);
         return lst->errorCode;
     }
 
     listDump (lst, dumpInfo, afterMessage);
+    #endif
     return newNodeNum;
 }
 

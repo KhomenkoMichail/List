@@ -1,22 +1,23 @@
 digraph classicList {
     rankdir = LR;
     node [shape = Mrecord, color = black];
-    node0152B8F8 [label = " address = 0152B8F8| data = CANARY|    next = 0152B790| prev = 0152B7F0", style = filled, fillcolor = "#dec84cff", color = black];
-    node0152B790 [label = " address = 0152B790| data = 10|    next = 0152B838| prev = 0152B8F8", style = filled, fillcolor = "#79D47F", color = black];
-    node0152B838 [label = " address = 0152B838| data = 20|    next = 0152B898| prev = 0152B790", style = filled, fillcolor = "#C2BBBD", color = black];
-    node0152B898 [label = " address = 0152B898| data = 30|    next = 0152B7A8| prev = 0152B838", style = filled, fillcolor = "#C2BBBD", color = black];
-    node0152B7A8 [label = " address = 0152B7A8| data = 40|    next = 0152B838| prev = 0152B898", style = filled, fillcolor = "#C2BBBD", color = black];
-    node0152B838 [label = " address = 0152B838| data = 20|    next = 0152B898| prev = 0152B790", style = filled, fillcolor = "#C2BBBD", color = black];
-    node0152B8F8 [label = " address = 0152B8F8| data = 47806|    next = 0152B790| prev = 0152B7F0", style = filled, fillcolor = "#C2BBBD", color = black];
-    node0152B7F0 [label = " address = 0152B7F0| data = 50|    next = 0152B8F8| prev = 0152B7A8", style = filled, fillcolor = "#C2BBBD", color = black];
-    node0152B7A8 [label = " address = 0152B7A8| data = 40|    next = 0152B838| prev = 0152B898", style = filled, fillcolor = "#C2BBBD", color = black];
-    node0152B898 [label = " address = 0152B898| data = 30|    next = 0152B7A8| prev = 0152B838", style = filled, fillcolor = "#C2BBBD", color = black];
-    node0152B838 [label = " address = 0152B838| data = 20|    next = 0152B898| prev = 0152B790", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0x0159B808 [label = " address = 0x0159B808| data = CANARY|    next = 0x0159B868| prev = 0x0159B7C0", style = filled, fillcolor = "#dec84cff", color = black];
+    node0x0159B868 [label = " address = 0x0159B868| data = 10|    next = 0x0159B880| prev = 0x0159B808", style = filled, fillcolor = "#79D47F", color = black];
+    node0x0159B880 [label = " address = 0x0159B880| data = 20|    next = 0x0159B748| prev = 0x0159B868", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0x0159B748 [label = " address = 0x0159B748| data = 30|    next = 0x0159B838| prev = 0x0159B880", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0x0159B838 [label = " address = 0x0159B838| data = 40|    next = 0x0159B7C0| prev = 0x12345678", style = filled, fillcolor = "#C2BBBD", color = black];
+    node0x0159B7C0 [label = " address = 0x0159B7C0| data = 50|    next = 0x0159B808| prev = 0x0159B838", style = filled, fillcolor = "#E07397", color = black];
 
-    node0152B8F8 -> node0152B790 [weight = 500, style = invis, color = white];
-    node0152B790 -> node0152B838 [weight = 500, style = invis, color = white];
-    node0152B838 -> node0152B898 [weight = 500, style = invis, color = white];
-    node0152B8F8 -> node0152B790 [dir = both, color = "#9faafaff"];
-    node0152B790 -> node0152B838 [dir = both, color = "#9faafaff"];
-    node0152B838 -> node0152B898 [dir = both, color = "#9faafaff"];
+    node0x0159B808 -> node0x0159B868 [weight = 500, style = invis, color = white];
+    node0x0159B868 -> node0x0159B880 [weight = 500, style = invis, color = white];
+    node0x0159B880 -> node0x0159B748 [weight = 500, style = invis, color = white];
+    node0x0159B748 -> node0x0159B838 [weight = 500, style = invis, color = white];
+    node0x0159B838 -> node0x0159B7C0 [weight = 500, style = invis, color = white];
+    node0x0159B808 -> node0x0159B868 [dir = both, color = "#9faafaff"];
+    node0x0159B868 -> node0x0159B880 [dir = both, color = "#9faafaff"];
+    node0x0159B880 -> node0x0159B748 [dir = both, color = "#9faafaff"];
+    node0x0159B748 -> node0x0159B838 [color = "#220ff5ff"];
+    errorNode0x12345678 [shape = doubleoctagon, style = filled, fillcolor = "#ff0000ff",  color = "#ff0000ff", label = " address = 0x12345678", fontcolor = white];
+    node0x0159B838 -> errorNode0x12345678 [color = "#ff0000ff", penwidth = 4];
+    node0x0159B838 -> node0x0159B7C0 [dir = both, color = "#9faafaff"];
  }

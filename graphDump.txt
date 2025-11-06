@@ -10,7 +10,9 @@ digraph List {
     node6 [label = " idx = 6| data = 70|    next = 7| prev = 5", style = filled, fillcolor = "#C2BBBD", color = black];
     node7 [label = " idx = 7| data = 50|    next = 8| prev = 6", style = filled, fillcolor = "#C2BBBD", color = black];
     node8 [label = " idx = 8| data = 90|    next = 0| prev = 7", style = filled, fillcolor = "#E07397", color = black];
-    node9 [label = " idx = 9| data = PZN|    next = 0| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
+    node9 [label = " idx = 9| data = PZN|    next = 10| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
+    node10 [label = " idx = 10| data = PZN|    next = 11| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
+    node11 [label = " idx = 11| data = PZN|    next = 0| prev = -1", style = filled, fillcolor = "#E3f194", color = black];
 
     node0 -> node1 [weight = 500, style = invis, color = white];
     node1 -> node2 [weight = 500, style = invis, color = white];
@@ -21,6 +23,8 @@ digraph List {
     node6 -> node7 [weight = 500, style = invis, color = white];
     node7 -> node8 [weight = 500, style = invis, color = white];
     node8 -> node9 [weight = 500, style = invis, color = white];
+    node9 -> node10 [weight = 500, style = invis, color = white];
+    node10 -> node11 [weight = 500, style = invis, color = white];
     node0 -> node1 [dir = both, color = "#9faafaff"];
     node1 -> node2 [dir = both, color = "#9faafaff"];
     node2 -> node3 [dir = both, color = "#9faafaff"];
@@ -30,6 +34,8 @@ digraph List {
     node6 -> node7 [dir = both, color = "#9faafaff"];
     node7 -> node8 [dir = both, color = "#9faafaff"];
     node8 -> node0 [dir = both, color = "#9faafaff"];
+    node9 -> node10 [color = gray];
+    node10 -> node11 [color = gray];
 
     head [shape = box3d, label="HEAD", style = filled, fillcolor = "#79D47F", color = black];
     tail [shape = box3d, label="TAIL", style = filled, fillcolor = "#E07397", color = black];

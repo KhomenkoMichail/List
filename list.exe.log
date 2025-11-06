@@ -5127,3 +5127,813 @@ Run file:	C:\Users\Admin\Desktop\prodva\List\list.exe
 Directory:	C:\Users\Admin\Desktop\prodva\List
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058267C (32-bit), Flags: Cmdre0, Thread: 0x52D8 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E206 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042DAFD in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:75:
+
+     73:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     74: 
+=>   75:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+     76: 
+     77:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 13:18:41, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 13:18:45
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe, файл: classicListFunctions.cpp, строка: 21, функция: listNode_t* classicInsertAfter(classicList*, listNode_t*, listData_t, dump*),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "anchorNode".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058267C (32-bit), Flags: Cmdre0, Thread: 0x2EB4 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045E206 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:21:
+
+     19: 
+     20: listNode_t* classicInsertAfter (struct classicList* cList, listNode_t* anchorNode, listData_t dataValue, struct dump* dumpInfo) {
+=>   21:     assert(anchorNode);
+     22: 
+     23:     dumpInfo->nameOfFunc = __func__;
+
+# 1 0x0042DAFD in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:75:
+
+     73:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     74: 
+=>   75:     ClassicInsertAfter(&cList, node6, 70, &dumpInfo);
+     76: 
+     77:     ClassicDeleteNode (&cList, node3, &dumpInfo);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 13:20:00, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 13:20:04
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00432C04 в функции findCListBadPrevCycle() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 582. Попытка прочесть данные по адресу 0x12345680 в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050F1FC (32-bit), Flags: Cmdre0, Thread: 0x3F68 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00432C04 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: findCListBadPrevCycle() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:582:
+
+    580:             return badNodeCycle;
+    581: 
+=>  582:         if (*(nodePrev(node)) == (*cListFictitious(cList)))
+    583:             break;
+    584:         cycleCounter++;
+
+# 1 0x00431746 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListVerifier() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:258:
+
+    256:         cList->errorCode |= -cListNextBadCycle;
+    257: 
+=>  258:     if (findCListBadPrevCycle(cList))
+    259:         cList->errorCode |= -cListPrevBadCycle;
+    260: 
+
+# 2 0x00430BCC in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:32:
+
+     30:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after [0x%p]",  dataValue, anchorNode);
+     31: 
+=>   32:     if(classicListVerifier(cList, dumpInfo)) {
+     33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34:         return NULL;
+
+# 3 0x00401630 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:98:
+
+     96:         return 1;
+     97:     node4->prev = (listNode_t*)0x12345678;
+=>   98:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     99:     if (!node6)
+    100:         return 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:09:52, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:09:56
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00432C04 в функции findCListBadPrevCycle() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 582. Попытка прочесть данные по адресу 0x12345680 в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050F1FC (32-bit), Flags: Cmdre0, Thread: 0x3F68 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00432C04 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: findCListBadPrevCycle() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:582:
+
+    580:             return badNodeCycle;
+    581: 
+=>  582:         if (*(nodePrev(node)) == (*cListFictitious(cList)))
+    583:             break;
+    584:         cycleCounter++;
+
+# 1 0x00431746 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListVerifier() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:258:
+
+    256:         cList->errorCode |= -cListNextBadCycle;
+    257: 
+=>  258:     if (findCListBadPrevCycle(cList))
+    259:         cList->errorCode |= -cListPrevBadCycle;
+    260: 
+
+# 2 0x00430BCC in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:32:
+
+     30:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after [0x%p]",  dataValue, anchorNode);
+     31: 
+=>   32:     if(classicListVerifier(cList, dumpInfo)) {
+     33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34:         return NULL;
+
+# 3 0x00401630 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:98:
+
+     96:         return 1;
+     97:     node4->prev = (listNode_t*)0x12345678;
+=>   98:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     99:     if (!node6)
+    100:         return 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:09:52, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:09:56
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00432C22 в функции findCListBadPrevCycle() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 585. Попытка прочесть данные по адресу 0x12345680 в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050F1FC (32-bit), Flags: Cmdre0, Thread: 0x5410 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00432C22 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: findCListBadPrevCycle() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:585:
+
+    583:             return badNodeCycle;
+    584: 
+=>  585:         if (*(nodePrev(node)) == (*cListFictitious(cList)))
+    586:             break;
+    587:         cycleCounter++;
+
+# 1 0x00431746 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListVerifier() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:258:
+
+    256:         cList->errorCode |= -cListNextBadCycle;
+    257: 
+=>  258:     if (findCListBadPrevCycle(cList))
+    259:         cList->errorCode |= -cListPrevBadCycle;
+    260: 
+
+# 2 0x00430BCC in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:32:
+
+     30:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after [0x%p]",  dataValue, anchorNode);
+     31: 
+=>   32:     if(classicListVerifier(cList, dumpInfo)) {
+     33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34:         return NULL;
+
+# 3 0x00401630 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:98:
+
+     96:         return 1;
+     97:     node4->prev = (listNode_t*)0x12345678;
+=>   98:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     99:     if (!node6)
+    100:         return 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:11:52, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:11:56
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00432C22 в функции findCListBadPrevCycle() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 585. Попытка прочесть данные по адресу 0x12345680 в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050F1FC (32-bit), Flags: Cmdre0, Thread: 0x5410 (Main). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00432C22 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: findCListBadPrevCycle() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:585:
+
+    583:             return badNodeCycle;
+    584: 
+=>  585:         if (*(nodePrev(node)) == (*cListFictitious(cList)))
+    586:             break;
+    587:         cycleCounter++;
+
+# 1 0x00431746 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListVerifier() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:258:
+
+    256:         cList->errorCode |= -cListNextBadCycle;
+    257: 
+=>  258:     if (findCListBadPrevCycle(cList))
+    259:         cList->errorCode |= -cListPrevBadCycle;
+    260: 
+
+# 2 0x00430BCC in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:32:
+
+     30:     snprintf(afterMessage, sizeof(afterMessage), "AFTER Insert \"%d\" after [0x%p]",  dataValue, anchorNode);
+     31: 
+=>   32:     if(classicListVerifier(cList, dumpInfo)) {
+     33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34:         return NULL;
+
+# 3 0x00401630 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:98:
+
+     96:         return 1;
+     97:     node4->prev = (listNode_t*)0x12345678;
+=>   98:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     99:     if (!node6)
+    100:         return 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:11:52, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:11:56
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00431225 в функции classicListGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 163. Попытка прочесть данные по адресу 0x1234567C в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050F1FC (32-bit), Flags: Cmdre0, Thread: 0x1EEC (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00431225 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:163:
+
+    161:         if (nextNum == NULL)
+    162:             continue;
+=>  163:         if(node != *(nodeNext(prevNum)))
+    164:             badNode2 = prevNum;
+    165: 
+
+# 1 0x004322EA in C:\Users\Admin\Desktop\prodva\List\List\list.exe: createClassicListGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:427:
+
+    425:         reversedClassicListGraphDump (*cListFictitious(cList), nameOfTextGraphFile);
+    426:     else
+=>  427:         classicListGraphDump(*cListFictitious(cList), nameOfTextGraphFile);
+    428: 
+    429: 
+
+# 2 0x00431C4C in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:357:
+
+    355:     fprintfClassicListDataForDump (cList, dumpInfo, dumpFile);
+    356: 
+=>  357:     createClassicListGraphImageForDump (cList, dumpInfo, dumpFile, nameOfTextGraphFile);
+    358: 
+    359:     if (fclose(dumpFile) != 0) {
+
+# 3 0x00430BF1 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:33:
+
+     31: 
+     32:     if(classicListVerifier(cList, dumpInfo)) {
+=>   33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34:         return NULL;
+     35:     }
+
+# 4 0x00401630 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:98:
+
+     96:         return 1;
+     97:     node4->prev = (listNode_t*)0x12345678;
+=>   98:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     99:     if (!node6)
+    100:         return 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:16:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:16:06
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00431225 в функции classicListGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 163. Попытка прочесть данные по адресу 0x1234567C в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050F1FC (32-bit), Flags: Cmdre0, Thread: 0x1EEC (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00431225 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:163:
+
+    161:         if (nextNum == NULL)
+    162:             continue;
+=>  163:         if(node != *(nodeNext(prevNum)))
+    164:             badNode2 = prevNum;
+    165: 
+
+# 1 0x004322EA in C:\Users\Admin\Desktop\prodva\List\List\list.exe: createClassicListGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:427:
+
+    425:         reversedClassicListGraphDump (*cListFictitious(cList), nameOfTextGraphFile);
+    426:     else
+=>  427:         classicListGraphDump(*cListFictitious(cList), nameOfTextGraphFile);
+    428: 
+    429: 
+
+# 2 0x00431C4C in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:357:
+
+    355:     fprintfClassicListDataForDump (cList, dumpInfo, dumpFile);
+    356: 
+=>  357:     createClassicListGraphImageForDump (cList, dumpInfo, dumpFile, nameOfTextGraphFile);
+    358: 
+    359:     if (fclose(dumpFile) != 0) {
+
+# 3 0x00430BF1 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:33:
+
+     31: 
+     32:     if(classicListVerifier(cList, dumpInfo)) {
+=>   33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34:         return NULL;
+     35:     }
+
+# 4 0x00401630 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:98:
+
+     96:         return 1;
+     97:     node4->prev = (listNode_t*)0x12345678;
+=>   98:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     99:     if (!node6)
+    100:         return 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:16:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:16:06
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x004313B9 в функции classicListGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 196. Попытка прочесть данные по адресу 0x1234567C в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050F1FC (32-bit), Flags: Cmdre0, Thread: 0x2F78 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004313B9 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:196:
+
+    194:         if (nextNum == NULL)
+    195:             continue;
+=>  196:         if(node != *(nodeNext(prevNum)))
+    197:             badNode2 = prevNum;
+    198: 
+
+# 1 0x0043233E in C:\Users\Admin\Desktop\prodva\List\List\list.exe: createClassicListGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:434:
+
+    432:         reversedClassicListGraphDump (*cListFictitious(cList), nameOfTextGraphFile);
+    433:     else
+=>  434:         classicListGraphDump(*cListFictitious(cList), nameOfTextGraphFile);
+    435: 
+    436: 
+
+# 2 0x00431CA0 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:364:
+
+    362:     fprintfClassicListDataForDump (cList, dumpInfo, dumpFile);
+    363: 
+=>  364:     createClassicListGraphImageForDump (cList, dumpInfo, dumpFile, nameOfTextGraphFile);
+    365: 
+    366:     if (fclose(dumpFile) != 0) {
+
+# 3 0x00430BF1 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:33:
+
+     31: 
+     32:     if(classicListVerifier(cList, dumpInfo)) {
+=>   33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34:         return NULL;
+     35:     }
+
+# 4 0x00401630 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:98:
+
+     96:         return 1;
+     97:     node4->prev = (listNode_t*)0x12345678;
+=>   98:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     99:     if (!node6)
+    100:         return 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:18:21, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:18:25
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x004313B9 в функции classicListGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 196. Попытка прочесть данные по адресу 0x1234567C в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0050F1FC (32-bit), Flags: Cmdre0, Thread: 0x2F78 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004313B9 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:196:
+
+    194:         if (nextNum == NULL)
+    195:             continue;
+=>  196:         if(node != *(nodeNext(prevNum)))
+    197:             badNode2 = prevNum;
+    198: 
+
+# 1 0x0043233E in C:\Users\Admin\Desktop\prodva\List\List\list.exe: createClassicListGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:434:
+
+    432:         reversedClassicListGraphDump (*cListFictitious(cList), nameOfTextGraphFile);
+    433:     else
+=>  434:         classicListGraphDump(*cListFictitious(cList), nameOfTextGraphFile);
+    435: 
+    436: 
+
+# 2 0x00431CA0 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:364:
+
+    362:     fprintfClassicListDataForDump (cList, dumpInfo, dumpFile);
+    363: 
+=>  364:     createClassicListGraphImageForDump (cList, dumpInfo, dumpFile, nameOfTextGraphFile);
+    365: 
+    366:     if (fclose(dumpFile) != 0) {
+
+# 3 0x00430BF1 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:33:
+
+     31: 
+     32:     if(classicListVerifier(cList, dumpInfo)) {
+=>   33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34:         return NULL;
+     35:     }
+
+# 4 0x00401630 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:98:
+
+     96:         return 1;
+     97:     node4->prev = (listNode_t*)0x12345678;
+=>   98:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+     99:     if (!node6)
+    100:         return 1;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:18:21, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:18:25
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0045F548 в функции classicListGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 235. Попытка прочесть данные по адресу 0x1234567C в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x2730 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045F548 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:235:
+
+    233:         if (nextNum == NULL)
+    234:             continue;
+=>  235:         if(node != *(nodeNext(prevNum)))
+    236:             badNode2 = prevNum;
+    237: 
+
+# 1 0x00460A9A in C:\Users\Admin\Desktop\prodva\List\List\list.exe: createClassicListGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:447:
+
+    445:     else {
+    446:         $$
+=>  447:         classicListGraphDump(*cListFictitious(cList), nameOfTextGraphFile);
+    448:     }
+    449: $$
+
+# 2 0x00460043 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:373:
+
+    371:     fprintfClassicListDataForDump (cList, dumpInfo, dumpFile);
+    372: $$
+=>  373:     createClassicListGraphImageForDump (cList, dumpInfo, dumpFile, nameOfTextGraphFile);
+    374: 
+    375:     if (fclose(dumpFile) != 0) {
+
+# 3 0x0045E887 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:33:
+
+     31: $$
+     32:     if(classicListVerifier(cList, dumpInfo)) {
+=>   33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34: 
+     35:         return NULL;
+
+# 4 0x0042DC32 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:99:
+
+     97:     node4->prev = (listNode_t*)0x12345678;
+     98: $$
+=>   99:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    100: $$
+    101:     if (!node6)
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int classicListGraphDump(listNode_t*, const char*) at classicListFunctions.cpp:218:
+
+    216:         if (nextNum == NULL)
+    217:             continue;
+=>  218: $$
+    219:         if(node == *(nodePrev(nextNum)))
+    220:             fprintf(graphFile, "    node0x%p -> node0x%p [dir = both, color = \"#9faafaff\"];\n", node, nextNum);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:35:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:35:40
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Desktop\prodva\List\List\list.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0045F548 в функции classicListGraphDump() в файле C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp на строке 235. Попытка прочесть данные по адресу 0x1234567C в модуле C:\Users\Admin\Desktop\prodva\List\List\list.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400], Instance: 0x0058367C (32-bit), Flags: Cmdre0, Thread: 0x2730 (Main), GetLastError(): 183 (Невозможно создать файл, так как он уже существует). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045F548 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListGraphDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:235:
+
+    233:         if (nextNum == NULL)
+    234:             continue;
+=>  235:         if(node != *(nodeNext(prevNum)))
+    236:             badNode2 = prevNum;
+    237: 
+
+# 1 0x00460A9A in C:\Users\Admin\Desktop\prodva\List\List\list.exe: createClassicListGraphImageForDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:447:
+
+    445:     else {
+    446:         $$
+=>  447:         classicListGraphDump(*cListFictitious(cList), nameOfTextGraphFile);
+    448:     }
+    449: $$
+
+# 2 0x00460043 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicListDump() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:373:
+
+    371:     fprintfClassicListDataForDump (cList, dumpInfo, dumpFile);
+    372: $$
+=>  373:     createClassicListGraphImageForDump (cList, dumpInfo, dumpFile, nameOfTextGraphFile);
+    374: 
+    375:     if (fclose(dumpFile) != 0) {
+
+# 3 0x0045E887 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: classicInsertAfter() at C:/Users/Admin/Desktop/prodva/List/List/classicListFunctions.cpp:33:
+
+     31: $$
+     32:     if(classicListVerifier(cList, dumpInfo)) {
+=>   33:         classicListDump(cList, dumpInfo, beforeMessage);
+     34: 
+     35:         return NULL;
+
+# 4 0x0042DC32 in C:\Users\Admin\Desktop\prodva\List\List\list.exe: main() at C:/Users/Admin/Desktop/prodva/List/List/main.cpp:99:
+
+     97:     node4->prev = (listNode_t*)0x12345678;
+     98: $$
+=>   99:     listNode_t* node6 = ClassicInsertAfter(&cList, node5, 60, &dumpInfo);
+    100: $$
+    101:     if (!node6)
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int classicListGraphDump(listNode_t*, const char*) at classicListFunctions.cpp:218:
+
+    216:         if (nextNum == NULL)
+    217:             continue;
+=>  218: $$
+    219:         if(node == *(nodePrev(nextNum)))
+    220:             fprintf(graphFile, "    node0x%p -> node0x%p [dir = both, color = \"#9faafaff\"];\n", node, nextNum);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-03 17:59:06 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\admin\downloads\codeblocks\mingw\include\txlib.h
+Compiled:	Nov  5 2025 23:35:37, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Nov 05 2025 23:35:41
+
+Run file:	C:\Users\Admin\Desktop\prodva\List\List\list.exe
+Directory:	C:\Users\Admin\Desktop\prodva\List\List
+
+--------------------------------------------------
