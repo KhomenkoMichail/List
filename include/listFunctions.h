@@ -1,0 +1,106 @@
+#ifndef LIST_FUNCTIONS_H
+#define LIST_FUNCTIONS_H
+
+#include "listAccessFunctions.h"
+#include "structsAndConsts.h"
+
+#define LIST_CTOR(listName, capacity, listInfo) ({\
+    (listInfo).name = #listName;\
+    (listInfo).nameOfFile = __FILE__;\
+    (listInfo).nameOfFunc = __func__;\
+    (listInfo).numOfLine = __LINE__;\
+    int returnableValue = listCtor(&listName, capacity, listInfo);\
+    returnableValue;\
+})
+
+#define InsertAfter(listAddress, anchorElemNum, dataValue, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int returnableValue = insertAfter(listAddress, anchorElemNum, dataValue, dumpInfoAddress);\
+    returnableValue;\
+})
+
+#define InsertBefore(listAddress, anchorElemNum, dataValue, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int returnableValue = insertBefore(listAddress, anchorElemNum, dataValue, dumpInfoAddress);\
+    returnableValue;\
+})
+
+#define InsertBeforeHead(listAddress, dataValue, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int head = *(listHead(listAddress));\
+    int returnableValue = insertBefore(listAddress, head, dataValue, dumpInfoAddress);\
+    returnableValue;\
+})
+
+#define InsertAfterTail(listAddress, dataValue, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int tail = *(listTail(listAddress));\
+    int returnableValue = insertAfter(listAddress, tail, dataValue, dumpInfoAddress);\
+    returnableValue;\
+})
+
+#define DeleteElement(listAddress, deletedElement, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int returnableValue = deleteElement(listAddress, deletedElement, dumpInfoAddress);\
+    returnableValue;\
+})
+
+#define MakeListLinear(listAddress, dumpInfoAddress) ({\
+    (dumpInfoAddress)->nameOfFile = __FILE__;\
+    (dumpInfoAddress)->numOfLine = __LINE__;\
+    int returnableValue = makeListLinear(listAddress, dumpInfoAddress);\
+    returnableValue;\
+})
+
+int listCtor (struct list* lst, ssize_t capacity, struct info listInfo);
+
+listErr_t reallocListUP (struct list* lst);
+
+int fprintfGraphDump (struct list* lst, const char* textGraphFileName);
+
+int listVerifier (struct list* lst);
+
+void listDump (struct list* lst, struct dump* dumpInfo, const char* message);
+
+void fprintfListDataForDump (struct list* lst, FILE* dumpFile);
+
+void createGraphImageForDump (struct list* lst, FILE* dumpFile, const char* nameOfTextGraphFile);
+
+int findBadFreeNode (struct list* lst);
+
+int findBadNextAndPrevMatch (struct list* lst);
+
+void fprintfListErrorsForDump (struct list* lst, FILE* dumpFile, struct dump* dumpInfo);
+
+int insertAfter (struct list* lst, size_t anchorElemNum, listData_t dataValue, struct dump* dumpInfo);
+
+int insertBefore (struct list* lst, size_t anchorElemNum, listData_t dataValue, struct dump* dumpInfo);
+
+int deleteElement (struct list* lst, size_t deletedElement, struct dump* dumpInfo);
+
+listErr_t findBadNodeCycle (struct list* lst);
+
+listErr_t findBadAnchorElemNum (struct list* lst, size_t anchorElemNum, struct dump* dumpInfo);
+
+listErr_t findBadDeleteNum (struct list* lst, size_t deletedElement, struct dump* dumpInfo);
+
+listErr_t findFreeListCycle (struct list* lst);
+
+void userListPrintf (struct list* lst);
+
+void listDtor (struct list* lst);
+
+int linearOrderNodeComparator(const void* firstStruct, const void* secondStruct);
+
+int makeListLinear (struct list* lst, struct dump* dumpInfo);
+
+listErr_t reallocListDown (struct list* lst);
+
+int findNonlinearList(struct list* lst);
+
+#endif
